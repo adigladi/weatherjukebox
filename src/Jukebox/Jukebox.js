@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Jukebox.css';
+import DZ from 'http://cdn-files.deezer.com/js/min/dz.js';
 
 class Jukebox extends Component {
 
@@ -19,7 +20,11 @@ class Jukebox extends Component {
         onload : onPlayerLoaded
       }
     });
+  
+  function onPlayerLoaded() {
+    DZ.player.playAlbum(238939);
   }
+}
 
   render() {
     return (
