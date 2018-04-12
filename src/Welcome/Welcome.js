@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 class Welcome extends Component {
   render() {
     return (
-      <div className="Welcome">
+      <div className="Welcome col-md-12">
         <p>
-            Welcome to the dinner planner React Startup code!
+            Weather Jukebox
         </p>
         
-        <Link to="/search">
+        <Link to="/jukebox">
             <button>Get Jukebox'd</button>
         </Link>
       </div>
