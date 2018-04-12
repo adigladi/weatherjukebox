@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './Sidebar.css';
-class Sidebar extends Component {
+import './User.css';
+class User extends Component {
 
   constructor(props) {
     super(props)
@@ -39,7 +39,7 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <div className="Sidebar">
+      <div className="User">
         <h3>This is the sidebar</h3>
         <p>
         People: <input value={this.state.numberOfGuests} onChange={this.onNumberOfGuestsChanged}/>
@@ -51,4 +51,4 @@ class Sidebar extends Component {
   }
 }
 
-export default Sidebar;
+export default User;
