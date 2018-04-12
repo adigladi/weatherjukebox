@@ -5,6 +5,15 @@ const httpOptions = {
 const WeatherModel = function () {
 
   let observers = [];
+  let currentCity = "Stockholm";
+
+  this.setCity = function(city) {
+    currentCity = city;
+  }
+
+  this.getCity = function(city) {
+    return currentCity;
+  }
 
   // API Calls
 
