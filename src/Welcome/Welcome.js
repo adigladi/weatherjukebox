@@ -31,6 +31,10 @@ class Welcome extends Component {
     modelInstance.setCity(e.target.value)
   }
 
+  onCloudClick = () => {
+    modelInstance.getWeather().then(weather => {modelInstance.setCurrentWeather(weather.weather[0].id)})
+  }
+
   render() {
     return (
       <div className="Welcome row">
@@ -43,7 +47,7 @@ class Welcome extends Component {
         <div className="col-md-12 text-center">
         <input type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
         <Link to="/jukebox">
-          <img className="cloud" src={require("./Cloud.png")}/>
+          <img className="cloud" src={require("./Cloud.png")} onClick={this.onCloudClick}/>
         </Link>
         </div>
       </div>
