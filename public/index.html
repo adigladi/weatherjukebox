@@ -4,63 +4,15 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Weather Jukebox</title>
-	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 
-		<script type="text/javascript" src="http://cdn-files.deezer.com/js/min/dz.js"></script>
+	<script type="text/javascript" src="http://cdn-files.deezer.com/js/min/dz.js"></script>
 </head>
 
 <body>
 	<div id="root"></div>
-<div id="dz-root"></div>
-<div id="controlers">
-	<input type="button" onclick="DZ.player.playAlbum(238939); return false;" value="Play Daft Punk - Discovery"/>
-	<input type="button" onclick="DZ.player.playAlbum(238939); return false;" value="Play Daft Punk - Homework"/>
-	<br/>
-	<input type="button" onclick="DZ.player.play(); return false;" value="play"/>
-	<input type="button" onclick="DZ.player.pause(); return false;" value="pause"/>
-	<input type="button" onclick="DZ.player.prev(); return false;" value="prev"/>
-	<input type="button" onclick="DZ.player.next(); return false;" value="next"/>
-	<br/>
-	<input type="button" onclick="DZ.player.setVolume(20); return false;" value="set Volume 20"/>
-	<input type="button" onclick="DZ.player.setVolume(80); return false;" value="set Volume 80"/>
-	<br/><br/><br/>
-</div>
 
-<script>
-	$(document).ready(function(){
-		$("#controlers input").attr('disabled', true);
-		
-	});
-	function event_listener_append() {
-		var pre = document.getElementById('event_listener');
-		var line = [];
-		for (var i = 0; i < arguments.length; i++) {
-			line.push(arguments[i]);
-		}
-		pre.innerHTML += line.join(' ') + "\n";
-	}
-	function onPlayerLoaded() {
-		$("#controlers input").attr('disabled', false);
-		event_listener_append('player_loaded');
-		DZ.Event.subscribe('current_track', function(arg){
-			event_listener_append('current_track', arg.index, arg.track.title, arg.track.album.title);
-		});
-		DZ.Event.subscribe('player_position', function(arg){
-			event_listener_append('position', arg[0], arg[1]);
-			$("#slider_seek").find('.bar').css('width', (100*arg[0]/arg[1]) + '%');
-		});
-	}
-	DZ.init({
-		appId  : '8',
-		channelUrl : 'http://developers.deezer.com/examples/channel.php',
-		player : {
-			onload : onPlayerLoaded
-		}
-	});
-</script><br/>
-event_listener : <br/>
-<pre id="event_listener" style="height:100px;overflow:auto;"></pre>
 </body>
 </html>
