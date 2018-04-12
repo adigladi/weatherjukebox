@@ -1,16 +1,31 @@
-const httpOptions = {
-  headers: {'X-Mashape-Key': 'YOUR_API_KEY'}
-};
-
 const WeatherModel = function () {
 
   let observers = [];
+  let currentCity = "Stockholm";
+  let currentWeather = 800;
+
+  this.setCurrentWeather = function(weather) {
+    currentWeather = weather;
+    console.log(currentWeather)
+  }
+
+  this.getCurrentWeather = function() {
+    return currentWeather;
+  }
+
+  this.setCity = function(city) {
+    currentCity = city;
+  }
+
+  this.getCity = function() {
+    return currentCity;
+  }
 
   // API Calls
 
-  this.getAllDishes = function () {
-    const url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search'
-    return fetch(url, httpOptions)
+  this.getWeather = function () {
+    const url = 'http://api.openweathermap.org/data/2.5/weather?q='+currentCity+'&APPID=4d7205e7d55f52007973fd59b41a403e&lang=se&units=metric'
+    return fetch(url)
       .then(processResponse)
       .catch(handleError)
   }
@@ -27,10 +42,10 @@ const WeatherModel = function () {
   const handleError = function (error) {
     if (error.json) {
       error.json().then(error => {
-        console.error('getAllDishes() API Error:', error.message || error)
+        console.error('getWeather() API Error:', error.message || error)
       })
     } else {
-      console.error('getAllDishes() API Error:', error.message || error)
+      console.error('getWeather() API Error:', error.message || error)
     }
   }
 
