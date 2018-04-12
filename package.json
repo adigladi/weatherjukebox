@@ -1,5 +1,5 @@
 {
-  "name": "dinnerplanner-html-react",
+  "name": "weatherjukebox",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,5 +13,21 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "<b>Our project will retrieve the users location (via geolocation or user input) and play music based on the current weather.</b>",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adigladi/weatherjukebox.git"
+  },
+  "keywords": [
+    "Jukebox"
+  ],
+  "author": "Wiigh/Wedberg/Berger/Dickson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adigladi/weatherjukebox/issues"
+  },
+  "homepage": "https://github.com/adigladi/weatherjukebox#readme"
 }
