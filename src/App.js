@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
 import Welcome from './Welcome/Welcome';
-import { modelInstance } from './data/DinnerModel'
-import SelectDish from "./SelectDish/SelectDish";
+import { modelInstance } from './data/WeatherModel'
+import Jukebox from "./Jukebox/Jukebox";
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      title: 'Dinner Planner',
+      title: 'Weather Jukebox',
     }
   }
 
@@ -21,7 +21,7 @@ class App extends Component {
           
           {/* We rended diffrent component based on the path */}
           <Route exact path="/" component={Welcome}/>
-          <Route path="/search" render={() => <SelectDish model={modelInstance}/>}/>
+          <Route path="/jukebox" render={() => <Jukebox model={modelInstance}/>}/>
         
         </header>
       </div>
