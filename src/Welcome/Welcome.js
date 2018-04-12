@@ -36,6 +36,7 @@ class Welcome extends Component {
       <div className="Welcome row">
         <div className="col-md-12">
           <br/>
+          <br/>
             <img className="center" src={require("./Logo.png")}/>
           <br/>
         </div>
