@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
 import Welcome from './Welcome/Welcome';
-import { modelInstance } from './data/DinnerModel'
+import { modelInstance } from './data/Model'
 import SelectDish from "./SelectDish/SelectDish";
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      title: 'Dinner Planner',
+      title: 'Weather Jukebox',
     }
   }
 
