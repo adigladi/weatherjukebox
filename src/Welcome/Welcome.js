@@ -5,14 +5,18 @@ import { Link } from 'react-router-dom';
 class Welcome extends Component {
   render() {
     return (
-      <div className="Welcome col-md-12">
-        <p>
-            Weather Jukebox
-        </p>
-        
+      <div className="Welcome row">
+        <div className="col-md-12">
+          <br/>
+            <img className="center" src={require("./Logo.png")}/>
+          <br/>
+        </div>
+        <div className="col-md-12 text-center">
+        <input type="text" name="search" placeholder="Enter your location..."/>
         <Link to="/jukebox">
             <button>Get Jukebox'd</button>
         </Link>
+        </div>
       </div>
     );
   }
