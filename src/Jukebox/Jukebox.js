@@ -3,37 +3,11 @@ import './Jukebox.css';
 
 class Jukebox extends Component {
 
-  constructor(props) {
-    super(props)
-    DZ.init({
-      appId  : '8',
-      channelUrl : 'http://developers.deezer.com/examples/channel.php',
-      player : {
-        
-      }
-      });
-    this.state = {
-      //numberOfGuests: this.props.model.getNumberOfGuests()
-    }
-  }
-
-  componentDidMount() {
-    console.log("hej");
-    
-  
-}
-
   render() {
-    
     return (
       <div className="Jukebox">
         <h2>This is the Jukebox screen</h2>
-        <div id="dz-root"></div>
-        <div id="controlers">
-          <input type="button" onclick="DZ.player.playAlbum(238939); return false;" value="Play Daft Punk - Discovery"/>
-          <input type="button" onclick="DZ.player.play(); return false;" value="play"/>
-          <input type="button" onclick="DZ.player.pause(); return false;" value="pause"/>
-        </div>
+        <iframe scrolling="no" frameBorder="0" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=true&width=300&height=300&color=007FEB&emptyPlayer=true&layout=dark&size=medium&type=tracks&id=1560273&app_id=1" width="0" height="0"></iframe>
       </div>
     );
   }
