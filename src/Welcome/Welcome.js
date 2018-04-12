@@ -14,7 +14,7 @@ class Welcome extends Component {
         <div className="col-md-12 text-center">
         <input type="text" name="search" placeholder="Enter your location..."/>
         <Link to="/jukebox">
-            <button>Get Jukebox'd</button>
+          <img className="cloud" src={require("./Cloud.png")}/>
         </Link>
         </div>
       </div>
