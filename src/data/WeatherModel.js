@@ -4,17 +4,7 @@ const httpOptions = {
 
 const WeatherModel = function () {
 
-  let numberOfGuests = 4;
   let observers = [];
-
-  this.setNumberOfGuests = function (num) {
-    numberOfGuests = num;
-    notifyObservers();
-  };
-
-  this.getNumberOfGuests = function () {
-    return numberOfGuests;
-  };
 
   // API Calls
 
