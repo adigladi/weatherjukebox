@@ -1,3 +1,5 @@
+@font-face { font-family: LemonMilk; src: url('../Fonts/LemonMilk.otf'); } 
+
 body {
     background: linear-gradient(rgb(0, 2, 71), rgb(34, 52, 102));
     height: 100vh;
@@ -29,6 +31,7 @@ input[type=text] {
     padding: 15px 20px 15px 20px;
     margin-left: 10px;
     font-size: 16px;
+    font-family: LemonMilk;
     font-weight: bold;
     color: black;
     border-color: rgb(252, 210, 127);
