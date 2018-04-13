@@ -3,10 +3,31 @@ const WeatherModel = function () {
   let observers = [];
   let currentCity = "Stockholm";
   let currentWeather = 800;
+  let currentGenre = {
+    'name':'Pop',
+    'genreID':132,
+    'weatherIDs':[{
+        'lower':800,
+        'upper':800
+    },{
+        'lower':801,
+        'upper':804
+    },{
+        'lower':951,
+        'upper':954
+    }],
+    'likelihood':8
+}
+  this.setCurrentGenre = function(genre) {
+    currentGenre = genre;
+  }
+
+  this.getCurrentGenre = function() {
+    return currentGenre;
+  }
 
   this.setCurrentWeather = function(weather) {
     currentWeather = weather;
-    console.log(currentWeather)
   }
 
   this.getCurrentWeather = function() {
