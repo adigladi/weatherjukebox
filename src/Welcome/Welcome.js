@@ -38,13 +38,13 @@ class Welcome extends Component {
   render() {
     return (
       <div className="Welcome row">
-        <div className="col-md-12">
+        <div className="col-12">
           <br/>
           <br/>
             <img className="center" src={require("./Logo.png")}/>
           <br/>
         </div>
-        <div className="col-md-12 text-center">
+        <div className="col-12 text-center">
         <input type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
         <Link to="/jukebox">
           <img className="cloud" src={require("./Cloud.png")} onClick={this.onCloudClick}/>
