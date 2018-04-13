@@ -746,22 +746,35 @@ const WeatherModel = function () {
   this.setCurrentArtist = function () { }
 
   // Functions for getting a genre/weather match
+
+  // weatherMatch outputs a random genreID matching the current weather.
   this.weatherMatch = function (weatherID) {
-    var matchedGenresOut = [];
+    var matchedGenres = [];
     var foundMatch = false;
     for (var i = 0; i < genreMatches.length; i++) {
       for (var j = 0; j < genreMatches[i].weatherIDs.length; j++) {
-        if (weatherID >= genreMatches[i].weatherIDs[j].lower && weatherID < genreMatches[i].weatherIDs[j].lower) {
+        if (weatherID >= genreMatches[i].weatherIDs[j].lower && weatherID < genreMatches[i].weatherIDs[j].upper + 1) {
           foundMatch = true;
         }
       }
       if (foundMatch) {
         for (var x = 0; x < genreMatches[i].likelihood; x++) {
-          matchedGenresOut.push(genreMatches[i].genreID)
+          matchedGenres.push(genreMatches[i].genreID)
         }
         foundMatch = false;
       }
     }
+    return matchedGenres[Math.floor(Math.random() * matchedGenres.length)];
+  }
+
+  // artistMatch returns a random artists id, given a list of artists from a certain genre.
+  this.artistMatch = function (generatedArtists) {
+    return generatedArtists[Math.floor(Math.random() * generatedArtists.length)].id;
+  }
+
+  // trackMatch returns a random track id, given a list of an artists top songs.
+  this.trackMatch = function (topSongs) {
+    return topSongs[Math.floor(Math.random() * topSongs.length)].id;
   }
 
   // API Calls
