@@ -81,10 +81,10 @@ const WeatherModel = function () {
   const handleError = function (error) {
     if (error.json) {
       error.json().then(error => {
-        console.error('getWeather() API Error:', error.message || error)
+        console.error('API Error:', error.message || error)
       })
     } else {
-      console.error('getWeather() API Error:', error.message || error)
+      console.error('API Error:', error.message || error)
     }
   }
 
