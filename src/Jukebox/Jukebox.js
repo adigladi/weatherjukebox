@@ -40,6 +40,9 @@ class Jukebox extends Component {
         <h2>Artist: {this.state.artist}</h2>
         <h2>Song: {this.state.song}</h2>
         <img src={this.state.picture}/>
+        <Link to="/">
+          <button type="button" className="btn btn-warning welcomebutton">Back</button>
+        </Link>
         <iframe scrolling="no" frameBorder="0" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=true&width=300&height=300&color=007FEB&emptyPlayer=true&layout=dark&size=medium&type=tracks&id=3097520&app_id=1" width="0" height="0"></iframe>
       </div>
     );
