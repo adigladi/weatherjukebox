@@ -745,6 +745,25 @@ const WeatherModel = function () {
 
   this.setCurrentArtist = function () { }
 
+  // Functions for getting a genre/weather match
+  this.weatherMatch = function (weatherID) {
+    var matchedGenresOut = [];
+    var foundMatch = false;
+    for (var i = 0; i < genreMatches.length; i++) {
+      for (var j = 0; j < genreMatches[i].weatherIDs.length; j++) {
+        if (weatherID >= genreMatches[i].weatherIDs[j].lower && weatherID < genreMatches[i].weatherIDs[j].lower) {
+          foundMatch = true;
+        }
+      }
+      if (foundMatch) {
+        for (var x = 0; x < genreMatches[i].likelihood; x++) {
+          matchedGenresOut.push(genreMatches[i].genreID)
+        }
+        foundMatch = false;
+      }
+    }
+  }
+
   // API Calls
 
   this.getWeather = function () {
