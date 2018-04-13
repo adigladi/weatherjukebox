@@ -746,8 +746,10 @@ const WeatherModel = function () {
   this.setCurrentArtist = function () { }
 
   // Functions for getting a genre/weather match
-
   // weatherMatch outputs a random genreID matching the current weather.
+  // artistMatch returns a random artists id, given a list of artists from a certain genre.
+  // trackMatch returns a random track id, given a list of an artists top songs.
+  
   this.weatherMatch = function (weatherID) {
     var matchedGenres = [];
     var foundMatch = false;
@@ -767,12 +769,10 @@ const WeatherModel = function () {
     return matchedGenres[Math.floor(Math.random() * matchedGenres.length)];
   }
 
-  // artistMatch returns a random artists id, given a list of artists from a certain genre.
   this.artistMatch = function (generatedArtists) {
     return generatedArtists[Math.floor(Math.random() * generatedArtists.length)].id;
   }
 
-  // trackMatch returns a random track id, given a list of an artists top songs.
   this.trackMatch = function (topSongs) {
     return topSongs[Math.floor(Math.random() * topSongs.length)].id;
   }
