@@ -32,7 +32,7 @@ class Welcome extends Component {
   }
 
   onCloudClick = () => {
-    modelInstance.getWeather().then(weather => {modelInstance.setCurrentWeather(weather.weather[0].id)})
+    modelInstance.getWeather().then(weather => {modelInstance.setCurrentWeather(weather.weather[0])})
   }
 
   render() {

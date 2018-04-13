@@ -28,6 +28,7 @@ const WeatherModel = function () {
 
   this.setCurrentWeather = function(weather) {
     currentWeather = weather;
+    console.log(currentWeather);
   }
 
   this.getCurrentWeather = function() {

@@ -1,7 +1,33 @@
 import React, { Component } from 'react';
 import './Jukebox.css';
+import { Link } from 'react-router-dom';
+import { modelInstance } from '../data/WeatherModel.js'
 
 class Jukebox extends Component {
+
+  constructor(props) {
+    super(props)
+    
+    this.state = {
+      genre: modelInstance.getCurrentGenre(),
+      weather: modelInstance.getCurrentWeather()
+    }
+  }
+
+  componentDidMount() {
+    modelInstance.addObserver(this)
+  }
+
+  componentWillUnmount() {
+    modelInstance.removeObserver(this)
+  }
+
+  update() {
+    this.setState({
+      genre: modelInstance.getCurrentGenre(),
+      weather: modelInstance.getCurrentWeather()
+    })
+  }
 
   render() {
     return (
