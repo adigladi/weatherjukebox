@@ -4,54 +4,71 @@ const WeatherModel = function () {
   let currentCity = "Stockholm";
   let currentWeather = 800;
   let currentGenre = {
-    'name':'Pop',
-    'genreID':132,
-    'weatherIDs':[{
-        'lower':800,
-        'upper':800
-    },{
-        'lower':801,
-        'upper':804
-    },{
-        'lower':951,
-        'upper':954
+    'name': 'Pop',
+    'genreID': 132,
+    'weatherIDs': [{
+      'lower': 800,
+      'upper': 800
+    }, {
+      'lower': 801,
+      'upper': 804
+    }, {
+      'lower': 951,
+      'upper': 954
     }],
-    'likelihood':8
-}
-  this.setCurrentGenre = function(genre) {
+    'likelihood': 8
+  }
+  let currentArtist = 27;
+
+  this.setCurrentGenre = function (genre) {
     currentGenre = genre;
   }
 
-  this.getCurrentGenre = function() {
+  this.getCurrentGenre = function () {
     return currentGenre;
   }
 
-  this.setCurrentWeather = function(weather) {
+  this.setCurrentWeather = function (weather) {
     currentWeather = weather;
-    console.log(currentWeather);
   }
 
-  this.getCurrentWeather = function() {
+  this.getCurrentWeather = function () {
     return currentWeather;
   }
 
-  this.setCity = function(city) {
+  this.setCity = function (city) {
     currentCity = city;
   }
 
-  this.getCity = function() {
+  this.getCity = function () {
     return currentCity;
   }
+
+  this.setCurrentArtist = function () { }
 
   // API Calls
 
   this.getWeather = function () {
-    const url = 'http://api.openweathermap.org/data/2.5/weather?q='+currentCity+'&APPID=4d7205e7d55f52007973fd59b41a403e&lang=se&units=metric'
+    const url = 'http://api.openweathermap.org/data/2.5/weather?q=' + currentCity + '&APPID=4d7205e7d55f52007973fd59b41a403e&lang=se&units=metric'
     return fetch(url)
       .then(processResponse)
       .catch(handleError)
   }
-  
+
+  this.getArtists = function () {
+    const url = 'https://api.deezer.com/genre/' + currentGenre.genreID + '/artists'
+    return fetch(url)
+      .then(processResponse)
+      .catch(handleError)
+  }
+
+  this.getTopTracks = function () {
+    const url = 'https://api.deezer.com/artist/' + currentArtist + '/top'
+    return fetch(url)
+      .then(processResponse)
+      .catch(handleError)
+  }
+
   // API Helper methods
 
   const processResponse = function (response) {
@@ -60,7 +77,7 @@ const WeatherModel = function () {
     }
     throw response;
   }
-  
+
   const handleError = function (error) {
     if (error.json) {
       error.json().then(error => {
