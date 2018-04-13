@@ -1,1 +1,6 @@
-@font-face { font-family: LemonMilk; src: url('../Fonts/LemonMilk.otf'); } 
+@font-face { font-family: LemonMilk; src: url('../Fonts/LemonMilk.otf'); }
+
+h2 {
+    font-family: LemonMilk;
+    color: rgb(252,227,127);
+}
