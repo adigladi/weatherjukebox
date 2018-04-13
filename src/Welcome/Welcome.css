@@ -7,11 +7,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 65%;
-}
-
-.cloud {
-    width: 9%;
+    width: 65vw;;
 }
 
 input[type=text] {
@@ -27,4 +23,14 @@ input[type=text] {
     padding: 12px 20px 12px 40px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
+}
+
+.welcomebutton {
+    padding: 15px 20px 15px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    border-color: rgb(252, 210, 127);
+    background-color:rgb(252, 227,127);
 }
