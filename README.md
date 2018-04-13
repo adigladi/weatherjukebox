@@ -1,6 +1,6 @@
 # weatherjukebox
 
-<b>Our project will retrieve the users location (via geolocation or user input) and play music based on the current weather.</b>
+<b>Our project will retrieve the users location (via geolocation or user input) and give music suggestions based on the current weather.</b>
 
 <ul>
 <li>What you have done</li>
