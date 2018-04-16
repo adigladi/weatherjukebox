@@ -729,6 +729,14 @@ const WeatherModel = function () {
     return currentGenre;
   }
 
+  this.setCurrentSong = function (inputId) {
+    songOut = inputId;
+  }
+
+  this.getCurrentSong = function () {
+    return songOut;
+  }
+
   this.setCurrentWeather = function (weather) {
     currentWeather = weather;
   }
@@ -783,7 +791,7 @@ const WeatherModel = function () {
     while (this.blacklistQuery(songOut)) {
       songOut = topSongs[Math.floor(Math.random() * topSongs.length)].id;
     }
-    return songOut;
+    this.setCurrentSong(songOut);
   }
 
   // API Calls
@@ -804,6 +812,13 @@ const WeatherModel = function () {
 
   this.getTopTracks = function () {
     const url = 'https://api.deezer.com/artist/' + currentArtist + '/top'
+    return fetch(url)
+      .then(processResponse)
+      .catch(handleError)
+  }
+
+  this.getTrack = function () {
+    const url = 'https://api.deezer.com/track/' + this.getCurrentSong()
     return fetch(url)
       .then(processResponse)
       .catch(handleError)
