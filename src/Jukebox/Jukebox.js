@@ -13,12 +13,21 @@ class Jukebox extends Component {
       weather: modelInstance.getCurrentWeather(),
       artist: "Daft Punk",
       song: "Harder, Better, Faster, Stronger",
-      picture: "https://e-cdns-images.dzcdn.net/images/cover/2e018122cb56986277102d2041a592c8/500x500-000000-80-0-0.jpg"
+      picture: "https://e-cdns-images.dzcdn.net/images/cover/2e018122cb56986277102d2041a592c8/500x500-000000-80-0-0.jpg",
+      status: 'INITIAL',
     }
   }
 
   componentDidMount() {
     modelInstance.addObserver(this);
+
+    modelInstance.getWeather().then(weather => {
+      this.setState({
+        status: 'LOADED',
+        genre: modelInstance.getCurrentGenre(),
+        weather: weather.weather[0]
+      });
+    });
 
     var id = "deezer-widget-loader";
     var js, djs = document.getElementsByTagName("script")[0];
@@ -28,20 +37,27 @@ class Jukebox extends Component {
 	  djs.parentNode.insertBefore(js, djs);
 
   }
-
+  
   componentWillUnmount() {
     modelInstance.removeObserver(this)
   }
 
   update() {
     this.setState({
+      status: 'LOADED',
       genre: modelInstance.getCurrentGenre(),
-      weather: modelInstance.getCurrentWeather()
+      weather: modelInstance.getCurrentWeather(),
     })
   }
 
   render() {
-    return (
+    let jukebox = null;
+    switch (this.state.status) {
+      case 'INITIAL':
+        jukebox = <div><h2>Fetching you trackz</h2><img alt='' src={require('./loading.svg')} id="loading"/></div>
+        break;
+      case 'LOADED':
+      jukebox = 
       <div className="Jukebox">
         <h2>Weather: {this.state.weather.description}</h2>
         <h2>Genre: {this.state.genre.name}</h2>
@@ -53,7 +69,14 @@ class Jukebox extends Component {
         </Link>
         <div className="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=30595446&app_id=1" data-scrolling="no" data-frameborder="0" data-width="0" data-height="0"></div>
       </div>
-    );
+        break;
+      default:
+        jukebox = <b>Failed to load data, please try again</b>
+        break;
+    }
+    return(
+      jukebox
+    )
   }
 }
 

@@ -720,13 +720,28 @@ const WeatherModel = function () {
   let currentArtist = 27;
   let songOut = 0;
   let trackBlacklist = [];
+  let matchHistory = [];
+  let favouritesList = [];
+  let blackListHit = false;
 
-  this.setCurrentGenre = function (genre) {
-    currentGenre = genre;
+  this.setCurrentGenre = function (setGenreId) {
+    for (var g = 0; g < genreMatches.length;g++) {
+      if (genreMatches[g].genreID == setGenreId) {
+        currentGenre = genreMatches[g];
+      }
+    }
   }
 
   this.getCurrentGenre = function () {
     return currentGenre;
+  }
+
+  this.setCurrentSong = function (inputId) {
+    songOut = inputId;
+  }
+
+  this.getCurrentSong = function () {
+    return songOut;
   }
 
   this.setCurrentWeather = function (weather) {
@@ -763,7 +778,7 @@ const WeatherModel = function () {
         }
       }
     }
-    return matchedGenres[Math.floor(Math.random() * matchedGenres.length)];
+    this.setCurrentGenre(matchedGenres[Math.floor(Math.random() * matchedGenres.length)]);
   }
 
   this.artistMatch = function (generatedArtists) {
@@ -771,7 +786,12 @@ const WeatherModel = function () {
   }
 
   this.blacklistQuery = function (queryId) {
-    if (trackBlacklist.includes(queryId)) {
+    for (var b = 0; b < trackBlacklist.length; b++) {
+      if (trackBlacklist[b].id == queryId) {
+        blackListHit = true;
+      }
+    }
+    if (blackListHit) {
       return true;
     } else {
       return false;
@@ -783,13 +803,13 @@ const WeatherModel = function () {
     while (this.blacklistQuery(songOut)) {
       songOut = topSongs[Math.floor(Math.random() * topSongs.length)].id;
     }
-    return songOut;
+    this.setCurrentSong(songOut);
   }
 
   // API Calls
 
   this.getWeather = function () {
-    const url = 'http://api.openweathermap.org/data/2.5/weather?q=' + currentCity + '&APPID=4d7205e7d55f52007973fd59b41a403e&lang=se&units=metric'
+    const url = 'http://api.openweathermap.org/data/2.5/weather?q=' + currentCity + '&APPID=4d7205e7d55f52007973fd59b41a403e&units=metric'
     return fetch(url)
       .then(processResponse)
       .catch(handleError)
@@ -804,6 +824,13 @@ const WeatherModel = function () {
 
   this.getTopTracks = function () {
     const url = 'https://api.deezer.com/artist/' + currentArtist + '/top'
+    return fetch(url)
+      .then(processResponse)
+      .catch(handleError)
+  }
+
+  this.getTrack = function () {
+    const url = 'https://api.deezer.com/track/' + this.getCurrentSong()
     return fetch(url)
       .then(processResponse)
       .catch(handleError)
