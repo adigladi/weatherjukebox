@@ -37,8 +37,8 @@ class Welcome extends Component {
 
   render() {
     return (
-      <div className="Welcome row">
-        <div className="col-12">
+      <div className="Welcome row container-fluid">
+        <div className="col-12 container-fluid">
           <br/>
           <br/>
             <img className="center" src={require("./Logo.png")}/>
