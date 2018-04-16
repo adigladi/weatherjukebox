@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="App-header container-fluid">
           {/* We rended diffrent component based on the path */}
           <Route exact path="/" component={Welcome}/>
           <Route path="/jukebox" render={() => <Jukebox model={modelInstance}/>}/>

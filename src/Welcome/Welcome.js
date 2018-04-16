@@ -37,8 +37,8 @@ class Welcome extends Component {
 
   render() {
     return (
-      <div className="Welcome row">
-        <div className="col-12">
+      <div className="Welcome row container-fluid">
+        <div className="col-12 container-fluid">
           <br/>
           <br/>
             <img className="center" src={require("./Logo.png")}/>
@@ -47,7 +47,7 @@ class Welcome extends Component {
         <div className="col-12 text-center">
         <input type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
         <Link to="/jukebox">
-        <button type="button" className="btn btn-warning welcomebutton" onClick={this.onCloudClick}>Get Jukebox'd</button>
+          <button type="button" className="btn btn-warning welcomebutton" onClick={this.onCloudClick}>Get Jukebox'd</button>
         </Link>
         </div>
       </div>
