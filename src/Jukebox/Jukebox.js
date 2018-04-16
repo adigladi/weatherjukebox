@@ -36,13 +36,14 @@ class Jukebox extends Component {
   
   componentWillUnmount() {
     modelInstance.removeObserver(this)
+    document.getElementById("deezer-widget-loader").remove();
   }
 
   update() {
     this.setState({
       status: 'LOADED',
       genre: modelInstance.getCurrentGenre(),
-      weather: modelInstance.getCurrentWeather(),
+      weather: modelInstance.getCurrentWeather()
     })
   }
 
