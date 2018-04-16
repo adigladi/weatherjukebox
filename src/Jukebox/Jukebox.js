@@ -26,16 +26,14 @@ class Jukebox extends Component {
         status: 'LOADED',
         genre: modelInstance.getCurrentGenre(),
         weather: weather.weather[0]
-      });
-    });
-
-    var id = "deezer-widget-loader";
-    var js, djs = document.getElementsByTagName("script")[0];
-	  if (document.getElementById(id)) return; 
-	  js = document.createElement("script"); js.id = id; 
-	  js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js"; 
-	  djs.parentNode.insertBefore(js, djs);
-
+      })
+      var id = "deezer-widget-loader";
+      var js, djs = document.getElementsByTagName("script")[0];
+	    if (document.getElementById(id)) return; 
+	    js = document.createElement("script"); js.id = id; 
+	    js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js"; 
+	    djs.parentNode.insertBefore(js, djs);
+    })
   }
   
   componentWillUnmount() {
@@ -67,7 +65,7 @@ class Jukebox extends Component {
         <Link to="/">
           <button type="button" className="btn btn-warning welcomebutton">Back</button>
         </Link>
-        <div className="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=30595446&app_id=1" data-scrolling="no" data-frameborder="0" data-width="0" data-height="0"></div>
+        <div className="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=30595446&app_id=1" data-scrolling="no" data-frameborder="0" data-width="300" data-height="300"></div>
       </div>
         break;
       default:
