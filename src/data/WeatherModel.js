@@ -721,8 +721,12 @@ const WeatherModel = function () {
   let songOut = 0;
   let trackBlacklist = [];
 
-  this.setCurrentGenre = function (genre) {
-    currentGenre = genre;
+  this.setCurrentGenre = function (setGenreId) {
+    for (var g = 0; g < genreMatches.length;g++) {
+      if (genreMatches[g].genreID == setGenreId) {
+        currentGenre = genreMatches[g];
+      }
+    }
   }
 
   this.getCurrentGenre = function () {
@@ -771,7 +775,7 @@ const WeatherModel = function () {
         }
       }
     }
-    return matchedGenres[Math.floor(Math.random() * matchedGenres.length)];
+    this.setCurrentGenre(matchedGenres[Math.floor(Math.random() * matchedGenres.length)]);
   }
 
   this.artistMatch = function (generatedArtists) {
