@@ -726,7 +726,7 @@ const WeatherModel = function () {
 
   this.setCurrentGenre = function (setGenreId) {
     for (var g = 0; g < genreMatches.length;g++) {
-      if (genreMatches[g].genreID == setGenreId) {
+      if (genreMatches[g].genreID === setGenreId) {
         currentGenre = genreMatches[g];
       }
     }
@@ -787,7 +787,7 @@ const WeatherModel = function () {
 
   this.blacklistQuery = function (queryId) {
     for (var b = 0; b < trackBlacklist.length; b++) {
-      if (trackBlacklist[b].id == queryId) {
+      if (trackBlacklist[b].id === queryId) {
         blackListHit = true;
       }
     }
