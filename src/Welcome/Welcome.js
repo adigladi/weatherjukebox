@@ -7,7 +7,7 @@ class Welcome extends Component {
 
   constructor(props) {
     super(props)
-    
+
     this.state = {
       city: modelInstance.getCity(),
     }
@@ -31,10 +31,6 @@ class Welcome extends Component {
     modelInstance.setCity(e.target.value)
   }
 
-  onCloudClick = () => {
-    modelInstance.getWeather().then(weather => {modelInstance.setCurrentWeather(weather.weather[0])})
-  }
-
   render() {
     return (
       <div className="Welcome row container-fluid">
@@ -47,7 +43,7 @@ class Welcome extends Component {
         <div className="col-12 text-center">
         <input type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
         <Link to="/jukebox">
-          <button type="button" className="btn btn-warning welcomebutton" onClick={this.onCloudClick}>Get Jukebox'd</button>
+          <button type="button" className="btn btn-warning welcomebutton">Get Jukebox'd</button>
         </Link>
         </div>
       </div>
