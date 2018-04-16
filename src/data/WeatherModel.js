@@ -87,7 +87,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 6
     }, {
-      'name': 'Alternativmusik',
+      'name': 'Alternative music',
       'genreID': 85,
       'weatherIDs': [{
         'lower': 600,
@@ -118,7 +118,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 7
     }, {
-      'name': 'Folkmusik',
+      'name': 'Folk',
       'genreID': 466,
       'weatherIDs': [{
         'lower': 800,
@@ -171,7 +171,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 4
     }, {
-      'name': 'Klassisk',
+      'name': 'Classical',
       'genreID': 98,
       'weatherIDs': [{
         'lower': 500,
@@ -191,7 +191,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 7
     }, {
-      'name': 'Film/Videospel',
+      'name': 'Movie-/Videogame Soundtracks',
       'genreID': 173,
       'weatherIDs': [{
         'lower': 500,
@@ -236,7 +236,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 6
     }, {
-      'name': 'Afrikansk musik',
+      'name': 'African music',
       'genreID': 2,
       'weatherIDs': [{
         'lower': 800,
@@ -247,7 +247,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 5
     }, {
-      'name': 'Asiatisk musik',
+      'name': 'Asian music',
       'genreID': 16,
       'weatherIDs': [{
         'lower': 800,
@@ -258,7 +258,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 5
     }, {
-      'name': 'Barn',
+      'name': 'Children',
       'genreID': 95,
       'weatherIDs': [{
         'lower': 800,
@@ -286,7 +286,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 5
     }, {
-      'name': 'Indisk musik',
+      'name': 'Indian music',
       'genreID': 81,
       'weatherIDs': [{
         'lower': 800,
@@ -297,7 +297,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 4
     }, {
-      'name': 'Latinomusik',
+      'name': 'Latino music',
       'genreID': 197,
       'weatherIDs': [{
         'lower': 800,
@@ -355,7 +355,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 4
     }, {
-      'name': 'Fransk musik',
+      'name': 'French music',
       'genreID': 52,
       'weatherIDs': [{
         'lower': 800,
@@ -422,7 +422,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 6
     }, {
-      'name': 'Indiepop/Folkmusik',
+      'name': 'Indie pop/Folk',
       'genreID': 133,
       'weatherIDs': [{
         'lower': 800,
@@ -442,7 +442,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 7
     }, {
-      'name': 'Vaggvisor',
+      'name': 'Lullabys',
       'genreID': 96,
       'weatherIDs': [{
         'lower': 801,
@@ -535,7 +535,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 7
     }, {
-      'name': 'Hårdrock',
+      'name': 'Hard rock',
       'genreID': 155,
       'weatherIDs': [{
         'lower': 200,
@@ -603,7 +603,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 5
     }, {
-      'name': 'Filmmusik',
+      'name': 'Movie Soundtracks',
       'genreID': 174,
       'weatherIDs': [{
         'lower': 500,
@@ -623,7 +623,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 6
     }, {
-      'name': 'Musikaler',
+      'name': 'Musicals',
       'genreID': 175,
       'weatherIDs': [{
         'lower': 500,
@@ -643,7 +643,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 5
     }, {
-      'name': 'Soundtrack',
+      'name': 'Soundtracks',
       'genreID': 176,
       'weatherIDs': [{
         'lower': 500,
@@ -663,7 +663,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 6
     }, {
-      'name': 'TV-soundtrack',
+      'name': 'TV Soundtracks',
       'genreID': 177,
       'weatherIDs': [{
         'lower': 500,
@@ -683,7 +683,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 6
     }, {
-      'name': 'Akustisk blues',
+      'name': 'Acoustic blues',
       'genreID': 180,
       'weatherIDs': [{
         'lower': 800,
@@ -700,7 +700,7 @@ const WeatherModel = function () {
       }],
       'likelihood': 5
     }, {
-      'name': 'Karibisk musik',
+      'name': 'Carribean music',
       'genreID': 199,
       'weatherIDs': [{
         'lower': 800,
@@ -728,7 +728,6 @@ const WeatherModel = function () {
     for (var g = 0; g < genreMatches.length;g++) {
       if (genreMatches[g].genreID === setGenreId) {
         currentGenre = genreMatches[g];
-        console.log(currentGenre.name);
       }
     }
   }
