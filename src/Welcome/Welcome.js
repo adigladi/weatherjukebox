@@ -47,7 +47,7 @@ class Welcome extends Component {
         <div className="col-12 text-center">
         <input type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
         <Link to="/jukebox">
-        <button type="button" className="btn btn-warning welcomebutton" onClick={this.onCloudClick}>Get Jukebox'd</button>
+          <button type="button" className="btn btn-warning welcomebutton" onClick={this.onCloudClick}>Get Jukebox'd</button>
         </Link>
         </div>
       </div>
