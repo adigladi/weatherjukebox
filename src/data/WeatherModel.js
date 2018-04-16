@@ -789,7 +789,7 @@ const WeatherModel = function () {
   // API Calls
 
   this.getWeather = function () {
-    const url = 'http://api.openweathermap.org/data/2.5/weather?q=' + currentCity + '&APPID=4d7205e7d55f52007973fd59b41a403e&lang=se&units=metric'
+    const url = 'http://api.openweathermap.org/data/2.5/weather?q=' + currentCity + '&APPID=4d7205e7d55f52007973fd59b41a403e&units=metric'
     return fetch(url)
       .then(processResponse)
       .catch(handleError)
