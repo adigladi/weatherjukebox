@@ -39,7 +39,7 @@ class Jukebox extends Component {
         <h2>Genre: {this.state.genre.name}</h2>
         <h2>Artist: {this.state.artist}</h2>
         <h2>Song: {this.state.song}</h2>
-        <img src={this.state.picture}/>
+        <img src={this.state.picture} draggable="false"/>
         <Link to="/">
           <button type="button" className="btn btn-warning welcomebutton">Back</button>
         </Link>
