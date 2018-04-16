@@ -786,7 +786,7 @@ const WeatherModel = function () {
   }
 
   this.blacklistQuery = function (queryId) {
-    for (b = 0; b < trackBlackList.length; b++) {
+    for (var b = 0; b < trackBlacklist.length; b++) {
       if (trackBlacklist[b].id == queryId) {
         blackListHit = true;
       }
