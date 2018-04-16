@@ -718,6 +718,8 @@ const WeatherModel = function () {
   let currentWeather = 800;
   let currentGenre = genreMatches[0];
   let currentArtist = 27;
+  let songOut = 0;
+  let trackBlacklist = [];
 
   this.setCurrentGenre = function (genre) {
     currentGenre = genre;
@@ -745,23 +747,43 @@ const WeatherModel = function () {
 
   this.setCurrentArtist = function () { }
 
-  // Functions for getting a genre/weather match
+  /* Functions for getting a genre/weather match:
+      weatherMatch outputs a random genreID matching the current weather.
+      artistMatch returns a random artists id, given a list of artists from a certain genre.
+      trackMatch returns a random track id, given a list of an artists top songs. */
+
   this.weatherMatch = function (weatherID) {
-    var matchedGenresOut = [];
-    var foundMatch = false;
+    var matchedGenres = [];
     for (var i = 0; i < genreMatches.length; i++) {
       for (var j = 0; j < genreMatches[i].weatherIDs.length; j++) {
-        if (weatherID >= genreMatches[i].weatherIDs[j].lower && weatherID < genreMatches[i].weatherIDs[j].lower) {
-          foundMatch = true;
+        if (weatherID >= genreMatches[i].weatherIDs[j].lower && weatherID <= genreMatches[i].weatherIDs[j].upper) {
+          for (var x = 0; x < genreMatches[i].likelihood; x++) {
+            matchedGenres.push(genreMatches[i].genreID)
+          }
         }
-      }
-      if (foundMatch) {
-        for (var x = 0; x < genreMatches[i].likelihood; x++) {
-          matchedGenresOut.push(genreMatches[i].genreID)
-        }
-        foundMatch = false;
       }
     }
+    return matchedGenres[Math.floor(Math.random() * matchedGenres.length)];
+  }
+
+  this.artistMatch = function (generatedArtists) {
+    return generatedArtists[Math.floor(Math.random() * generatedArtists.length)].id;
+  }
+
+  this.blacklistQuery = function (queryId) {
+    if (trackBlacklist.includes(queryId)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  this.trackMatch = function (topSongs) {
+    songOut = topSongs[Math.floor(Math.random() * topSongs.length)].id;
+    while (this.blacklistQuery(songOut)) {
+      songOut = topSongs[Math.floor(Math.random() * topSongs.length)].id;
+    }
+    return songOut;
   }
 
   // API Calls
