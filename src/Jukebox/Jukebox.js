@@ -13,13 +13,21 @@ class Jukebox extends Component {
       weather: modelInstance.getCurrentWeather(),
       artist: "Daft Punk",
       song: "Harder, Better, Faster, Stronger",
-      picture: "https://e-cdns-images.dzcdn.net/images/cover/2e018122cb56986277102d2041a592c8/500x500-000000-80-0-0.jpg"
+      picture: "https://e-cdns-images.dzcdn.net/images/cover/2e018122cb56986277102d2041a592c8/500x500-000000-80-0-0.jpg",
+      status: 'INITIAL',
     }
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     modelInstance.addObserver(this)
-  }
+    modelInstance.getWeather().then(weather => {
+      this.setState({
+        status: 'LOADED',
+        genre: modelInstance.getCurrentGenre(),
+        weather: weather.weather[0]
+      })
+    })
+}
 
   componentWillUnmount() {
     modelInstance.removeObserver(this)
@@ -27,13 +35,20 @@ class Jukebox extends Component {
 
   update() {
     this.setState({
+      status: 'LOADED',
       genre: modelInstance.getCurrentGenre(),
-      weather: modelInstance.getCurrentWeather()
+      weather: modelInstance.getCurrentWeather(),
     })
   }
 
   render() {
-    return (
+    let jukebox = null;
+    switch (this.state.status) {
+      case 'INITIAL':
+        jukebox = <p>Loading</p>
+        break;
+      case 'LOADED':
+      jukebox = 
       <div className="Jukebox">
         <h2>Weather: {this.state.weather.description}</h2>
         <h2>Genre: {this.state.genre.name}</h2>
@@ -45,7 +60,14 @@ class Jukebox extends Component {
         </Link>
         <iframe scrolling="no" frameBorder="0" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=true&width=300&height=300&color=007FEB&emptyPlayer=true&layout=dark&size=medium&type=tracks&id=3097520&app_id=1" width="0" height="0"></iframe>
       </div>
-    );
+        break;
+      default:
+        jukebox = <b>Failed to load data, please try again</b>
+        break;
+    }
+    return(
+      jukebox
+    )
   }
 }
 
