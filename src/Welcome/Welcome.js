@@ -41,7 +41,7 @@ class Welcome extends Component {
         <div className="col-12 container-fluid">
           <br/>
           <br/>
-            <img className="center" src={require("./Logo.png")}/>
+            <img className="center" src={require("./Logo.png")} draggable="false"/>
           <br/>
         </div>
         <div className="col-12 text-center">
