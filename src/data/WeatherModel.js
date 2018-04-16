@@ -728,6 +728,7 @@ const WeatherModel = function () {
     for (var g = 0; g < genreMatches.length;g++) {
       if (genreMatches[g].genreID === setGenreId) {
         currentGenre = genreMatches[g];
+        console.log(currentGenre.name);
       }
     }
   }
@@ -779,6 +780,7 @@ const WeatherModel = function () {
       }
     }
     this.setCurrentGenre(matchedGenres[Math.floor(Math.random() * matchedGenres.length)]);
+    console.log(this.getCurrentGenre());
   }
 
   this.artistMatch = function (generatedArtists) {

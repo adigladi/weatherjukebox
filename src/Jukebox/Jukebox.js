@@ -10,7 +10,6 @@ class Jukebox extends Component {
     
     this.state = {
       genre: modelInstance.getCurrentGenre(),
-      weather: modelInstance.getCurrentWeather(),
       location: modelInstance.getCity(),
       status: 'INITIAL',
     }
@@ -20,18 +19,22 @@ class Jukebox extends Component {
     modelInstance.addObserver(this);
 
     modelInstance.getWeather().then(weather => {
+      var id = "deezer-widget-loader";
+      var js, djs = document.getElementsByTagName("script")[0];
+      if (document.getElementById(id)) return;
+      js = document.createElement("script"); js.id = id;
+      js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
+      djs.parentNode.insertBefore(js, djs);
+
+      modelInstance.weatherMatch(weather.weather[0].id);
+      
       this.setState({
         status: 'LOADED',
         genre: modelInstance.getCurrentGenre(),
         weather: weather.weather[0]
       })
-      var id = "deezer-widget-loader";
-      var js, djs = document.getElementsByTagName("script")[0];
-	    if (document.getElementById(id)) return; 
-	    js = document.createElement("script"); js.id = id; 
-	    js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js"; 
-	    djs.parentNode.insertBefore(js, djs);
     })
+
   }
   
   componentWillUnmount() {
