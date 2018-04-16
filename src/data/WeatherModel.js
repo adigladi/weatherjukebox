@@ -755,7 +755,7 @@ const WeatherModel = function () {
     var foundMatch = false;
     for (var i = 0; i < genreMatches.length; i++) {
       for (var j = 0; j < genreMatches[i].weatherIDs.length; j++) {
-        if (weatherID >= genreMatches[i].weatherIDs[j].lower && weatherID < genreMatches[i].weatherIDs[j].upper + 1) {
+        if (weatherID >= genreMatches[i].weatherIDs[j].lower && weatherID <= genreMatches[i].weatherIDs[j].upper) {
           foundMatch = true;
         }
       }
