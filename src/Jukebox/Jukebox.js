@@ -12,7 +12,6 @@ class Jukebox extends Component {
       genre: modelInstance.getCurrentGenre(),
       weather: modelInstance.getCurrentWeather(),
       location: modelInstance.getCity(),
-      picture: "https://e-cdns-images.dzcdn.net/images/cover/2e018122cb56986277102d2041a592c8/500x500-000000-80-0-0.jpg",
       status: 'INITIAL',
     }
   }
@@ -55,15 +54,14 @@ class Jukebox extends Component {
         break;
       case 'LOADED':
       jukebox = 
-      <div className="Jukebox">
+      <div className="Jukebox text-center">
         <h2>Location: {this.state.location}</h2>
         <h2>Weather: {this.state.weather.description}</h2>
         <h2>Genre: {this.state.genre.name}</h2>
-        <img src={this.state.picture} draggable="false"/>
+        <div className="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=30595446&app_id=1" data-scrolling="no" data-frameborder="0" data-width="300" data-height="300"></div>
         <Link to="/">
           <button type="button" className="btn btn-warning welcomebutton">Back</button>
         </Link>
-        <div className="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=playlist&id=30595446&app_id=1" data-scrolling="no" data-frameborder="0" data-width="300" data-height="300"></div>
       </div>
         break;
       default:
