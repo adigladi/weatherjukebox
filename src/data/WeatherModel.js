@@ -718,6 +718,8 @@ const WeatherModel = function () {
   let currentWeather = 800;
   let currentGenre = genreMatches[0];
   let currentArtist = 27;
+  let songOut = 0;
+  let trackBlacklist = [];
 
   this.setCurrentGenre = function (genre) {
     currentGenre = genre;
@@ -768,8 +770,20 @@ const WeatherModel = function () {
     return generatedArtists[Math.floor(Math.random() * generatedArtists.length)].id;
   }
 
+  this.blacklistQuery = function (queryId) {
+    if (trackBlacklist.includes(queryId)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   this.trackMatch = function (topSongs) {
-    return topSongs[Math.floor(Math.random() * topSongs.length)].id;
+    songOut = topSongs[Math.floor(Math.random() * topSongs.length)].id;
+    while (this.blacklistQuery(songOut)) {
+      songOut = topSongs[Math.floor(Math.random() * topSongs.length)].id;
+    }
+    return songOut;
   }
 
   // API Calls
