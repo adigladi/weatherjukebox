@@ -747,7 +747,7 @@ const WeatherModel = function () {
 
   this.setCurrentArtist = function () { }
 
-  /* Functions for getting a genre/weather match:
+  /* Functions for getting a genre/weather/artist/track-match:
       weatherMatch outputs a random genreID matching the current weather.
       artistMatch returns a random artists id, given a list of artists from a certain genre.
       trackMatch returns a random track id, given a list of an artists top songs. */
