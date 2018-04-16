@@ -11,8 +11,6 @@ class Jukebox extends Component {
     this.state = {
       genre: modelInstance.getCurrentGenre(),
       weather: modelInstance.getCurrentWeather(),
-      artist: "Daft Punk",
-      song: "Harder, Better, Faster, Stronger",
       location: modelInstance.getCity(),
       picture: "https://e-cdns-images.dzcdn.net/images/cover/2e018122cb56986277102d2041a592c8/500x500-000000-80-0-0.jpg",
       status: 'INITIAL',
@@ -61,8 +59,6 @@ class Jukebox extends Component {
         <h2>Location: {this.state.location}</h2>
         <h2>Weather: {this.state.weather.description}</h2>
         <h2>Genre: {this.state.genre.name}</h2>
-        <h2>Artist: {this.state.artist}</h2>
-        <h2>Song: {this.state.song}</h2>
         <img src={this.state.picture} draggable="false"/>
         <Link to="/">
           <button type="button" className="btn btn-warning welcomebutton">Back</button>
