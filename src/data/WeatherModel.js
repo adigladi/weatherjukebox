@@ -722,6 +722,7 @@ const WeatherModel = function () {
   let trackBlacklist = [];
   let matchHistory = [];
   let favouritesList = [];
+  let blackListHit = false;
 
   this.setCurrentGenre = function (setGenreId) {
     for (var g = 0; g < genreMatches.length;g++) {
@@ -785,7 +786,6 @@ const WeatherModel = function () {
   }
 
   this.blacklistQuery = function (queryId) {
-    blackListHit = false;
     for (b = 0; b < trackBlackList.length; b++) {
       if (trackBlacklist[b].id == queryId) {
         blackListHit = true;
