@@ -1,5 +1,9 @@
 @font-face { font-family: LemonMilk; src: url('../Fonts/LemonMilk.otf'); }
 
+.Jukebox {
+    margin-top: 15px;
+}
+
 body {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
