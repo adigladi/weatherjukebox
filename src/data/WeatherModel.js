@@ -720,6 +720,8 @@ const WeatherModel = function () {
   let currentArtist = 27;
   let songOut = 0;
   let trackBlacklist = [];
+  let matchHistory = [];
+  let favouritesList = [];
 
   this.setCurrentGenre = function (setGenreId) {
     for (var g = 0; g < genreMatches.length;g++) {
@@ -783,7 +785,13 @@ const WeatherModel = function () {
   }
 
   this.blacklistQuery = function (queryId) {
-    if (trackBlacklist.includes(queryId)) {
+    blackListHit = false;
+    for (b = 0; b < trackBlackList.length; b++) {
+      if (trackBlacklist[b].id == queryId) {
+        blackListHit = true;
+      }
+    }
+    if (blackListHit) {
       return true;
     } else {
       return false;
