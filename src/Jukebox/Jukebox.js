@@ -45,7 +45,7 @@ class Jukebox extends Component {
     let jukebox = null;
     switch (this.state.status) {
       case 'INITIAL':
-        jukebox = <p>Loading</p>
+        jukebox = <img alt='' src={require('./loading.svg')} id="loading"/>
         break;
       case 'LOADED':
       jukebox = 
