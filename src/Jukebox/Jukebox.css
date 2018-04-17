@@ -4,8 +4,7 @@
     margin-top: 15px;
 }
 
-.Jukebox:before {
-    content: "";
+#backgroundImg {
     position: fixed;
     left: 0;
     right: 0;
@@ -25,6 +24,8 @@
 }
 
 body {
+    height: 100%;
+
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

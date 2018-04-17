@@ -63,6 +63,13 @@ typings/
 # dotenv environment variables file
 .env
 
+# Firebase
+firebase.json
+.firebaserc
+public/404.html
+database.rules.json
+build
+
 
 
 # End of https://www.gitignore.io/api/node
