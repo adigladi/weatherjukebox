@@ -779,11 +779,11 @@ const WeatherModel = function () {
       }
     }
     this.setCurrentGenre(matchedGenres[Math.floor(Math.random() * matchedGenres.length)]);
-    console.log(this.getCurrentGenre());
   }
 
   this.artistMatch = function (generatedArtists) {
-    return generatedArtists[Math.floor(Math.random() * generatedArtists.length)].id;
+    currentArtist = generatedArtists[Math.floor(Math.random() * generatedArtists.length)].id;
+    console.log(currentArtist);
   }
 
   this.blacklistQuery = function (queryId) {
