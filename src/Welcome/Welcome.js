@@ -62,6 +62,9 @@ class Welcome extends Component {
     return (
       <div className="Welcome row container-fluid">
         <div className="col-12 container-fluid">
+        <Link to="/user">
+          <button type="button" id="locationBtn" className="btn btn-warning userbutton"><i class="material-icons w3-xlarge">person</i></button>
+        </Link>
           <br/>
           <br/>
             <img className="center" src={require("./Logo.png")} draggable="false"/>
