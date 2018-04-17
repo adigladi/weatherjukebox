@@ -29,7 +29,7 @@ class User extends Component {
       <div className="User row container-fluid">
         <div className="col-12 container-fluid">
         <Link to="/">
-            <button type="button" className="btn btn-warning towelcomebutton"><img className="jukeboxIcon" src={require("./jukebox.png")}/></button>
+            <button type="button" className="btn btn-warning towelcomebutton"><img id="boxjuke" src={require("./jukebox.png")} draggable="false"/></button>
         </Link>
         <br/>
           <h2 className="userTitle text-center">My Trackz</h2>
