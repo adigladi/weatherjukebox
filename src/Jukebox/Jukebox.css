@@ -4,6 +4,26 @@
     margin-top: 15px;
 }
 
+.Jukebox:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    
+    display: block;
+    background-image: url('https://e-cdns-images.dzcdn.net/images/cover/6f6a4d4ae7aab0cf0446c1b77835cef5/1000x1000-000000-80-0-0.jpg');
+    width: 100%;
+    height: 100%;
+    transform: scale(1.5);
+    
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+}
+
 body {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
