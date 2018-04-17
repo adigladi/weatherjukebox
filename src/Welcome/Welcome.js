@@ -47,7 +47,10 @@ class Welcome extends Component {
         lat: position.coords.latitude,
         lng: position.coords.longitude
         };
-        console.log(pos)
+        modelInstance.getWeatherByCoordinates(pos.lat, pos.lng).then(weather => {
+          modelInstance.setCity(weather.name);
+          console.log(modelInstance.getCity())
+        })
       });
     }
     else {
