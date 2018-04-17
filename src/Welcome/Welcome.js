@@ -15,6 +15,15 @@ class Welcome extends Component {
 
   componentDidMount() {
     modelInstance.addObserver(this)
+
+    var input = document.getElementById("locationField");
+
+    //Enter press
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        document.getElementById("locationBtn").click();
+      }
+    });
   }
 
   componentWillUnmount() {
@@ -41,9 +50,9 @@ class Welcome extends Component {
           <br/>
         </div>
         <div className="col-12 text-center">
-        <input type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
+        <input id="locationField" type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
         <Link to="/jukebox">
-          <button type="button" className="btn btn-warning welcomebutton">Get Jukebox'd</button>
+          <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Get Jukebox'd</button>
         </Link>
         </div>
       </div>
