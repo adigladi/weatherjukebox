@@ -1,3 +1,7 @@
+const httpOptions = {
+  headers: {'Access-Control-Allow-Origin': '*'}
+};
+
 const WeatherModel = function () {
 
   var genreMatches = [
@@ -718,11 +722,13 @@ const WeatherModel = function () {
   let currentWeather = 800;
   let currentGenre = genreMatches[0];
   let currentArtist = 27;
+  let generatedSong = 0;
   let songOut = 0;
   let trackBlacklist = [];
   let matchHistory = [];
   let favouritesList = [];
   let blackListHit = false;
+  let currentTrack = {};
 
   this.setCurrentGenre = function (setGenreId) {
     for (var g = 0; g < genreMatches.length;g++) {
@@ -742,6 +748,14 @@ const WeatherModel = function () {
 
   this.getCurrentSong = function () {
     return songOut;
+  }
+
+  this.setCurrentTrack = function (inputTrack) {
+    currentTrack = inputTrack;
+  }
+
+  this.getCurrentTrack = function () {
+    return currentTrack;
   }
 
   this.setCurrentWeather = function (weather) {
@@ -783,7 +797,6 @@ const WeatherModel = function () {
 
   this.artistMatch = function (generatedArtists) {
     currentArtist = generatedArtists[Math.floor(Math.random() * generatedArtists.length)].id;
-    console.log(currentArtist);
   }
 
   this.blacklistQuery = function (queryId) {
@@ -800,11 +813,11 @@ const WeatherModel = function () {
   }
 
   this.trackMatch = function (topSongs) {
-    songOut = topSongs[Math.floor(Math.random() * topSongs.length)].id;
+    generatedSong = topSongs[Math.floor(Math.random() * topSongs.length)].id;
     while (this.blacklistQuery(songOut)) {
-      songOut = topSongs[Math.floor(Math.random() * topSongs.length)].id;
+      generatedSong = topSongs[Math.floor(Math.random() * topSongs.length)].id;
     }
-    this.setCurrentSong(songOut);
+    this.setCurrentSong(generatedSong);
   }
 
   // API Calls
@@ -817,21 +830,21 @@ const WeatherModel = function () {
   }
 
   this.getArtists = function () {
-    const url = 'https://api.deezer.com/genre/' + currentGenre.genreID + '/artists'
+    const url = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/' + currentGenre.genreID + '/artists'
     return fetch(url)
       .then(processResponse)
       .catch(handleError)
   }
 
   this.getTopTracks = function () {
-    const url = 'https://api.deezer.com/artist/' + currentArtist + '/top'
+    const url = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/' + currentArtist + '/top'
     return fetch(url)
       .then(processResponse)
       .catch(handleError)
   }
 
   this.getTrack = function () {
-    const url = 'https://api.deezer.com/track/' + this.getCurrentSong()
+    const url = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/' + this.getCurrentSong()
     return fetch(url)
       .then(processResponse)
       .catch(handleError)
