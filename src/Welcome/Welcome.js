@@ -40,6 +40,21 @@ class Welcome extends Component {
     modelInstance.setCity(e.target.value)
   }
 
+  onLocationClick = (e) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+        };
+        console.log(pos)
+      });
+    }
+    else {
+      alert("Please enter a location instead!")
+    }
+  }
+
   render() {
     return (
       <div className="Welcome row container-fluid">
@@ -54,6 +69,7 @@ class Welcome extends Component {
         <Link to="/jukebox">
           <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Get Jukebox'd</button>
         </Link>
+        <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}>Get My Location</button>
         </div>
       </div>
     );
