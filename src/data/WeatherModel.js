@@ -729,6 +729,10 @@ const WeatherModel = function () {
   let favouritesList = [];
   let blackListHit = false;
   let currentTrack = {};
+  let coordinates = {
+    lat: 59.3463798,
+    lng: 18.0724861
+  }
 
   this.setCurrentGenre = function (setGenreId) {
     for (var g = 0; g < genreMatches.length;g++) {
@@ -824,6 +828,13 @@ const WeatherModel = function () {
 
   this.getWeather = function () {
     const url = 'http://api.openweathermap.org/data/2.5/weather?q=' + currentCity + '&APPID=4d7205e7d55f52007973fd59b41a403e&units=metric'
+    return fetch(url)
+      .then(processResponse)
+      .catch(handleError)
+  }
+
+  this.getWeatherByCoordinates = function () {
+    const url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + coordinates.lat + '&lon=' + coordinates.lng +'&APPID=4d7205e7d55f52007973fd59b41a403e&units=metric'
     return fetch(url)
       .then(processResponse)
       .catch(handleError)
