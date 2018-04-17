@@ -42,12 +42,11 @@ class Jukebox extends Component {
               weather: weather.weather[0],
               trackid: modelInstance.getCurrentTrack().id
             });
-
+            document.getElementById("backgroundImg").style.backgroundImage = "url(" + modelInstance.getCurrentTrack().album.cover_xl + ")";
           });
         });
       });
     });
-
   }
   
   componentWillUnmount() {
@@ -72,14 +71,17 @@ class Jukebox extends Component {
         break;
       case 'LOADED':
       jukebox = 
-      <div className="Jukebox text-center">
-        <h2>Location: {this.state.location}</h2>
-        <h2>Weather: {this.state.weather.description}</h2>
-        <h2>Genre: {this.state.genre.name}</h2>
-        <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.trackid + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="300" data-height="300"></div>
-        <Link to="/">
-          <button type="button" className="btn btn-warning welcomebutton">Back</button>
-        </Link>
+      <div>
+        <div id="backgroundImg"></div>
+        <div className="Jukebox text-center">
+          <h2>Location: {this.state.location}</h2>
+          <h2>Weather: {this.state.weather.description}</h2>
+          <h2>Genre: {this.state.genre.name}</h2>
+          <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.trackid + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="300" data-height="300"></div>
+          <Link to="/">
+            <button type="button" className="btn btn-warning welcomebutton">Back</button>
+          </Link>
+        </div>
       </div>
         break;
       default:

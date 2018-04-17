@@ -4,8 +4,7 @@
     margin-top: 15px;
 }
 
-.Jukebox:before {
-    content: "";
+#backgroundImg {
     position: fixed;
     left: 0;
     right: 0;
