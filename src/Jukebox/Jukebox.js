@@ -19,30 +19,32 @@ class Jukebox extends Component {
     modelInstance.addObserver(this);
 
     modelInstance.getWeather().then(weather => {
-      var id = "deezer-widget-loader";
-      var js, djs = document.getElementsByTagName("script")[0];
-      if (document.getElementById(id)) return;
-      js = document.createElement("script"); js.id = id;
-      js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
-      djs.parentNode.insertBefore(js, djs);
 
       modelInstance.weatherMatch(weather.weather[0].id);
 
       modelInstance.getArtists().then(artists => {
         modelInstance.artistMatch(artists.data);
-      });
+        modelInstance.getTopTracks().then(topTracks => {
+          modelInstance.trackMatch(topTracks.data);
+          modelInstance.getTrack().then(returnTrack => {
+            modelInstance.setCurrentTrack(returnTrack);
 
-      modelInstance.getTopTracks().then(topTracks => {
-        modelInstance.trackMatch(topTracks.data);
-        modelInstance.getTrack().then(returnTrack => {
-          modelInstance.setCurrentTrack(returnTrack);
+            var id = "deezer-widget-loader";
+            var js, djs = document.getElementsByTagName("script")[0];
+            if (document.getElementById(id)) return;
+            js = document.createElement("script"); js.id = id;
+            js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
+            djs.parentNode.insertBefore(js, djs);
+
+            this.setState({
+              status: 'LOADED',
+              genre: modelInstance.getCurrentGenre(),
+              weather: weather.weather[0],
+              trackid: modelInstance.getCurrentTrack().id
+            });
+
+          });
         });
-      });
-      this.setState({
-        status: 'LOADED',
-        genre: modelInstance.getCurrentGenre(),
-        weather: weather.weather[0],
-        trackid: modelInstance.getCurrentTrack().id
       });
     });
 
