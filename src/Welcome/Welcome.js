@@ -10,7 +10,6 @@ class Welcome extends Component {
 
     this.state = {
       city: modelInstance.getCity(),
-      status: "INITIAL"
     }
   }
 
@@ -43,9 +42,6 @@ class Welcome extends Component {
 
   onLocationClick = (e) => {
     if (navigator.geolocation) {
-      this.setState({
-        status: 'LOADING'
-      })
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
         lat: position.coords.latitude,
@@ -53,9 +49,7 @@ class Welcome extends Component {
         };
         modelInstance.getWeatherByCoordinates(pos.lat, pos.lng).then(weather => {
           modelInstance.setCity(weather.name);
-          var text = document.getElementById('locationField');
-          text.value = weather.name;
-          document.getElementById("locationBtn").click();
+          console.log(modelInstance.getCity())
         })
       });
     }
@@ -65,22 +59,12 @@ class Welcome extends Component {
   }
 
   render() {
-    let button = null;
-    switch (this.state.status) {
-      case 'INITIAL':
-      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}>Get My Location</button>
-        break;
-      case 'LOADING':
-      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}>...</button>
-        break;
-      default:
-        button = <b>Try Again</b>
-        break;
-    }
-
     return (
       <div className="Welcome row container-fluid">
         <div className="col-12 container-fluid">
+        <Link to="/user">
+          <button type="button" id="locationBtn" className="btn btn-warning userbutton"><i class="material-icons w3-xlarge">person</i></button>
+        </Link>
           <br/>
           <br/>
             <img className="center" src={require("./Logo.png")} draggable="false"/>
@@ -91,11 +75,10 @@ class Welcome extends Component {
         <Link to="/jukebox">
           <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Get Jukebox'd</button>
         </Link>
-        {button}
+        <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}>Get My Location</button>
         </div>
       </div>
     );
   }
 }
-
 export default Welcome;
