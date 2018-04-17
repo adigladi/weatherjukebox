@@ -68,10 +68,10 @@ class Welcome extends Component {
     let button = null;
     switch (this.state.status) {
       case 'INITIAL':
-      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}>Get My Location</button>
+      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><img id="marker" src={require("./marker.png")} draggable="false"/></button>
         break;
       case 'LOADING':
-      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}>...</button>
+      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><i className="w3-xlarge material-icons w3-spin">refresh</i></button>
         break;
       default:
         button = <b>Try Again</b>

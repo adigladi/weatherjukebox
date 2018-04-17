@@ -12,6 +12,11 @@ body {
     width: 65vw;;
 }
 
+#marker
+{
+    width: 1.5vw;
+}
+
 input[type=text] {
     width: 40%;
     box-sizing: border-box;
