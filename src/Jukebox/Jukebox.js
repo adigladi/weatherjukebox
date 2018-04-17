@@ -27,13 +27,24 @@ class Jukebox extends Component {
       djs.parentNode.insertBefore(js, djs);
 
       modelInstance.weatherMatch(weather.weather[0].id);
-      
+
+      modelInstance.getArtists().then(artists => {
+        modelInstance.artistMatch(artists.data);
+      });
+
+      modelInstance.getTopTracks().then(topTracks => {
+        modelInstance.trackMatch(topTracks.data);
+        modelInstance.getTrack().then(returnTrack => {
+          modelInstance.setCurrentTrack(returnTrack);
+        });
+      });
       this.setState({
         status: 'LOADED',
         genre: modelInstance.getCurrentGenre(),
-        weather: weather.weather[0]
-      })
-    })
+        weather: weather.weather[0],
+        trackid: modelInstance.getCurrentTrack().id
+      });
+    });
 
   }
   
@@ -46,7 +57,8 @@ class Jukebox extends Component {
     this.setState({
       status: 'LOADED',
       genre: modelInstance.getCurrentGenre(),
-      weather: modelInstance.getCurrentWeather()
+      weather: modelInstance.getCurrentWeather(),
+      trackid: modelInstance.getCurrentTrack().id
     })
   }
 
@@ -62,7 +74,7 @@ class Jukebox extends Component {
         <h2>Location: {this.state.location}</h2>
         <h2>Weather: {this.state.weather.description}</h2>
         <h2>Genre: {this.state.genre.name}</h2>
-        <div className="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=tracks&id=1583148&app_id=1" data-scrolling="no" data-frameborder="0" data-width="300" data-height="300"></div>
+        <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.trackid + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="300" data-height="300"></div>
         <Link to="/">
           <button type="button" className="btn btn-warning welcomebutton">Back</button>
         </Link>
