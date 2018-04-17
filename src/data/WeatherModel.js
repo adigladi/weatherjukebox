@@ -1,7 +1,3 @@
-const httpOptions = {
-  headers: {'Access-Control-Allow-Origin': '*'}
-};
-
 const WeatherModel = function () {
 
   var genreMatches = [
