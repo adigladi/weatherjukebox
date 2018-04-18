@@ -8,6 +8,7 @@ class User extends Component {
     super(props)
     
     this.state = {
+      myTracks: modelInstance.getMyTracks()
     }
   }
 
@@ -21,10 +22,21 @@ class User extends Component {
 
   update() {
     this.setState({
+      myTracks: modelInstance.getMyTracks()
     })
   }
 
   render() {
+    let myList = "";
+    myList = this.state.myTracks.map((track, i) =>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+    )
     return (
       <div className="User row container-fluid">
         <div className="col-12 container-fluid">
@@ -33,6 +45,20 @@ class User extends Component {
         </Link>
         <br/>
           <h2 className="userTitle text-center">My Trackz</h2>
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Artist</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Weather</th>
+                <th scope="col">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {myList}
+            </tbody>
+          </table>
         </div>
       </div>
     );

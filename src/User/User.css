@@ -27,3 +27,9 @@
     width:24px;
     height: 28px;
 }
+
+tr {
+    font-size: 16px;
+    font-family: LemonMilk;
+    color: rgb(252, 210, 127);
+}
