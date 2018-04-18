@@ -10,6 +10,7 @@ class Welcome extends Component {
 
     this.state = {
       city: modelInstance.getCity(),
+      status: "INITIAL"
     }
   }
 
@@ -42,6 +43,9 @@ class Welcome extends Component {
 
   onLocationClick = (e) => {
     if (navigator.geolocation) {
+      this.setState({
+        status: 'LOADING'
+      })
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
         lat: position.coords.latitude,
@@ -49,7 +53,9 @@ class Welcome extends Component {
         };
         modelInstance.getWeatherByCoordinates(pos.lat, pos.lng).then(weather => {
           modelInstance.setCity(weather.name);
-          console.log(modelInstance.getCity())
+          var text = document.getElementById('locationField');
+          text.value = weather.name;
+          document.getElementById("locationBtn").click();
         })
       });
     }
@@ -59,11 +65,23 @@ class Welcome extends Component {
   }
 
   render() {
+    let button = null;
+    switch (this.state.status) {
+      case 'INITIAL':
+      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><img id="marker" src={require("./marker.png")} draggable="false"/></button>
+        break;
+      case 'LOADING':
+      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><i className="w3-xlarge material-icons w3-spin">refresh</i></button>
+        break;
+      default:
+        button = <b>Try Again</b>
+        break;
+    }
     return (
       <div className="Welcome row container-fluid">
         <div className="col-12 container-fluid">
         <Link to="/user">
-          <button type="button" id="locationBtn" className="btn btn-warning userbutton"><i class="material-icons w3-xlarge">person</i></button>
+          <button type="button" id="locationBtn2" className="btn btn-warning userbutton"><i className="material-icons w3-xlarge">person</i></button>
         </Link>
           <br/>
           <br/>
@@ -75,7 +93,7 @@ class Welcome extends Component {
         <Link to="/jukebox">
           <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Get Jukebox'd</button>
         </Link>
-        <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}>Get My Location</button>
+        {button}
         </div>
       </div>
     );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './User.css';
+import { Link } from 'react-router-dom';
 import { modelInstance } from '../data/WeatherModel.js'
 class User extends Component {
 
@@ -25,10 +26,14 @@ class User extends Component {
 
   render() {
     return (
-      <div className="User">
-        <p>
-        Hej
-        </p>
+      <div className="User row container-fluid">
+        <div className="col-12 container-fluid">
+        <Link to="/">
+            <button type="button" className="btn btn-warning towelcomebutton"><img id="boxjuke" src={require("./jukebox.png")} draggable="false"/></button>
+        </Link>
+        <br/>
+          <h2 className="userTitle text-center">My Trackz</h2>
+        </div>
       </div>
     );
   }
