@@ -1,8 +1,12 @@
 @font-face { font-family: LemonMilk; src: url('../Fonts/LemonMilk.otf'); } 
 
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
 body {
     background: linear-gradient(rgb(0, 2, 71), rgb(34, 52, 102));
-    height: 100vh;
 }
 
 .center {
