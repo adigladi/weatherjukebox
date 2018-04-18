@@ -714,6 +714,7 @@ const WeatherModel = function () {
   ];
 
   let observers = [];
+  let myTracks = [];
   let currentCity = "Stockholm";
   let currentWeather = 800;
   let currentGenre = genreMatches[0];
@@ -736,6 +737,14 @@ const WeatherModel = function () {
         currentGenre = genreMatches[g];
       }
     }
+  }
+
+  this.addMyTracks = function (track) {
+    myTracks.push(track);
+  }
+
+  this.getMyTracks = function () {
+    return myTracks;
   }
 
   this.getCurrentGenre = function () {
