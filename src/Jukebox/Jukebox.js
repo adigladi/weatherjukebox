@@ -75,7 +75,10 @@ class Jukebox extends Component {
         break;
       case 'LOADED':
       jukebox = 
-      <div>
+      <div className="col-md-12 container-fluid" id="mainDiv">
+        <Link to="/user">
+          <button type="button" id="locationBtn2" className="btn btn-warning userbutton"><i className="material-icons w3-xlarge">person</i></button>
+        </Link>
         <div id="backgroundImg"></div>
         <div className="Jukebox text-center">
           <h2>Location: {this.state.location}</h2>
