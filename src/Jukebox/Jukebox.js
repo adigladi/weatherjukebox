@@ -64,7 +64,7 @@ class Jukebox extends Component {
   }
 
   onClickAdd = () => {
-    modelInstance.addMyTracks({'song':modelInstance.getCurrentTrack(),'weather':this.state.weather,'genre':this.state.genre})
+    modelInstance.addMyTracks({'song':modelInstance.getCurrentTrack(),'weather':this.state.weather,'genre':this.state.genre,'city':this.state.location})
   }
 
   render() {

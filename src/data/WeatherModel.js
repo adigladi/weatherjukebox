@@ -741,6 +741,7 @@ const WeatherModel = function () {
 
   this.addMyTracks = function (track) {
     myTracks.push(track);
+    console.log(myTracks)
   }
 
   this.getMyTracks = function () {

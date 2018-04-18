@@ -30,11 +30,11 @@ class User extends Component {
     let myList = "";
     myList = this.state.myTracks.map((track, i) =>
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+        <th scope="row">{this.state.myTracks[i].song.title}</th>
+        <td>{this.state.myTracks[i].song.artist.name}</td>
+        <td>{this.state.myTracks[i].genre.name}</td>
+        <td>{this.state.myTracks[i].weather.description}</td>
+        <td>{this.state.myTracks[i].city}</td>
       </tr>
     )
     return (
@@ -52,7 +52,7 @@ class User extends Component {
                 <th scope="col">Artist</th>
                 <th scope="col">Genre</th>
                 <th scope="col">Weather</th>
-                <th scope="col">Date</th>
+                <th scope="col">City</th>
               </tr>
             </thead>
             <tbody>
