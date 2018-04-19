@@ -7,14 +7,14 @@
 <p>The app is deployed using Firebase and can be found <a href="https://weather-jukebox.firebaseapp.com/">here</a>.</p>
 
 <img src="http://www.emildickson.se/weatherjukebox/logo.png" alt="logo"/>
-<i>The front page.</i>
+<i>The front page.</i><br/>
 
 <img src="http://www.emildickson.se/weatherjukebox/result.png" alt="logo"/>
-<i>A song result for someone in Dallas.</i>
+<i>A song result for someone in Dallas.</i><br/>
 
 <img src="http://www.emildickson.se/weatherjukebox/user1.png" alt="logo"/>
 <img src="http://www.emildickson.se/weatherjukebox/user2.png" alt="logo"/>
-<i>The pages in the user section.</i>
+<i>The pages in the user section.</i><br/>
 
 # about the actual work
 
