@@ -33,7 +33,7 @@ class User extends Component {
   }
 
   clickRemoveBlacklist = (r) => {
-    modelInstance.removeFromBlacklist(r);
+    modelInstance.removeFromBlacklist(r.target.title);
   }
 
   render() {

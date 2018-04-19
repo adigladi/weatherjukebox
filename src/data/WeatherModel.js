@@ -810,12 +810,11 @@ const WeatherModel = function () {
   }
 
   this.removeFromBlacklist = function (toBeUnblacklisted) {
-    for (var i; i < trackBlacklist.length; i++) {
-      if (trackBlacklist[i].song.id === parseInt(toBeUnblacklisted)) {
+    for (var i = 0; i < trackBlacklist.length; i++) {
+      if (trackBlacklist[i].song.id === parseInt(toBeUnblacklisted, 10)) {
         trackBlacklist.splice(i, 1);
       }
     }
-    console.log(trackBlacklist);
   }
 
   this.getBlacklist = function () {
