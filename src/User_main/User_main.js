@@ -9,7 +9,8 @@ class User_main extends Component {
     
     this.state = {
       myTracks: modelInstance.getMyTracks(),
-      myBlacklistTracks: modelInstance.getBlacklist()
+      myBlacklistTracks: modelInstance.getBlacklist(),
+      myHistory: modelInstance.getMyHistory(),
     }
   }
 
@@ -24,7 +25,8 @@ class User_main extends Component {
   update() {
     this.setState({
       myTracks: modelInstance.getMyTracks(),
-      myBlacklistTracks: modelInstance.getBlacklist()
+      myBlacklistTracks: modelInstance.getBlacklist(),
+      myHistory: modelInstance.getMyHistory(),
     })
   }
 
@@ -40,7 +42,14 @@ class User_main extends Component {
     let myList = "";
     myList = this.state.myTracks.map((track, i) =>
       <tr key={i}>
-        <td className="text-center">{this.state.myTracks[i].song.title}</td>
+        <td className="text-center">{this.state.myTracks[i].song.title+" - "+this.state.myTracks[i].song.artist.name}</td>
+      </tr>
+    )
+
+    let myHistoryList = "";
+    myHistoryList = this.state.myHistory.map((track, i) =>
+      <tr key={i}>
+        <td className="text-center">{this.state.myHistory[i].song.title+" - "+this.state.myHistory[i].song.artist.name}</td>
       </tr>
     )
 
@@ -76,7 +85,7 @@ class User_main extends Component {
               </tr>
             </thead>
             <tbody>
-              {myList}
+              {myHistoryList}
             </tbody>
           </table>
           </div>

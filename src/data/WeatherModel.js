@@ -591,7 +591,7 @@ const WeatherModel = function () {
   let generatedSong = 0;
   let songOut = 0;
   let trackBlacklist = [];
-  let matchHistory = [];
+  let myHistory = [];
   let favouritesList = [];
   let blackListHit = false;
   let currentTrack = {};
@@ -617,10 +617,17 @@ const WeatherModel = function () {
     return coordinates
   }
 
+  this.addMyHistory = function (track) {
+    myHistory.push(track);
+  }
+
+  this.getMyHistory = function () {
+    return myHistory
+  }
+
   this.addMyTracks = function (track) {
     this.removeMyTracks(track.song.id)
     myTracks.push(track);
-    console.log(myTracks)
   }
 
   this.removeMyTracks = function (id) {
