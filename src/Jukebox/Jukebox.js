@@ -67,6 +67,8 @@ class Jukebox extends Component {
 
   onClickAdd = () => {
     modelInstance.addMyTracks({'song':modelInstance.getCurrentTrack(),'weather':this.state.weather,'genre':this.state.genre,'city':this.state.location})
+    var resetBtn = document.getElementById("addbutton");
+    resetBtn.disabled = "disabled";
   }
 
   onClickBlacklist = () => {

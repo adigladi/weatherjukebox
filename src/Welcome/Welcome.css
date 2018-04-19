@@ -48,7 +48,7 @@ input[type=text] {
     background-color:rgb(252, 227,127);
 }
 
-.userbutton {
+#locationBtn2 {
     padding: 15px 20px 15px 20px;
     margin-left: 10px;
     font-size: 16px;
@@ -57,7 +57,7 @@ input[type=text] {
     color: black;
     border-color: rgb(252, 210, 127);
     background-color:rgb(252, 227,127);
-    position:absolute;
+    position: absolute;
     left: 1vw;
     top: 6vh;
 }

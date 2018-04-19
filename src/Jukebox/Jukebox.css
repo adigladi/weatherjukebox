@@ -84,3 +84,8 @@ button {
     left: 1vw;
     top: 6vh;
 }
+
+#locationBtn2:hover {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+}
