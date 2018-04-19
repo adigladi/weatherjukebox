@@ -73,6 +73,8 @@ class Jukebox extends Component {
 
   onClickBlacklist = () => {
     modelInstance.addToBlacklist({ 'song': modelInstance.getCurrentTrack(), 'weather': this.state.weather, 'genre': this.state.genre, 'city': this.state.location });
+    var resetBtn = document.getElementById("disablebutton");
+    resetBtn.disabled = "disabled";
   }
 
   render() {
@@ -95,8 +97,8 @@ class Jukebox extends Component {
             <h2>{this.state.weather.description}</h2>
             <h2>Genre: {this.state.genre.name}</h2>
           </div>
-          <button type="button" className="btn btn-warning welcomebutton" onClick={this.onClickAdd}>Add</button>
-          <button type="button" className="btn btn-warning welcomebutton" onClick={this.onClickBlacklist}>Dislike</button>
+          <button type="button" className="btn btn-warning welcomebutton" id="addbutton" onClick={this.onClickAdd}>Add</button>
+          <button type="button" className="btn btn-warning welcomebutton" id="disablebutton" onClick={this.onClickBlacklist}>Dislike</button>
           <Link to="/">
             <button type="button" className="btn btn-warning welcomebutton">Back</button>
           </Link>
