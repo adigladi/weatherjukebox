@@ -805,14 +805,17 @@ const WeatherModel = function () {
 
   this.setCurrentArtist = function () { }
 
-  this.addToBlacklist = function () {
-    var toBeBlacklisted = {
-      "track": currentTrack,
-      "weather": currentWeather.description,
-      "genre": currentGenre.name,
-      "city": currentCity
+  this.addToBlacklist = function (toBeBlacklisted) {
+    trackBlacklist.push(toBeBlacklisted);
+  }
+
+  this.removeFromBlacklist = function (toBeUnblacklisted) {
+    for (var i; i < trackBlacklist.length; i++) {
+      if (trackBlacklist[i].song.id === parseInt(toBeUnblacklisted)) {
+        trackBlacklist.splice(i, 1);
+      }
     }
-    trackBlacklist.push(currentTrack);
+    console.log(trackBlacklist);
   }
 
   this.getBlacklist = function () {

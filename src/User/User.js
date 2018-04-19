@@ -32,6 +32,10 @@ class User extends Component {
     modelInstance.removeMyTracks(e.target.title);
   }
 
+  clickRemoveBlacklist = (r) => {
+    modelInstance.removeFromBlacklist(r);
+  }
+
   render() {
     let myList = "";
     myList = this.state.myTracks.map((track, i) =>
@@ -43,18 +47,19 @@ class User extends Component {
         <td>{this.state.myTracks[i].genre.name}</td>
         <td>{this.state.myTracks[i].weather.description}</td>
         <td>{this.state.myTracks[i].city}</td>
-        <td><img id="trashbin" src={require("./trash.png")} draggable="false" title={this.state.myTracks[i].song.id} onClick={this.clickTrash}/></td>
+        <td><img id="trashbin" src={require("./trash.png")} draggable="false" title={this.state.myTracks[i].song.id} alt="X" onClick={this.clickTrash}/></td>
       </tr>
     )
 
     let myBlacklist;
     myBlacklist = this.state.myBlacklistTracks.map((blTrack, j) => 
       <tr key={j}>
-        <td>{this.state.myBlacklistTracks[j].track.title}</td>
-        <td>{this.state.myBlacklistTracks[j].track.artist.name}</td>
-        <td>{this.state.myBlacklistTracks[j].genre}</td>
-        <td>{this.state.myBlacklistTracks[j].weather}</td>
+        <td>{this.state.myBlacklistTracks[j].song.title}</td>
+        <td>{this.state.myBlacklistTracks[j].song.artist.name}</td>
+        <td>{this.state.myBlacklistTracks[j].genre.name}</td>
+        <td>{this.state.myBlacklistTracks[j].weather.description}</td>
         <td>{this.state.myBlacklistTracks[j].city}</td>
+        <td><img id="trashbin" src={require("./trash.png")} draggable="false" title={this.state.myBlacklistTracks[j].song.id} alt="X" onClick={this.clickRemoveBlacklist} /></td>
       </tr>
     )
 
@@ -92,6 +97,7 @@ class User extends Component {
                 <th scope="col">Genre</th>
                 <th scope="col">Weather</th>
                 <th scope="col">City</th>
+                <th className="text-center" scope="col">X</th>
               </tr>
             </thead>
             <tbody>

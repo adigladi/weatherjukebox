@@ -70,7 +70,7 @@ class Jukebox extends Component {
   }
 
   onClickBlacklist = () => {
-    modelInstance.addToBlacklist();
+    modelInstance.addToBlacklist({ 'song': modelInstance.getCurrentTrack(), 'weather': this.state.weather, 'genre': this.state.genre, 'city': this.state.location });
   }
 
   render() {
@@ -94,6 +94,7 @@ class Jukebox extends Component {
             <h2>Genre: {this.state.genre.name}</h2>
           </div>
           <button type="button" className="btn btn-warning welcomebutton" onClick={this.onClickAdd}>Add</button>
+          <button type="button" className="btn btn-warning welcomebutton" onClick={this.onClickBlacklist}>Dislike</button>
           <Link to="/">
             <button type="button" className="btn btn-warning welcomebutton">Back</button>
           </Link>
