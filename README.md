@@ -13,5 +13,8 @@
     <li>A 'jukebox' page, that plays music for the user and displays information about weather and genre. The user has the ability to add the song to their favourites list or add it to a blacklist to ensure that this particular song is not suggested again.</li>
 </ul>
 <li>What you still plan to do</li>
+<ul>
+    <li>User data will be stored using Firebase.</li>
+</ul>
 <li>Your project file structure (short description/purpose of each file)</li>
 <ul>
