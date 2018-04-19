@@ -42,6 +42,7 @@ class Jukebox extends Component {
               weather: weather.weather[0],
               trackid: modelInstance.getCurrentTrack().id
             });
+            modelInstance.addMyHistory({'song':modelInstance.getCurrentTrack(),'weather':this.state.weather,'genre':this.state.genre,'city':this.state.location})
             document.getElementById("backgroundImg").style.backgroundImage = "url(" + modelInstance.getCurrentTrack().album.cover_xl + ")";
           });
         });
