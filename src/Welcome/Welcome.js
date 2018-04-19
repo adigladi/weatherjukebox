@@ -51,7 +51,8 @@ class Welcome extends Component {
         lat: position.coords.latitude,
         lng: position.coords.longitude
         };
-        modelInstance.getWeatherByCoordinates(pos.lat, pos.lng).then(weather => {
+        modelInstance.setCoordinates(pos);
+        modelInstance.getWeatherByCoordinates(modelInstance.getCoordinates().lat,modelInstance.getCoordinates().lng).then(weather => {
           modelInstance.setCity(weather.name);
           var text = document.getElementById('locationField');
           text.value = weather.name;
@@ -78,6 +79,7 @@ class Welcome extends Component {
         break;
     }
     return (
+      <div>
       <div className="Welcome row container-fluid">
         <div className="col-12 container-fluid">
         <Link to="/user">
@@ -88,6 +90,8 @@ class Welcome extends Component {
             <img className="center" src={require("./Logo.png")} draggable="false"/>
           <br/>
         </div>
+        </div>
+        <div className="row container-fluid">
         <div className="col-12 text-center">
         <input id="locationField" type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
         <Link to="/jukebox">
@@ -95,7 +99,8 @@ class Welcome extends Component {
         </Link>
         {button}
         </div>
-      </div>
+        </div>
+        </div>
     );
   }
 }

@@ -739,6 +739,15 @@ const WeatherModel = function () {
     }
   }
 
+  this.setCoordinates = function (coord) {
+    coordinates.lat = coord.lat;
+    coordinates.lng = coord.lng;
+  }
+
+  this.getCoordinates = function () {
+    return coordinates
+  }
+
   this.addMyTracks = function (track) {
     this.removeMyTracks(track.song.id)
     myTracks.push(track);
@@ -794,6 +803,14 @@ const WeatherModel = function () {
   }
 
   this.setCurrentArtist = function () { }
+
+  this.addToBlacklist = function () {
+    trackBlacklist.push(currentTrack);
+  }
+
+  this.getBlacklist = function () {
+    return trackBlacklist;
+  }
 
   /* Functions for getting a genre/weather/artist/track-match:
       weatherMatch outputs a random genreID matching the current weather.
