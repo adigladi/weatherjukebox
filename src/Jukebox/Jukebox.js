@@ -87,9 +87,12 @@ class Jukebox extends Component {
         </Link>
         <div id="backgroundImg"></div>
         <div className="Jukebox text-center">
-          <h2>Location: {this.state.location}</h2>
-          <h2>Weather: {this.state.weather.description}</h2>
-          <h2>Genre: {this.state.genre.name}</h2>
+          <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=400&height=400&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.trackid + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="400" data-height="400"></div>
+          <div id="infoText">
+            <h2>Location: {this.state.location}</h2>
+            <h2>{this.state.weather.description}</h2>
+            <h2>Genre: {this.state.genre.name}</h2>
+          </div>
           <button type="button" className="btn btn-warning welcomebutton" onClick={this.onClickAdd}>Add</button>
           <button type="button" className="btn btn-warning welcomebutton" onClick={this.onClickBlacklist}>Blacklist</button>
           <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.trackid + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="300" data-height="300"></div>
