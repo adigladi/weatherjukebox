@@ -18,6 +18,20 @@
     top: 6vh;
 }
 
+#userswitch {
+    padding: 15px 20px 15px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: LemonMilk;
+    font-weight: bold;
+    color: black;
+    border-color: rgb(252, 210, 127);
+    background-color:rgb(252, 227,127);
+    position: absolute;
+    left: 1vw;
+    top: 18vh;
+}
+
 .jukeboxIcon {
     height: 15%;
     width: 15%;

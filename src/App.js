@@ -5,6 +5,7 @@ import Welcome from './Welcome/Welcome';
 import { modelInstance } from './data/WeatherModel'
 import Jukebox from "./Jukebox/Jukebox";
 import User_main from "./User_main/User_main";
+import User_all from "./User_all/User_all";
 
 class App extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class App extends Component {
           <Route exact path="/" component={Welcome}/>
           <Route path="/jukebox" render={() => <Jukebox model={modelInstance}/>}/>
           <Route exact path="/user_main" component={User_main}/>
+          <Route exact path="/user_all" component={User_all}/>
         </header>
       </div>
     );
