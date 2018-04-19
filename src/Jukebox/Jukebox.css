@@ -39,7 +39,7 @@ body {
 h2 {
     font-family: LemonMilk;
     color: rgb(252,227,127);
-    font-size: 12px;
+    font-size: 2vw;
 }
 
 #infoText {
@@ -52,6 +52,7 @@ h2 {
 #infoText h2 {
     display: inline-block;
     margin-right: 20px;
+    font-size: 12px;
 }
 
 img {
