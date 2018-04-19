@@ -2,6 +2,8 @@
 
 <b>Our project will retrieve the users location (via geolocation or user input) and give music suggestions based on the current weather.</b>
 
+<p>The app takes weather info from <a href="https://openweathermap.org/api">OpenWeatherMap's API</a>, gets song info from <a href="https://developers.deezer.com/api/explorer">Deezer's API</a> and finally plays music using a player from Deezer.</p>
+
 <ul>
 <li>What we have done</li>
 <ul>
