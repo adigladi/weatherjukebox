@@ -804,6 +804,14 @@ const WeatherModel = function () {
 
   this.setCurrentArtist = function () { }
 
+  this.addToBlacklist = function () {
+    trackBlacklist.push(currentTrack);
+  }
+
+  this.getBlacklist = function () {
+    return trackBlacklist();
+  }
+
   /* Functions for getting a genre/weather/artist/track-match:
       weatherMatch outputs a random genreID matching the current weather.
       artistMatch returns a random artists id, given a list of artists from a certain genre.
