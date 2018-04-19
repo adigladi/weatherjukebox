@@ -61,3 +61,7 @@ input[type=text] {
     left: 1vw;
     top: 6vh;
 }
+
+.btn {
+    vertical-align: bottom;
+}

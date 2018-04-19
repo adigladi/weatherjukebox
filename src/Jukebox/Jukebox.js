@@ -23,6 +23,9 @@ class Jukebox extends Component {
       modelInstance.weatherMatch(weather.weather[0].id);
 
       modelInstance.getArtists().then(artists => {
+        console.log(weather.weather[0].id)
+        console.log(modelInstance.getCurrentGenre())
+        console.log(artists.data)
         modelInstance.artistMatch(artists.data);
         modelInstance.getTopTracks().then(topTracks => {
           modelInstance.trackMatch(topTracks.data);
