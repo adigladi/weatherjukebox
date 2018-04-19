@@ -65,3 +65,8 @@ input[type=text] {
 .btn {
     vertical-align: bottom;
 }
+
+button:hover {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+}
