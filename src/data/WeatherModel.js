@@ -760,6 +760,7 @@ const WeatherModel = function () {
         myTracks.splice(i, 1);
       }
     }
+    notifyObservers();
   }
 
   this.getMyTracks = function () {

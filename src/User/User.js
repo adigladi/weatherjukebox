@@ -28,6 +28,10 @@ class User extends Component {
     })
   }
 
+  clickTrash = (e) => {
+    modelInstance.removeMyTracks(e.target.title);
+  }
+
   render() {
     let myList = "";
     myList = this.state.myTracks.map((track, i) =>
@@ -39,6 +43,7 @@ class User extends Component {
         <td>{this.state.myTracks[i].genre.name}</td>
         <td>{this.state.myTracks[i].weather.description}</td>
         <td>{this.state.myTracks[i].city}</td>
+        <td><img id="trashbin" src={require("./trash.png")} draggable="false" title={this.state.myTracks[i].song.id} onClick={this.clickTrash}/></td>
       </tr>
     )
 
@@ -69,6 +74,7 @@ class User extends Component {
                 <th scope="col">Genre</th>
                 <th scope="col">Weather</th>
                 <th scope="col">City</th>
+                <th className="text-center" scope="col">X</th>
               </tr>
             </thead>
             <tbody>
