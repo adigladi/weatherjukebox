@@ -76,6 +76,11 @@ button {
     box-shadow: 3px 3px 20px #333;
 }
 
+button:hover {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+}
+
 #jukeButtons {
     padding: 15px 20px 15px 20px;
     font-size: 16px;
