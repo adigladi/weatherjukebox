@@ -1,0 +1,77 @@
+@font-face { font-family: LemonMilk; src: url('../Fonts/LemonMilk.otf'); } 
+
+.userTitle {
+    font-size: 70px;
+}
+
+.towelcomebutton {
+    padding: 15px 20px 15px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: LemonMilk;
+    font-weight: bold;
+    color: black;
+    border-color: rgb(252, 210, 127);
+    background-color:rgb(252, 227,127);
+    position: absolute;
+    left: 1vw;
+    top: 6vh;
+}
+
+.jukeboxIcon {
+    height: 15%;
+    width: 15%;
+}
+
+#boxjuke {
+    width:24px;
+    height: 28px;
+}
+
+#blacklistTable {
+    margin-top: 50px;
+}
+
+#trashbin {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+tr {
+    font-size: 16px;
+    font-family: LemonMilk;
+    color: rgb(252, 210, 127);
+    border-top:0px;
+}
+
+th {
+    border-top:0px;
+    border-bottom:0px;
+    font-size:25px;
+}
+
+.table thead th {
+    border-bottom:0px;
+    border-top:0px;
+}
+
+.table td {
+    border-top:0px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: underline;
+}
