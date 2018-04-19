@@ -40,10 +40,8 @@ class User_all extends Component {
     let myList = "";
     myList = this.state.myTracks.map((track, i) =>
       <tr key={i}>
-        <a href={this.state.myTracks[i].song.link} target="_blank">
-        <td>{this.state.myTracks[i].song.title}</td>
-        </a>
-        <td>{this.state.myTracks[i].song.artist.name}</td>
+        <td><a href={this.state.myTracks[i].song.link} target="_blank">{this.state.myTracks[i].song.title}</a></td>
+        <td><a href={this.state.myTracks[i].song.artist.link} target="_blank">{this.state.myTracks[i].song.artist.name}</a></td>
         <td>{this.state.myTracks[i].genre.name}</td>
         <td>{this.state.myTracks[i].weather.description}</td>
         <td>{this.state.myTracks[i].city}</td>
@@ -54,8 +52,8 @@ class User_all extends Component {
     let myBlacklist;
     myBlacklist = this.state.myBlacklistTracks.map((blTrack, j) => 
       <tr key={j}>
-        <td>{this.state.myBlacklistTracks[j].song.title}</td>
-        <td>{this.state.myBlacklistTracks[j].song.artist.name}</td>
+        <td><a href={this.state.myBlacklistTracks[j].song.link} target="_blank">{this.state.myBlacklistTracks[j].song.title}</a></td>
+        <td><a href={this.state.myBlacklistTracks[j].song.artist.link} target="_blank">{this.state.myBlacklistTracks[j].song.artist.name}</a></td>
         <td>{this.state.myBlacklistTracks[j].genre.name}</td>
         <td>{this.state.myBlacklistTracks[j].weather.description}</td>
         <td>{this.state.myBlacklistTracks[j].city}</td>
