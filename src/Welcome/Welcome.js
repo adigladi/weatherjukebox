@@ -92,7 +92,7 @@ class Welcome extends Component {
         </div>
         </div>
         <div className="row container-fluid">
-        <div className="col-10 text-center">
+        <div className="col-12 text-center">
         <input id="locationField" type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
         <Link to="/jukebox">
           <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Get Jukebox'd</button>
