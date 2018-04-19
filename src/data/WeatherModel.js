@@ -805,6 +805,12 @@ const WeatherModel = function () {
   this.setCurrentArtist = function () { }
 
   this.addToBlacklist = function () {
+    var toBeBlacklisted = {
+      "track": currentTrack,
+      "weather": currentWeather.description,
+      "genre": currentGenre.name,
+      "city": currentCity
+    }
     trackBlacklist.push(currentTrack);
   }
 
@@ -837,7 +843,7 @@ const WeatherModel = function () {
 
   this.blacklistQuery = function (queryId) {
     for (var b = 0; b < trackBlacklist.length; b++) {
-      if (trackBlacklist[b].id === queryId) {
+      if (trackBlacklist[b].track.id === queryId) {
         blackListHit = true;
       }
     }

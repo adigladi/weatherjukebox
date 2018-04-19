@@ -8,7 +8,8 @@ class User extends Component {
     super(props)
     
     this.state = {
-      myTracks: modelInstance.getMyTracks()
+      myTracks: modelInstance.getMyTracks(),
+      myBlacklistTracks: modelInstance.getBlacklist()
     }
   }
 
@@ -22,7 +23,8 @@ class User extends Component {
 
   update() {
     this.setState({
-      myTracks: modelInstance.getMyTracks()
+      myTracks: modelInstance.getMyTracks(),
+      myBlacklistTracks: modelInstance.getBlacklist()
     })
   }
 
@@ -39,6 +41,18 @@ class User extends Component {
         <td>{this.state.myTracks[i].city}</td>
       </tr>
     )
+
+    let myBlacklist;
+    myBlacklist = this.state.myBlacklistTracks.map((blTrack, j) => 
+      <tr key={j}>
+        <td>{this.state.myBlacklistTracks[j].track.title}</td>
+        <td>{this.state.myBlacklistTracks[j].track.artist.name}</td>
+        <td>{this.state.myBlacklistTracks[j].genre}</td>
+        <td>{this.state.myBlacklistTracks[j].weather}</td>
+        <td>{this.state.myBlacklistTracks[j].city}</td>
+      </tr>
+    )
+
     return (
       <div className="User row container-fluid">
         <div className="col-12 container-fluid">
@@ -59,6 +73,23 @@ class User extends Component {
             </thead>
             <tbody>
               {myList}
+            </tbody>
+          </table>
+        </div>
+        <div className="col-12 container-fluid" id="blacklistTable">
+          <h2 className="userTitle text-center">Disliked Trackz</h2>
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Artist</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Weather</th>
+                <th scope="col">City</th>
+              </tr>
+            </thead>
+            <tbody>
+              {myBlacklist}
             </tbody>
           </table>
         </div>
