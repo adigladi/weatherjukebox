@@ -47,6 +47,7 @@ h2 {
     padding: 1px;
     width: 400px;
     margin: 0 auto;
+    margin-bottom: 5px;
 }
 
 #infoText h2 {
@@ -73,21 +74,25 @@ button {
     background-color:rgb(252, 227,127);
 }
 
-#locationBtn2 {
+#jukeButtons {
     padding: 15px 20px 15px 20px;
-    margin-left: 10px;
     font-size: 16px;
     font-family: LemonMilk;
     font-weight: bold;
     color: black;
     border-color: rgb(252, 210, 127);
     background-color:rgb(252, 227,127);
+    display: inline-block;
+}
+
+#jukeButtons:hover {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+}
+
+#buttonDiv {
     position:absolute;
     left: 1vw;
     top: 6vh;
-}
-
-#locationBtn2:hover {
-    background-color: #f0ad4e;
-    border-color: #f0ad4e;
+    width: 30%;
 }

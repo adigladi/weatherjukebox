@@ -86,9 +86,14 @@ class Jukebox extends Component {
       case 'LOADED':
       jukebox = 
       <div className="col-md-12 container-fluid" id="mainDiv">
-        <Link to="/user">
-          <button type="button" id="locationBtn2" className="btn btn-warning userbutton"><i className="material-icons w3-xlarge">person</i></button>
-        </Link>
+        <div id="buttonDiv">
+          <Link to="/">
+            <button type="button" id="jukeButtons" className="btn btn-warning welcomebutton">Back</button>
+          </Link>
+          <Link to="/user">
+            <button type="button" id="jukeButtons" className="btn btn-warning userbutton"><i className="material-icons w3-xlarge">person</i></button>
+          </Link>
+        </div>
         <div id="backgroundImg"></div>
         <div className="Jukebox text-center">
           <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=400&height=400&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.trackid + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="400" data-height="400"></div>
@@ -99,9 +104,6 @@ class Jukebox extends Component {
           </div>
           <button type="button" className="btn btn-warning welcomebutton" id="addbutton" onClick={this.onClickAdd}>Add</button>
           <button type="button" className="btn btn-warning welcomebutton" id="disablebutton" onClick={this.onClickBlacklist}>Dislike</button>
-          <Link to="/">
-            <button type="button" className="btn btn-warning welcomebutton">Back</button>
-          </Link>
         </div>
       </div>
         break;
