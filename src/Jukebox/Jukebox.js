@@ -89,7 +89,7 @@ class Jukebox extends Component {
       <div className="col-md-12 container-fluid" id="mainDiv">
         <div id="buttonDiv">
           <Link to="/">
-            <button type="button" id="jukeButtons" className="btn btn-warning welcomebutton">Back</button>
+            <button type="button" id="jukeButtons" className="btn btn-warning welcomebutton"><i className="fa fa-chevron-circle-left"></i></button>
           </Link>
           <Link to="/user_main">
             <button type="button" id="jukeButtons" className="btn btn-warning userbutton"><i className="material-icons w3-xlarge">person</i></button>
@@ -97,7 +97,7 @@ class Jukebox extends Component {
         </div>
         <div id="backgroundImg"></div>
         <div className="Jukebox text-center">
-          <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=400&height=400&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.trackid + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="400" data-height="400"></div>
+          <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=350&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.trackid + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="350" data-height="350"></div>
           <div id="infoText">
             <h2>Location: {this.state.location}</h2>
             <h2>{this.state.weather.description}</h2>

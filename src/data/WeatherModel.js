@@ -729,7 +729,7 @@ const WeatherModel = function () {
 
   this.trackMatch = function (topSongs) {
     generatedSong = topSongs[Math.floor(Math.random() * topSongs.length)].id;
-    while (this.blacklistQuery(songOut)) {
+    while (this.blacklistQuery(generatedSong)) {
       generatedSong = topSongs[Math.floor(Math.random() * topSongs.length)].id;
     }
     this.setCurrentSong(generatedSong);

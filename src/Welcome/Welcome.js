@@ -56,7 +56,6 @@ class Welcome extends Component {
           modelInstance.setCity(weather.name);
           var text = document.getElementById('locationField');
           text.value = weather.name;
-          document.getElementById("locationBtn").click();
         })
       });
     }
@@ -94,10 +93,10 @@ class Welcome extends Component {
         <div className="row container-fluid">
         <div className="col-12 text-center">
         <input id="locationField" type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
+        {button}
         <Link to="/jukebox">
           <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Get Jukebox'd</button>
         </Link>
-        {button}
         </div>
         </div>
         </div>
