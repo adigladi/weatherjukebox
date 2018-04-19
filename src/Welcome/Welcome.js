@@ -69,7 +69,7 @@ class Welcome extends Component {
     let button = null;
     switch (this.state.status) {
       case 'INITIAL':
-      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><img id="marker" src={require("./marker.png")} draggable="false"/></button>
+      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><img id="marker" alt="Weather Jukebox" src={require("./marker.png")} draggable="false"/></button>
         break;
       case 'LOADING':
       button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><i className="w3-xlarge material-icons w3-spin">refresh</i></button>
@@ -87,7 +87,7 @@ class Welcome extends Component {
         </Link>
           <br/>
           <br/>
-            <img className="center" src={require("./Logo.png")} draggable="false"/>
+            <img className="center" alt="Weather Jukebox" src={require("./Logo.png")} draggable="false"/>
           <br/>
         </div>
         </div>
