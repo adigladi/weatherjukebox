@@ -69,11 +69,15 @@ class Jukebox extends Component {
     modelInstance.addMyTracks({'song':modelInstance.getCurrentTrack(),'weather':this.state.weather,'genre':this.state.genre,'city':this.state.location})
     var resetBtn = document.getElementById("addbutton");
     resetBtn.disabled = "disabled";
+    var resetBtn = document.getElementById("disablebutton");
+    resetBtn.disabled = "disabled";
   }
 
   onClickBlacklist = () => {
     modelInstance.addToBlacklist({ 'song': modelInstance.getCurrentTrack(), 'weather': this.state.weather, 'genre': this.state.genre, 'city': this.state.location });
     var resetBtn = document.getElementById("disablebutton");
+    resetBtn.disabled = "disabled";
+    var resetBtn = document.getElementById("addbutton");
     resetBtn.disabled = "disabled";
   }
 
