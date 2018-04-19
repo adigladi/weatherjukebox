@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './User.css';
+import './User_all.css';
 import { Link } from 'react-router-dom';
 import { modelInstance } from '../data/WeatherModel.js'
-class User extends Component {
+class User_all extends Component {
 
   constructor(props) {
     super(props)
@@ -69,6 +69,9 @@ class User extends Component {
         <Link to="/">
             <button type="button" className="btn btn-warning towelcomebutton"><img id="boxjuke" src={require("./jukebox2.png")} draggable="false"/></button>
         </Link>
+        <Link to="/user_main">
+          <button type="button" id="userwitch" className="btn btn-warning"><i className="material-icons w3-xlarge">person</i></button>
+        </Link>
         <br/>
           <h2 className="userTitle text-center">My Trackz</h2>
           <table className="table table-striped">
@@ -110,4 +113,4 @@ class User extends Component {
   }
 }
 
-export default User;
+export default User_all;
