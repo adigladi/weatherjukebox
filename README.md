@@ -31,7 +31,7 @@
     <li>User data will be stored using Firebase.</li>
     <li>The user interaction for the favourites and blacklist will be improved.</li>
     <li>The icon for geolocation will stop spinning when location is retrieved.</li>
-    <li>The user history will be more reflective of the actual history than it currently is.</li>
+    <li>A "reroll" button will be added to the Jukebox view that will reload the song suggestion for the selected location.</li>
 </ul>
 <li><b>Our project file structure (images are ignored)</b></li>
 <ul>
