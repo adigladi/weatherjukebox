@@ -28,6 +28,11 @@
     height: 28px;
 }
 
+#trashbin {
+    width: 24px;
+    height: 24px;
+}
+
 tr {
     font-size: 16px;
     font-family: LemonMilk;

@@ -61,7 +61,6 @@ class Jukebox extends Component {
     this.setState({
       status: 'LOADED',
       genre: modelInstance.getCurrentGenre(),
-      weather: modelInstance.getCurrentWeather(),
       trackid: modelInstance.getCurrentTrack().id
     })
   }
