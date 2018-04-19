@@ -308,92 +308,6 @@ const WeatherModel = function () {
       }],
       'likelihood': 4
     }, {
-      'name': 'J-pop',
-      'genreID': 22,
-      'weatherIDs': [{
-        'lower': 800,
-        'upper': 800
-      }, {
-        'lower': 900,
-        'upper': 906
-      }],
-      'likelihood': 3
-    }, {
-      'name': 'K-pop',
-      'genreID': 23,
-      'weatherIDs': [{
-        'lower': 800,
-        'upper': 800
-      }, {
-        'lower': 900,
-        'upper': 906
-      }],
-      'likelihood': 3
-    }, {
-      'name': 'Thai country',
-      'genreID': 27,
-      'weatherIDs': [{
-        'lower': 800,
-        'upper': 800
-      }, {
-        'lower': 900,
-        'upper': 906
-      }],
-      'likelihood': 2
-    }, {
-      'name': 'Flamenco',
-      'genreID': 36,
-      'weatherIDs': [{
-        'lower': 800,
-        'upper': 800
-      }, {
-        'lower': 801,
-        'upper': 804
-      }, {
-        'lower': 951,
-        'upper': 954
-      }],
-      'likelihood': 4
-    }, {
-      'name': 'French music',
-      'genreID': 52,
-      'weatherIDs': [{
-        'lower': 800,
-        'upper': 800
-      }, {
-        'lower': 951,
-        'upper': 954
-      }],
-      'likelihood': 3
-    }, {
-      'name': 'Tango',
-      'genreID': 73,
-      'weatherIDs': [{
-        'lower': 800,
-        'upper': 800
-      }, {
-        'lower': 801,
-        'upper': 804
-      }, {
-        'lower': 951,
-        'upper': 954
-      }],
-      'likelihood': 4
-    }, {
-      'name': 'Country',
-      'genreID': 84,
-      'weatherIDs': [{
-        'lower': 800,
-        'upper': 800
-      }, {
-        'lower': 801,
-        'upper': 804
-      }, {
-        'lower': 951,
-        'upper': 954
-      }],
-      'likelihood': 5
-    }, {
       'name': 'Indie Pop',
       'genreID': 86,
       'weatherIDs': [{
@@ -483,23 +397,6 @@ const WeatherModel = function () {
         'upper': 962
       }],
       'likelihood': 5
-    }, {
-      'name': 'Electro Hip Hop',
-      'genreID': 109,
-      'weatherIDs': [{
-        'lower': 500,
-        'upper': 531
-      }, {
-        'lower': 300,
-        'upper': 312
-      }, {
-        'lower': 700,
-        'upper': 781
-      }, {
-        'lower': 900,
-        'upper': 906
-      }],
-      'likelihood': 6
     }, {
       'name': 'Electro Pop/Electro Rock',
       'genreID': 110,
@@ -682,35 +579,7 @@ const WeatherModel = function () {
         'upper': 232
       }],
       'likelihood': 6
-    }, {
-      'name': 'Acoustic blues',
-      'genreID': 180,
-      'weatherIDs': [{
-        'lower': 800,
-        'upper': 800
-      }, {
-        'lower': 500,
-        'upper': 531
-      }, {
-        'lower': 700,
-        'upper': 781
-      }, {
-        'lower': 801,
-        'upper': 804
-      }],
-      'likelihood': 5
-    }, {
-      'name': 'Carribean music',
-      'genreID': 199,
-      'weatherIDs': [{
-        'lower': 800,
-        'upper': 800
-      }, {
-        'lower': 900,
-        'upper': 906
-      }],
-      'likelihood': 4
-    }
+    },
   ];
 
   let observers = [];
