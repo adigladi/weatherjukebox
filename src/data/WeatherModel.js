@@ -809,7 +809,7 @@ const WeatherModel = function () {
   }
 
   this.getBlacklist = function () {
-    return trackBlacklist();
+    return trackBlacklist;
   }
 
   /* Functions for getting a genre/weather/artist/track-match:

@@ -23,6 +23,9 @@ class Jukebox extends Component {
       modelInstance.weatherMatch(weather.weather[0].id);
 
       modelInstance.getArtists().then(artists => {
+        console.log(weather.weather[0].id)
+        console.log(modelInstance.getCurrentGenre())
+        console.log(artists.data)
         modelInstance.artistMatch(artists.data);
         modelInstance.getTopTracks().then(topTracks => {
           modelInstance.trackMatch(topTracks.data);
@@ -67,6 +70,10 @@ class Jukebox extends Component {
     modelInstance.addMyTracks({'song':modelInstance.getCurrentTrack(),'weather':this.state.weather,'genre':this.state.genre,'city':this.state.location})
   }
 
+  onClickBlacklist = () => {
+    modelInstance.addToBlacklist();
+  }
+
   render() {
     let jukebox = null;
     switch (this.state.status) {
@@ -88,6 +95,8 @@ class Jukebox extends Component {
             <h2>Genre: {this.state.genre.name}</h2>
           </div>
           <button type="button" className="btn btn-warning welcomebutton" onClick={this.onClickAdd}>Add</button>
+          <button type="button" className="btn btn-warning welcomebutton" onClick={this.onClickBlacklist}>Blacklist</button>
+          <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.trackid + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="300" data-height="300"></div>
           <Link to="/">
             <button type="button" className="btn btn-warning welcomebutton">Back</button>
           </Link>

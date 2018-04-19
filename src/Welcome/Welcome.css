@@ -18,11 +18,12 @@ body {
 
 #marker
 {
-    width: 1.5vw;
+    width: 20px;
+    height: auto
 }
 
 input[type=text] {
-    width: 40%;
+    width: 20%;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -59,4 +60,8 @@ input[type=text] {
     position:absolute;
     left: 1vw;
     top: 6vh;
+}
+
+.btn {
+    vertical-align: bottom;
 }
