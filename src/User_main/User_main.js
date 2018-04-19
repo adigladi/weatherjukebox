@@ -73,7 +73,7 @@ class User_main extends Component {
               </tr>
             </thead>
             <tbody>
-              {myList}
+              {myList.reverse()}
             </tbody>
           </table>
           </div>
@@ -85,7 +85,7 @@ class User_main extends Component {
               </tr>
             </thead>
             <tbody>
-              {myHistoryList}
+              {myHistoryList.reverse()}
             </tbody>
           </table>
           </div>
