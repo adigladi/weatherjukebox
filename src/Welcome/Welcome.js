@@ -79,6 +79,7 @@ class Welcome extends Component {
         break;
     }
     return (
+      <div>
       <div className="Welcome row container-fluid">
         <div className="col-12 container-fluid">
         <Link to="/user">
@@ -89,14 +90,17 @@ class Welcome extends Component {
             <img className="center" src={require("./Logo.png")} draggable="false"/>
           <br/>
         </div>
-        <div className="col-12 text-center">
+        </div>
+        <div className="row container-fluid">
+        <div className="col-10 text-center">
         <input id="locationField" type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
         <Link to="/jukebox">
           <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Get Jukebox'd</button>
         </Link>
         {button}
         </div>
-      </div>
+        </div>
+        </div>
     );
   }
 }
