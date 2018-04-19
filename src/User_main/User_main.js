@@ -38,6 +38,10 @@ class User_main extends Component {
     modelInstance.removeFromBlacklist(r.target.title);
   }
 
+  clickClearHistory = () => {
+    modelInstance.clearMyHistory();
+  }
+
   render() {
     let myList = "";
     myList = this.state.myTracks.map((track, i) =>
@@ -81,7 +85,7 @@ class User_main extends Component {
           <table className="table table-striped">
             <thead>
               <tr>
-                <th scope="col" className="text-center">Your History</th>
+                <th scope="col" className="text-center">Your History<img id="trashbin" src={require("./trash.png")} draggable="false" alt="X" onClick={this.clickClearHistory}/></th>
               </tr>
             </thead>
             <tbody>

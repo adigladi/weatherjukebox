@@ -625,6 +625,11 @@ const WeatherModel = function () {
     return myHistory
   }
 
+  this.clearMyHistory = function () {
+    myHistory = [];
+    notifyObservers();
+  }
+
   this.addMyTracks = function (track) {
     this.removeMyTracks(track.song.id)
     myTracks.push(track);
