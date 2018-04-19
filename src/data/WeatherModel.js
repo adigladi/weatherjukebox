@@ -740,8 +740,18 @@ const WeatherModel = function () {
   }
 
   this.addMyTracks = function (track) {
+    this.removeMyTracks(track.song.id)
     myTracks.push(track);
     console.log(myTracks)
+  }
+
+  this.removeMyTracks = function (id) {
+    for (let i = 0; i < myTracks.length; i++) {
+      if (myTracks[i].song.id === parseInt(id, 10)) {
+        myTracks.splice(i, 1);
+      }
+    }
+    notifyObservers();
   }
 
   this.getMyTracks = function () {
