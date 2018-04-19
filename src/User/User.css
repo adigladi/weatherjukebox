@@ -28,6 +28,10 @@
     height: 28px;
 }
 
+#blacklistTable {
+    margin-top: 50px;
+}
+
 #trashbin {
     width: 24px;
     height: 24px;
