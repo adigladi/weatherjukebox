@@ -4,6 +4,10 @@
     margin-top: 40px;
 }
 
+iframe {
+    box-shadow: 3px 3px 20px #333;
+}
+
 #backgroundImg {
     position: fixed;
     left: 0;
@@ -48,6 +52,7 @@ h2 {
     width: 400px;
     margin: 0 auto;
     margin-bottom: 5px;
+    box-shadow: 3px 3px 20px #333;
 }
 
 #infoText h2 {
@@ -83,6 +88,7 @@ button {
     border-color: rgb(252, 210, 127);
     background-color:rgb(252, 227,127);
     display: inline-block;
+    box-shadow: 3px 3px 20px #333;
 }
 
 #jukeButtons:hover {
