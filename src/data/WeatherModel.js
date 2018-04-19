@@ -739,6 +739,15 @@ const WeatherModel = function () {
     }
   }
 
+  this.setCoordinates = function (coord) {
+    coordinates.lat = coord.lat;
+    coordinates.lng = coord.lng;
+  }
+
+  this.getCoordinates = function () {
+    return coordinates
+  }
+
   this.addMyTracks = function (track) {
     this.removeMyTracks(track.song.id)
     myTracks.push(track);

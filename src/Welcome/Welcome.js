@@ -51,7 +51,8 @@ class Welcome extends Component {
         lat: position.coords.latitude,
         lng: position.coords.longitude
         };
-        modelInstance.getWeatherByCoordinates(pos.lat, pos.lng).then(weather => {
+        modelInstance.setCoordinates(pos);
+        modelInstance.getWeatherByCoordinates(modelInstance.getCoordinates().lat,modelInstance.getCoordinates().lng).then(weather => {
           modelInstance.setCity(weather.name);
           var text = document.getElementById('locationField');
           text.value = weather.name;
