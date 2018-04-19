@@ -7,7 +7,14 @@
 <p>The app is deployed using Firebase and can be found <a href="https://weather-jukebox.firebaseapp.com/">here</a>.</p>
 
 <img src="http://www.emildickson.se/weatherjukebox/logo.png" alt="logo"/>
-<i>The front page</i>
+<i>The front page.</i>
+
+<img src="http://www.emildickson.se/weatherjukebox/result.png" alt="logo"/>
+<i>A song result for someone in Dallas.</i>
+
+<img src="http://www.emildickson.se/weatherjukebox/user1.png" alt="logo"/>
+<img src="http://www.emildickson.se/weatherjukebox/user2.png" alt="logo"/>
+<i>The pages in the user section.</i>
 
 # about the actual work
 
@@ -15,11 +22,11 @@
 <li><b>What we have done</b></li>
 <ul>
     <li>A welcome page where the user can type in their location or have it decided by geolocation and then press "get jukebox'd" to get a music suggestion.</li>
-    <li>A 'user' page where the user can se their saved and disliked ("blacklisted") tracks. The user can also remove tracks from either of the lists.</li>
+    <li>A 'user' section where the user can se their saved and disliked ("blacklisted") tracks. The user can also remove tracks from either of the lists. The section consists of two views/pages.</li>
     <li>A loading screen, present while fetching data from the Deezer API.</li>
     <li>A 'jukebox' page, that plays music for the user and displays information about weather and genre. The user has the ability to add the song to their favourites list or add it to a blacklist to ensure that this particular song is not suggested again.</li>
 </ul>
-<li><b>What you still plan to do</b></li>
+<li><b>What we still plan to do</b></li>
 <ul>
     <li>User data will be stored using Firebase.</li>
     <li>The user interaction for the favourites and blacklist will be improved.</li>
@@ -33,7 +40,21 @@
     </ul>
     <li><i>The "src" folder</i></li>
     <ul>
-        <li></li>
+        <li>App.css - empty css file.</li>
+        <li>App.js - acts as router for the app.</li>
+        <li>data/WeatherModel.js - this handles all of the logic for the app, such as generating songs, communicating with API's and such.</li>
+        <li>Fonts/LemonMilk.otf - a nice font we use in the app.</li>
+        <li>index.css - empty css file.</li>
+        <li>index.js - browser router.</li>
+        <li>Jukebox/Jukebox.css - css file for the Jukebox view.</li>
+        <li>Jukebox/Jukebox.js - Handles everything for the Jukebox view.</li>
+        <li>Jukebox/loading.svg - Pacman for when the app is loading.</li>
+        <li>User_all/User_all.css - handles css for the User_all view</li>
+        <li>User_all/User_all.js - favourites and blacklist view for the user page.</li>
+        <li>User_main/User_main.css - css for the User_main view.</li>
+        <li>User_main/User_main.js - main view for the user page.</li>
+        <li>Welcome/Welcome.css - handles css for the front page.</li>
+        <li>Welcome/Welcome.js - this is the first page that the user is presented with when using the app.</li>
     </ul>
 </ul>
 </ul>
