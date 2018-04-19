@@ -684,6 +684,7 @@ const WeatherModel = function () {
         trackBlacklist.splice(i, 1);
       }
     }
+    notifyObservers();
   }
 
   this.getBlacklist = function () {
