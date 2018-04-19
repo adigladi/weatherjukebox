@@ -70,7 +70,7 @@ class User_all extends Component {
             <button type="button" className="btn btn-warning towelcomebutton"><img id="boxjuke" src={require("./jukebox2.png")} draggable="false"/></button>
         </Link>
         <Link to="/user_main">
-          <button type="button" id="userwitch" className="btn btn-warning"><i className="material-icons w3-xlarge">person</i></button>
+            <button type="button" id="userswitch" className="btn btn-warning"><i className="material-icons w3-xlarge">person</i></button>
         </Link>
         <br/>
           <h2 className="userTitle text-center">My Trackz</h2>
