@@ -7,7 +7,14 @@
 <p>The app is deployed using Firebase and can be found <a href="https://weather-jukebox.firebaseapp.com/">here</a>.</p>
 
 <img src="http://www.emildickson.se/weatherjukebox/logo.png" alt="logo"/>
-<i>The front page</i>
+<i>The front page.</i><br/><br/>
+
+<img src="http://www.emildickson.se/weatherjukebox/result.png" alt="logo"/>
+<i>A song result for someone in Dallas.</i><br/><br/>
+
+<img src="http://www.emildickson.se/weatherjukebox/user1.png" alt="logo"/>
+<img src="http://www.emildickson.se/weatherjukebox/user2.png" alt="logo"/>
+<i>The pages in the user section.</i><br/><br/>
 
 # about the actual work
 
@@ -23,6 +30,8 @@
 <ul>
     <li>User data will be stored using Firebase.</li>
     <li>The user interaction for the favourites and blacklist will be improved.</li>
+    <li>The icon for geolocation will stop spinning when location is retrieved.</li>
+    <li>The user history will be more reflective of the actual history than it currently is.</li>
 </ul>
 <li><b>Our project file structure (images are ignored)</b></li>
 <ul>

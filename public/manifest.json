@@ -1,0 +1,15 @@
+{
+    "short_name": "Weather Jukebox",
+    "name": "Weather Jukebox",
+    "icons": [
+      {
+        "src": "favicon.png",
+        "sizes": "250x250",
+        "type": "image/png"
+      }
+    ],
+    "background_color": "#FAFAFA",
+    "start_url": "./",
+    "display": "standalone",
+    "orientation": "portrait"
+  }
