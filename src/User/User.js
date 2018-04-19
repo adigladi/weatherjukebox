@@ -29,8 +29,10 @@ class User extends Component {
   render() {
     let myList = "";
     myList = this.state.myTracks.map((track, i) =>
-      <tr>
-        <th scope="row">{this.state.myTracks[i].song.title}</th>
+      <tr key={i}>
+        <a href={this.state.myTracks[i].song.link} target="_blank">
+        <td>{this.state.myTracks[i].song.title}</td>
+        </a>
         <td>{this.state.myTracks[i].song.artist.name}</td>
         <td>{this.state.myTracks[i].genre.name}</td>
         <td>{this.state.myTracks[i].weather.description}</td>
