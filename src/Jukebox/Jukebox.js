@@ -23,9 +23,6 @@ class Jukebox extends Component {
       modelInstance.weatherMatch(weather.weather[0].id);
 
       modelInstance.getArtists().then(artists => {
-        console.log(weather.weather[0].id)
-        console.log(modelInstance.getCurrentGenre())
-        console.log(artists.data)
         modelInstance.artistMatch(artists.data);
         modelInstance.getTopTracks().then(topTracks => {
           modelInstance.trackMatch(topTracks.data);
@@ -94,7 +91,7 @@ class Jukebox extends Component {
           <Link to="/">
             <button type="button" id="jukeButtons" className="btn btn-warning welcomebutton"><i className="fa fa-chevron-circle-left"></i></button>
           </Link>
-          <Link to="/user">
+          <Link to="/user_main">
             <button type="button" id="jukeButtons" className="btn btn-warning userbutton"><i className="material-icons w3-xlarge">person</i></button>
           </Link>
         </div>

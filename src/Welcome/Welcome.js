@@ -56,7 +56,6 @@ class Welcome extends Component {
           modelInstance.setCity(weather.name);
           var text = document.getElementById('locationField');
           text.value = weather.name;
-          document.getElementById("locationBtn").click();
         })
       });
     }
@@ -72,7 +71,7 @@ class Welcome extends Component {
       button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><img id="marker" alt="Weather Jukebox" src={require("./marker.png")} draggable="false"/></button>
         break;
       case 'LOADING':
-      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><i className="w3-xlarge material-icons w3-spin">refresh</i></button>
+      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><img id="marker" alt="Weather Jukebox" src={require("./spinner.gif")} draggable="false"/></button>
         break;
       default:
         button = <b>Try Again</b>
@@ -82,7 +81,7 @@ class Welcome extends Component {
       <div>
       <div className="Welcome row container-fluid">
         <div className="col-12 container-fluid">
-        <Link to="/user">
+        <Link to="/user_main">
           <button type="button" id="locationBtn2" className="btn btn-warning userbutton"><i className="material-icons w3-xlarge">person</i></button>
         </Link>
           <br/>
@@ -94,10 +93,10 @@ class Welcome extends Component {
         <div className="row container-fluid">
         <div className="col-12 text-center">
         <input id="locationField" type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
+        {button}
         <Link to="/jukebox">
           <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Get Jukebox'd</button>
         </Link>
-        {button}
         </div>
         </div>
         </div>
