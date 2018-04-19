@@ -27,10 +27,6 @@ iframe {
     filter: blur(20px);
 }
 
-html, body {
-    overflow: hidden;
-}
-
 body {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
