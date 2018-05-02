@@ -26,11 +26,8 @@ class App extends Component {
           <Route path="/jukebox" render={() => <Jukebox model={modelInstance}/>}/>
           <Route exact path="/user_main" component={User_main}/>
           <Route exact path="/user_all" component={User_all}/>
-<<<<<<< HEAD
           <Route exact path="/user_jukebox" component={User_jukebox}/>
-=======
           <Route exact path="/user_login" component={User_login}/>
->>>>>>> 4a11fc611deb3908990894048484868ce5fe5828
         </header>
       </div>
     );
