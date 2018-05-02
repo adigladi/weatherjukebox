@@ -71,7 +71,9 @@ class User_all extends Component {
             <button type="button" id="userswitch" className="btn btn-warning"><i className="material-icons w3-xlarge">person</i></button>
         </Link>
         <br/>
-          <h2 className="userTitle text-center">My Trackz</h2>
+        <h1 className="text-center">Manage Trackz</h1>
+        <br/>
+          <h2 className="userTitle text-center">Favouritz</h2>
           <table className="table table-striped">
             <thead>
               <tr>

@@ -64,7 +64,7 @@ class User_main extends Component {
             <button type="button" className="btn btn-warning towelcomebutton"><img id="boxjuke" src={require("./jukebox2.png")} draggable="false"/></button>
         </Link>
         <Link to="/user_all">
-            <button type="button" id="userswitch" className="btn btn-warning"><img id="boxjuke" src={require("./list.png")} draggable="false"/></button>
+            <button type="button" id="userswitch" className="btn btn-warning"><img id="boxjuke" src={require("./settings.png")} draggable="false"/></button>
         </Link>
         <br/>
           <h2 className="userTitle text-center">Hello User!</h2>
