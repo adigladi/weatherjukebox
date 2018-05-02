@@ -53,11 +53,11 @@ class User_main extends Component {
   render() {
     let myList = "";
     myList = this.state.myTracks.map((track, i) =>
-      <Link to="/user_jukebox">
       <tr key={i}>
+      <Link to="/user_jukebox">
         <td className="text-center" title={this.state.myTracks[i].song.id} onClick={this.clickTrack}>{this.state.myTracks[i].song.title+" - "+this.state.myTracks[i].song.artist.name}</td>
-      </tr>
       </Link>
+      </tr>
     )
 
     let myHistoryList = "";
@@ -86,7 +86,7 @@ class User_main extends Component {
                 <th scope="col" className="text-center">Favouritz</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-center">
               {myList.reverse()}
             </tbody>
           </table>

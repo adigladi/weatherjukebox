@@ -22,8 +22,8 @@ class User_jukebox extends Component {
     if (document.getElementById(id)) return;
     js = document.createElement("script"); js.id = id;
     js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
-    djs.parentNode.insertBefore(js, djs); 
-    document.getElementById("backgroundImg").style.backgroundImage = "url(" + this.state.currentTrack.album.cover_xl + ")";
+    djs.parentNode.insertBefore(js, djs);
+    document.getElementById("backgroundImg").style.backgroundImage = "url(" + this.state.currentTrack.song.album.cover_xl + ")";
   }
   
   componentWillUnmount() {
