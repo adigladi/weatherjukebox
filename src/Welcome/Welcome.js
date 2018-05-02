@@ -81,7 +81,7 @@ class Welcome extends Component {
       <div>
       <div className="Welcome row container-fluid">
         <div className="col-12 container-fluid">
-        <Link to="/user_main">
+        <Link to="/user_login">
           <button type="button" id="locationBtn2" className="btn btn-warning userbutton"><i className="material-icons w3-xlarge">person</i></button>
         </Link>
           <br/>
