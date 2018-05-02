@@ -42,12 +42,22 @@ class User_main extends Component {
     modelInstance.clearMyHistory();
   }
 
+  clickTrack = (r) => {
+    for (let i = 0; i < this.state.myTracks.length; i++) {
+      if (this.state.myTracks[i].song.id === parseInt(r.target.title, 10)) {
+        modelInstance.setCurrentTrack(this.state.myTracks[i])
+      }
+    }
+  }
+
   render() {
     let myList = "";
     myList = this.state.myTracks.map((track, i) =>
+      <Link to="/user_jukebox">
       <tr key={i}>
-        <td className="text-center">{this.state.myTracks[i].song.title+" - "+this.state.myTracks[i].song.artist.name}</td>
+        <td className="text-center" title={this.state.myTracks[i].song.id} onClick={this.clickTrack}>{this.state.myTracks[i].song.title+" - "+this.state.myTracks[i].song.artist.name}</td>
       </tr>
+      </Link>
     )
 
     let myHistoryList = "";
@@ -73,7 +83,7 @@ class User_main extends Component {
           <table className="table table-striped">
             <thead>
               <tr>
-                <th scope="col" className="text-center">Your Tracks</th>
+                <th scope="col" className="text-center">Favouritz</th>
               </tr>
             </thead>
             <tbody>
@@ -85,7 +95,7 @@ class User_main extends Component {
           <table className="table table-striped">
             <thead>
               <tr>
-                <th scope="col" className="text-center">Your History<img id="trashbin" src={require("./trash.png")} draggable="false" alt="X" onClick={this.clickClearHistory}/></th>
+                <th scope="col" className="text-center">Your Hiztory<img id="trashbin" src={require("./trash.png")} draggable="false" alt="X" onClick={this.clickClearHistory}/></th>
               </tr>
             </thead>
             <tbody>

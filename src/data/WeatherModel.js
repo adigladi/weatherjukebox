@@ -662,6 +662,7 @@ const WeatherModel = function () {
 
   this.setCurrentTrack = function (inputTrack) {
     currentTrack = inputTrack;
+    console.log(currentTrack);
   }
 
   this.getCurrentTrack = function () {
