@@ -6,7 +6,11 @@ import { modelInstance } from './data/WeatherModel'
 import Jukebox from "./Jukebox/Jukebox";
 import User_main from "./User_main/User_main";
 import User_all from "./User_all/User_all";
+<<<<<<< HEAD
 import User_jukebox from "./User_jukebox/User_jukebox";
+=======
+import User_login from "./User_login/User_login";
+>>>>>>> 4a11fc611deb3908990894048484868ce5fe5828
 
 class App extends Component {
   constructor(props) {
@@ -25,7 +29,11 @@ class App extends Component {
           <Route path="/jukebox" render={() => <Jukebox model={modelInstance}/>}/>
           <Route exact path="/user_main" component={User_main}/>
           <Route exact path="/user_all" component={User_all}/>
+<<<<<<< HEAD
           <Route exact path="/user_jukebox" component={User_jukebox}/>
+=======
+          <Route exact path="/user_login" component={User_login}/>
+>>>>>>> 4a11fc611deb3908990894048484868ce5fe5828
         </header>
       </div>
     );
