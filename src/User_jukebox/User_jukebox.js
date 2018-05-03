@@ -10,7 +10,7 @@ class User_jukebox extends Component {
     
     this.state = {
       myTracks: modelInstance.getMyTracks(),
-      currentTrack: modelInstance.getCurrentTrack(),
+      playedTrack: modelInstance.getPlayedTrack(),
     }
   }
 
@@ -23,7 +23,7 @@ class User_jukebox extends Component {
     js = document.createElement("script"); js.id = id;
     js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
     djs.parentNode.insertBefore(js, djs);
-    document.getElementById("backgroundImg").style.backgroundImage = "url(" + this.state.currentTrack.song.album.cover_xl + ")";
+    document.getElementById("backgroundImg").style.backgroundImage = "url(" + this.state.playedTrack.song.album.cover_xl + ")";
   }
   
   componentWillUnmount() {
@@ -32,13 +32,29 @@ class User_jukebox extends Component {
   }
 
   update() {
+    window.location.reload();  
     this.setState({
       myTracks: modelInstance.getMyTracks(),
-      currentTrack: modelInstance.getCurrentTrack(),
+      playedTrack: modelInstance.getPlayedTrack(),
     })
   }
 
+  clickTrack = (r) => {
+    for (let i = 0; i < this.state.myTracks.length; i++) {
+      if (this.state.myTracks[i].song.id === parseInt(r.target.title, 10)) {
+        modelInstance.setPlayedTrack(this.state.myTracks[i])
+      }
+    }
+  }
+
   render() {
+    let myList = "";
+    myList = this.state.myTracks.map((track, i) =>
+      <tr key={i}>
+        <td className="text-center" id="hp" title={this.state.myTracks[i].song.id} onClick={this.clickTrack}>{this.state.myTracks[i].song.title+" - "+this.state.myTracks[i].song.artist.name}</td>
+      </tr>
+      )
+
     return(
       <div className="col-md-12 container-fluid" id="mainDiv">
         <div id="buttonDiv">
@@ -50,15 +66,31 @@ class User_jukebox extends Component {
           </Link>
         </div>
         <div id="backgroundImg"></div>
-        <div className="Jukebox text-center">
-          <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=350&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.currentTrack.song.id + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="350" data-height="350"></div>
-          <div id="infoText">
-            <h2>When you liked this track you were in {this.state.currentTrack.city}</h2>
-            <h2>The weather condition was: {this.state.currentTrack.weather.description}</h2>
-            <h2>Genre: {this.state.currentTrack.genre.name}</h2>
+        <div className="row">
+          <div className="col-md-6 container-fluid">
+            <div className="Jukebox text-center">
+              <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=350&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.playedTrack.song.id + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="350" data-height="350"></div>
+              <div id="infoText">
+                <h2>When you liked this track you were in {this.state.playedTrack.city}</h2>
+                <h2>The weather condition was: {this.state.playedTrack.weather.description}</h2>
+                <h2>Genre: {this.state.playedTrack.genre.name}</h2>
+              </div>
+            </div>
+          </div>
+            <div className="col-md-6 container-fluid">
+              <table className="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col" className="text-center">Favouritz</th>
+                  </tr>
+                </thead>
+                <tbody className="text-center">
+                  {myList.reverse()}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-      </div>
     )
   }
 }

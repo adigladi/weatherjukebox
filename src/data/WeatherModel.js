@@ -595,9 +595,19 @@ const WeatherModel = function () {
   let favouritesList = [];
   let blackListHit = false;
   let currentTrack = {};
+  let playedTrack = {};
   let coordinates = {
     lat: 59.3463798,
     lng: 18.0724861
+  }
+
+  this.setPlayedTrack = function (inputTrack) {
+    playedTrack = inputTrack;
+    notifyObservers();
+  }
+
+  this.getPlayedTrack = function () {
+    return playedTrack;
   }
 
   this.setCurrentGenre = function (setGenreId) {
@@ -662,7 +672,6 @@ const WeatherModel = function () {
 
   this.setCurrentTrack = function (inputTrack) {
     currentTrack = inputTrack;
-    console.log(currentTrack);
   }
 
   this.getCurrentTrack = function () {

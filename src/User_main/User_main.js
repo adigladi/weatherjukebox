@@ -45,7 +45,7 @@ class User_main extends Component {
   clickTrack = (r) => {
     for (let i = 0; i < this.state.myTracks.length; i++) {
       if (this.state.myTracks[i].song.id === parseInt(r.target.title, 10)) {
-        modelInstance.setCurrentTrack(this.state.myTracks[i])
+        modelInstance.setPlayedTrack(this.state.myTracks[i])
       }
     }
   }
@@ -55,7 +55,7 @@ class User_main extends Component {
     myList = this.state.myTracks.map((track, i) =>
       <tr key={i}>
       <Link to="/user_jukebox">
-        <td className="text-center" title={this.state.myTracks[i].song.id} onClick={this.clickTrack}>{this.state.myTracks[i].song.title+" - "+this.state.myTracks[i].song.artist.name}</td>
+        <td className="text-center" title={this.state.myTracks[i].song.id} id="hp" onClick={this.clickTrack}>{this.state.myTracks[i].song.title+" - "+this.state.myTracks[i].song.artist.name}</td>
       </Link>
       </tr>
     )

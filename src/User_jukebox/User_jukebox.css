@@ -103,3 +103,11 @@ button:hover {
     top: 20px;
     width: 150px;
 }
+
+#hp {
+    cursor: pointer;
+}
+
+#hp:hover {
+    color: hotpink;
+}
