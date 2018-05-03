@@ -79,6 +79,10 @@ class Jukebox extends Component {
     resetBtn.disabled = "disabled";
   }
 
+  onClickReroll = () => {
+    window.location.reload();
+  }
+
   render() {
     let jukebox = null;
     switch (this.state.status) {
@@ -106,6 +110,7 @@ class Jukebox extends Component {
           </div>
           <button type="button" className="btn btn-warning welcomebutton" id="addbutton" onClick={this.onClickAdd}>Add</button>
           <button type="button" className="btn btn-warning welcomebutton" id="disablebutton" onClick={this.onClickBlacklist}>Dislike</button>
+          <button type="button" id="rerollbutton" className="btn btn-warning welcomebutton" onClick={this.onClickReroll}>Reroll</button>
         </div>
       </div>
         break;
