@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './User_signup.css';
+import './User_forgot.css';
 import { Link } from 'react-router-dom';
 import { modelInstance } from '../data/WeatherModel.js'
-class User_signup extends Component {
+class User_forgot extends Component {
 
     constructor(props) {
         super(props)
@@ -26,7 +26,7 @@ class User_signup extends Component {
 
     render() {
         return (
-            <form id="signupForm">
+            <form id="forgotForm">
                 <div className="imgcontainer">
                     <img src={require("./Logo.png")} className="avatar" />
                 </div>
@@ -35,15 +35,9 @@ class User_signup extends Component {
                     <label><b>Email:</b></label>
                     <input type="text" placeholder="Enter email" name="uname" required />
 
-                    <label><b>Choose password:</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required />
-
-                    <label><b>Re-type password:</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required />
-
                     <br /><br />
                     <Link to="/user_main">
-                        <button type="button">Sign up</button>
+                        <button type="button">Reset my password!</button>
                     </Link>
                     <br /><br />
                 </div>
@@ -59,4 +53,4 @@ class User_signup extends Component {
 
 }
 
-export default User_signup;
+export default User_forgot;

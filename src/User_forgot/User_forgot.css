@@ -1,0 +1,56 @@
+/* Bordered form */
+#forgotForm form {
+    border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+#forgotForm input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+#forgotForm label {
+    color: rgb(252,227,127);
+}
+/* Set a style for all buttons */
+#forgotForm button {
+    width: 100%;
+    margin-left: 0;
+}
+
+/* Extra style for the cancel button (red) */
+#forgotForm .cancelbtn {
+    width: auto;
+}
+
+/* Center the avatar image inside this container */
+#forgotForm .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+#forgotForm img.avatar {
+    width: 300px;
+}
+
+/* Add padding to containers */
+#forgotForm .container {
+    padding: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}
