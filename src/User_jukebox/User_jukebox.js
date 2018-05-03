@@ -49,11 +49,15 @@ class User_jukebox extends Component {
 
   render() {
     let myList = "";
-    myList = this.state.myTracks.map((track, i) =>
-      <tr key={i}>
-        <td className="text-center" id="hp" title={this.state.myTracks[i].song.id} onClick={this.clickTrack}>{this.state.myTracks[i].song.title+" - "+this.state.myTracks[i].song.artist.name}</td>
-      </tr>
-      )
+    myList = this.state.myTracks.map((track, i) => {
+      if(track.song.id == this.state.playedTrack.song.id){
+        return <tr key={i}><td className="text-center" id="pink" title={track.song.id} onClick={this.clickTrack}><img id="speaker" className="d-inline" src={require("./speaker.png")}/>&#032;<p className="d-inline">{track.song.title+" - "+track.song.artist.name}</p></td></tr>
+      }
+      else{
+        return <tr key={i}><td className="text-center" id="hp" title={track.song.id} onClick={this.clickTrack}><p className="d-inline">{track.song.title+" - "+track.song.artist.name}</p></td></tr>
+      }
+    })
+      
 
     return(
       <div className="col-md-12 container-fluid" id="mainDiv">

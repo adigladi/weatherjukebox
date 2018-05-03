@@ -111,3 +111,13 @@ button:hover {
 #hp:hover {
     color: hotpink;
 }
+
+#pink{
+    cursor: pointer;
+    color: hotpink;
+}
+
+#speaker{
+    width:20px;
+    height:auto;
+}
