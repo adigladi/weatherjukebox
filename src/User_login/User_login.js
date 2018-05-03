@@ -39,8 +39,14 @@ class User_login extends Component {
           <label><b>Password:</b></label>
           <input type="password" placeholder="Enter Password" name="psw" required/>
       
+          <br/><br/>
           <Link to="/user_main">
             <button type="button">Login</button>
+          </Link>
+
+          <br/><br/>
+          <Link to="/user_signup">
+            <button type="button">Don't have an account? Sign up!</button>
           </Link>
         </div>
       
