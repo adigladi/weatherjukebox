@@ -80,7 +80,7 @@ class Jukebox extends Component {
   }
 
   onClickReroll = () => {
-    this.update();
+    window.location.reload();
   }
 
   render() {
