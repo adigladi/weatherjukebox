@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Welcome.css';
 import { Link } from 'react-router-dom';
 import { modelInstance } from '../data/WeatherModel.js'
+import SignOutButton from '../User_signout/User_signout';
 
 class Welcome extends Component {
 
@@ -105,6 +106,7 @@ class Welcome extends Component {
           </div>
         </div>
         </div>
+        <SignOutButton />
         </div>
     );
   }

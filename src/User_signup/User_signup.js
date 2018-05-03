@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
+import {
+    Link,
+    withRouter,
+} from 'react-router-dom';
 import './User_signup.css';
-import { Link } from 'react-router-dom';
-import { modelInstance } from '../data/WeatherModel.js'
+import { modelInstance } from '../data/WeatherModel.js';
+import { auth } from '../firebase';
+import * as routes from '../constants/routes';
+
+const SignUpPage = ({ history }) => 
+    <div>
+        <User_signup history={history} />
+    </div>
 
 const INITIAL_STATE = {
     email: '',
@@ -23,7 +33,24 @@ class User_signup extends Component {
     }
 
     onSubmit = (event) => {
+        const {
+            email,
+            passwordOne,
+        } = this.state;
 
+        const {
+            history,
+        } = this.props;
+
+        auth.doCreateUserWithEmailAndPassword(email, passwordOne)
+            .then(authUser => {
+                this.setState(() => ({INITIAL_STATE}));
+                history.push(routes.HOME);
+            })
+            .catch(error => {
+                this.setState(byPropKey('error', error));
+            });
+        event.preventDefault();
     }
 
     componentDidMount() {
@@ -85,7 +112,7 @@ class User_signup extends Component {
                     <br /><br />
                     <button disabled={isInvalid} type="submit">Sign up</button>
                     <br /><br />
-                    { error && <p>{error.message}</p> }
+                    { error && <label><b>{error.message}</b></label> }
                 </div>
 
                 <div className="container">
@@ -99,4 +126,6 @@ class User_signup extends Component {
 
 }
 
-export default User_signup;
+export default withRouter(SignUpPage);
+
+export {User_signup};

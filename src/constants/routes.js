@@ -1,0 +1,9 @@
+export const SIGN_UP = '/user_signup';
+export const SIGN_IN = '/user_login';
+export const LANDING = '/';
+export const HOME = '/';
+export const ACCOUNT = '/user_main';
+export const MANAGE_TRACKS = 'user_all';
+export const JUKEBOX = '/jukebox';
+export const USER_JUKEBOX = '/user_jukebox';
+export const PASSWORD_FORGET = '/user_forgot';
