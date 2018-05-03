@@ -44,15 +44,21 @@ class User_login extends Component {
             <button type="button">Login</button>
           </Link>
 
-          <br/><br/>
-          <Link to="/user_signup">
-            <button type="button">Don't have an account? Sign up!</button>
-          </Link>
+          <div className="row">
+            <div className="col-md-6">
+              <br/><br/>
+              <Link to="/user_signup">
+                <button type="button">Don't have an account? Sign up!</button>
+              </Link>
+            </div>
 
-          <br /><br />
-          <Link to="/user_forgot">
-            <button type="button">Forgot your password? Try here!</button>
-          </Link>
+            <div className="col-md-6">
+              <br /><br />
+              <Link to="/user_forgot">
+                <button type="button">Forgot your password? Try here!</button>
+              </Link>
+            </div>
+          </div>
         </div>
       
         <div className="container">

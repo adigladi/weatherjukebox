@@ -49,7 +49,7 @@ class User_signup extends Component {
                 </div>
 
                 <div className="container">
-                    <Link to="/">
+                    <Link to="/user_login">
                         <button type="button" className="cancelbtn">Back</button>
                     </Link>
                 </div>
