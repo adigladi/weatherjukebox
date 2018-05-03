@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { modelInstance } from '../data/WeatherModel.js'
 
 const INITIAL_STATE = {
-    username: '',
     email: '',
     passwordOne: '',
     passwordTwo: '',
@@ -40,6 +39,18 @@ class User_signup extends Component {
     }
 
     render() {
+        const {
+            email,
+            passwordOne,
+            passwordTwo,
+            error
+        } = this.state;
+
+        const isInvalid = 
+            passwordOne != passwordTwo ||
+            passwordOne === '' ||
+            email === '';
+
         return (
             <form id="signupForm" onSubmit={this.onSubmit}>
                 <div className="imgcontainer">
@@ -56,16 +67,25 @@ class User_signup extends Component {
                         name="uname" required />
 
                     <label><b>Choose password:</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required />
+                    <input
+                        value={passwordOne}
+                        onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+                        type="password"
+                        placeholder="Enter Password"
+                        name="psw" required />
 
                     <label><b>Re-type password:</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required />
+                    <input
+                        value={passwordTwo}
+                        onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+                        type="password"
+                        placeholder="Re-type Password"
+                        name="psw2" required />
 
                     <br /><br />
-                    <Link to="/user_main">
-                        <button type="button">Sign up</button>
-                    </Link>
+                    <button disabled={isInvalid} type="submit">Sign up</button>
                     <br /><br />
+                    { error && <p>{error.message}</p> }
                 </div>
 
                 <div className="container">
