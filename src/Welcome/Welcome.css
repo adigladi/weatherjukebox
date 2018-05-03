@@ -3,9 +3,12 @@
 html, body {
     margin: 0;
     height: 100%;
+    background: rgb(34, 52, 102);
 }
 
 body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background: linear-gradient(rgb(0, 2, 71), rgb(34, 52, 102));
 }
 
