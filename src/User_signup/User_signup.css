@@ -1,5 +1,5 @@
 /* Bordered form */
-#loginForm form {
+#signupForm form {
     border: 3px solid #f1f1f1;
 }
 
@@ -18,29 +18,29 @@
     color: rgb(252,227,127);
 }
 /* Set a style for all buttons */
-#loginForm button {
+#signupForm button {
     width: 100%;
     margin-left: 0;
 }
 
 /* Extra style for the cancel button (red) */
-#loginForm .cancelbtn {
+#signupForm .cancelbtn {
     width: auto;
 }
 
 /* Center the avatar image inside this container */
-#loginForm .imgcontainer {
+#signupForm .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
 }
 
 /* Avatar image */
-#loginForm img.avatar {
+#signupForm img.avatar {
     width: 300px;
 }
 
 /* Add padding to containers */
-#loginForm .container {
+#signupForm .container {
     padding: 16px;
 }
 
