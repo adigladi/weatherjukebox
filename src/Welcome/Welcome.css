@@ -6,10 +6,10 @@ html, body {
 }
 
 body {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     background: rgb(34, 52, 102);
     background-image: -webkit-linear-gradient(rgb(0, 2, 71), rgb(34, 52, 102));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .center {
