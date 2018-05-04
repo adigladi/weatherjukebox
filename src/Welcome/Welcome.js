@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Welcome.css';
 import { Link } from 'react-router-dom';
 import { modelInstance } from '../data/WeatherModel.js'
+import SignOutButton from '../User_signout/User_signout';
 
 class Welcome extends Component {
 
@@ -92,13 +93,20 @@ class Welcome extends Component {
         </div>
         <div className="row container-fluid">
         <div className="col-12 text-center">
-        <input id="locationField" type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
-        {button}
-        <Link to="/jukebox">
-          <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Get Jukebox'd</button>
-        </Link>
+          <div className="row">
+            <div className="col-12 col-md-4 offset-md-2">
+              <input id="locationField" type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
+            </div>
+            <div className="col-12 col-md-5 text-md-left">  
+              {button}
+              <Link to="/jukebox">
+                <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Get Jukebox'd</button>
+              </Link>
+            </div>
+          </div>
         </div>
         </div>
+        <SignOutButton />
         </div>
     );
   }

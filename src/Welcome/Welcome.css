@@ -26,7 +26,7 @@ body {
 }
 
 input[id=locationField] {
-    width: 20%;
+    width: 90%;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -42,7 +42,6 @@ input[id=locationField] {
 
 .welcomebutton {
     padding: 15px 20px 15px 20px;
-    margin-left: 10px;
     font-size: 16px;
     font-family: LemonMilk;
     font-weight: bold;
@@ -53,7 +52,6 @@ input[id=locationField] {
 
 #locationBtn2 {
     padding: 15px 20px 15px 20px;
-    margin-left: 10px;
     font-size: 16px;
     font-family: LemonMilk;
     font-weight: bold;
@@ -73,3 +71,8 @@ button:hover {
     background-color: #f0ad4e;
     border-color: #f0ad4e;
 }
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }
