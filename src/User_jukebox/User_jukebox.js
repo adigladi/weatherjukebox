@@ -16,14 +16,8 @@ class User_jukebox extends Component {
 
   componentDidMount() {
     modelInstance.addObserver(this);
-
-    var id = "deezer-widget-loader";
-    var js, djs = document.getElementsByTagName("script")[0];
-    if (document.getElementById(id)) return;
-    js = document.createElement("script"); js.id = id;
-    js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
-    djs.parentNode.insertBefore(js, djs);
-    document.getElementById("backgroundImg").style.backgroundImage = "url(" + this.state.playedTrack.song.album.cover_xl + ")";
+    this.player();
+    this.background(this.state.playedTrack.song.album.cover_xl);
   }
   
   componentWillUnmount() {
@@ -31,18 +25,33 @@ class User_jukebox extends Component {
     document.getElementById("deezer-widget-loader").remove();
   }
 
-  update() {
-    window.location.reload();  
+  update() { 
     this.setState({
       myTracks: modelInstance.getMyTracks(),
       playedTrack: modelInstance.getPlayedTrack(),
     })
   }
 
+  player() {
+    var id = "deezer-widget-loader";
+    var js, djs = document.getElementsByTagName("script")[0];
+    if (document.getElementById(id)) return;
+    js = document.createElement("script"); js.id = id;
+    js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
+    djs.parentNode.insertBefore(js, djs);
+  }
+
+  background(x) {
+    document.getElementById("backgroundImg").style.backgroundImage = "url(" + x + ")";
+  }
+
   clickTrack = (r) => {
     for (let i = 0; i < this.state.myTracks.length; i++) {
       if (this.state.myTracks[i].song.id === parseInt(r.target.title, 10)) {
-        modelInstance.setPlayedTrack(this.state.myTracks[i])
+        modelInstance.setPlayedTrack(this.state.myTracks[i]);
+        document.getElementById("deezer-widget-loader").remove();
+        this.player();
+        this.background(this.state.myTracks[i].song.album.cover_xl);
       }
     }
   }
@@ -51,10 +60,10 @@ class User_jukebox extends Component {
     let myList = "";
     myList = this.state.myTracks.map((track, i) => {
       if(track.song.id == this.state.playedTrack.song.id){
-        return <tr key={i}><td className="text-center" id="pink" title={track.song.id} onClick={this.clickTrack}><img id="speaker" className="d-inline" src={require("./speaker.png")}/>&#032;<p className="d-inline">{track.song.title+" - "+track.song.artist.name}</p></td></tr>
+        return <tr key={i}><td className="text-center" id="pink" title={track.song.id} onClick={this.clickTrack}><img id="speaker" className="d-inline" src={require("./speaker.png")}/>&#032;<p title={track.song.id} className="d-inline">{track.song.title+" - "+track.song.artist.name}</p></td></tr>
       }
       else{
-        return <tr key={i}><td className="text-center" id="hp" title={track.song.id} onClick={this.clickTrack}><p className="d-inline">{track.song.title+" - "+track.song.artist.name}</p></td></tr>
+        return <tr key={i}><td className="text-center" id="hp" title={track.song.id} onClick={this.clickTrack}><p title={track.song.id} className="d-inline">{track.song.title+" - "+track.song.artist.name}</p></td></tr>
       }
     })
       
