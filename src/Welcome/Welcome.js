@@ -87,7 +87,7 @@ class Welcome extends Component {
         </Link>
           <br/>
           <br/>
-            <img className="center" alt="Weather Jukebox" src={require("./Logo.png")} draggable="false"/>
+            <img className="center" alt="Weather Jukebox" id="mainlogo" src={require("./Logo.png")} draggable="false"/>
           <br/>
         </div>
         </div>
