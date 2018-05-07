@@ -1,6 +1,7 @@
 import React from 'react';
+import './Navbar.css';
 import { Link } from 'react-router-dom';
-import SignOutButton from '../User_signout/User_signout';
+import { auth } from '../firebase';
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -17,7 +18,7 @@ const Navbar = () =>
             <Link to="/user_login">User page</Link>
             <Link to="/user_all">Manage trackz</Link>
             <a href="#">About</a>
-            <SignOutButton />
+            <span id="navLink" onClick={auth.doSignOut}>Sign Out</span>
         </div>
         <span id="navBtn" onClick={openNav}>&#9776;</span>
     </div>
