@@ -76,3 +76,7 @@ button:hover {
     padding: 0 !important;
     margin: 0 !important;
  }
+
+ #buttonCol {
+     padding: 5px;
+ }
