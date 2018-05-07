@@ -15,6 +15,7 @@ const Navbar = () =>
     <div>
         <div id="mySidenav" className="sidenav">
             <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
+            <Link to="/">Home</Link>
             <Link to="/user_main">User page</Link>
             <Link to="/user_jukebox">Play my trackz</Link>
             <Link to="/user_all">Manage trackz</Link>
