@@ -10,6 +10,7 @@ import User_jukebox from "./User_jukebox/User_jukebox";
 import User_login from "./User_login/User_login";
 import User_signup from "./User_signup/User_signup";
 import User_forgot from "./User_forgot/User_forgot";
+import withAuthentication from "./withAuthentication";
 
 class App extends Component {
   constructor(props) {
@@ -38,4 +39,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuthentication(App);
