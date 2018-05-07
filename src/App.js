@@ -11,6 +11,7 @@ import User_login from "./User_login/User_login";
 import User_signup from "./User_signup/User_signup";
 import User_forgot from "./User_forgot/User_forgot";
 import withAuthentication from "./withAuthentication";
+import About from "./About/About";
 
 class App extends Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class App extends Component {
           <Route exact path="/user_login" component={User_login}/>
           <Route exact path="/user_signup" component={User_signup}/>
           <Route exact path="/user_forgot" component={User_forgot} />
+          <Route exact path="/about" component={About} />
         </header>
       </div>
     );
