@@ -79,7 +79,7 @@ class User_login extends Component {
     return (
       <form onSubmit={this.onSubmit} id="loginForm">
         <div className="imgcontainer">
-          <img src={require("./Logo.png")} className="avatar" />
+          <img src={require("./Logo.png")} className="avatar" alt="Logo"/>
         </div>
 
         <div className="container">
