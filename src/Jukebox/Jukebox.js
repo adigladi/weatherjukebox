@@ -48,7 +48,7 @@ class Jukebox extends Component {
         });
       })}
       else{
-        alert("The location you have entered doen't exist...")
+        alert("The location you have entered doen't exist. \n Please try again!")
         window.location = "/";
       }
     });
