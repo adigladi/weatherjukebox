@@ -65,6 +65,14 @@ class Welcome extends Component {
     }
   }
 
+  openNav = (e) => {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+  closeNav = (e) => {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+
   render() {
     let button = null;
     switch (this.state.status) {
@@ -82,12 +90,20 @@ class Welcome extends Component {
       <div>
       <div className="Welcome row container-fluid">
         <div className="col-12 container-fluid">
-        <Link to="/user_login">
-          <button type="button" id="locationBtn2" className="btn btn-warning userbutton"><i className="material-icons w3-xlarge">person</i></button>
-        </Link>
+        <div id="mySidenav" className="sidenav">
+          <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Clients</a>
+          <a href="#">Contact</a>
+        </div>
+        <span id="navBtn" onClick={this.openNav}>&#9776;</span>
+        {/* <Link to="/user_login">
+          <button type="button" id="locationBtn2" className="btn btn-warning userbutton">&#9776;</button>
+        </Link> */}
           <br/>
           <br/>
-            <img className="center" alt="Weather Jukebox" src={require("./Logo.png")} draggable="false"/>
+            <img className="center" alt="Weather Jukebox" id="mainlogo" src={require("./Logo.png")} draggable="false"/>
           <br/>
         </div>
         </div>
