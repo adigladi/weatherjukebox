@@ -96,6 +96,7 @@ class Welcome extends Component {
           <a href="#">Services</a>
           <a href="#">Clients</a>
           <a href="#">Contact</a>
+          <SignOutButton />
         </div>
         <span id="navBtn" onClick={this.openNav}>&#9776;</span>
         {/* <Link to="/user_login">
@@ -122,7 +123,6 @@ class Welcome extends Component {
           </div>
         </div>
         </div>
-        <SignOutButton />
         </div>
     );
   }
