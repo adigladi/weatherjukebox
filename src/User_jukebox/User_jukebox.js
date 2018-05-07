@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './User_jukebox.css';
 import { Link } from 'react-router-dom';
-import { modelInstance } from '../data/WeatherModel.js'
+import { modelInstance } from '../data/WeatherModel.js';
+import Navbar from '../Navbar/Navbar';
 
 class User_jukebox extends Component {
 
@@ -74,15 +75,10 @@ class User_jukebox extends Component {
 
     return(
       <div className="col-md-12 container-fluid" id="mainDiv">
-        <div id="buttonDiv">
-          <Link to="/">
-            <button type="button" id="jukeButtons" className="btn btn-warning welcomebutton"><i className="fa fa-chevron-circle-left"></i></button>
-          </Link>
-          <Link to="/user_main">
-            <button type="button" id="jukeButtons" className="btn btn-warning userbutton"><i className="material-icons w3-xlarge">person</i></button>
-          </Link>
-        </div>
+        <Navbar />
         <div id="backgroundImg"></div>
+        <br/>
+        <br/>
         <div className="row">
           <div className="col-md-6 container-fluid">
             <div className="Jukebox text-center">
