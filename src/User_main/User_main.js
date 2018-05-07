@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './User_main.css';
 import { Link } from 'react-router-dom';
 import { modelInstance } from '../data/WeatherModel.js'
+import Navbar from '../Navbar/Navbar';
+
+
 class User_main extends Component {
 
   constructor(props) {
@@ -70,12 +73,8 @@ class User_main extends Component {
     return (
       <div className="User row container-fluid">
         <div className="col-12 container-fluid">
-        <Link to="/">
-            <button type="button" className="btn btn-warning towelcomebutton"><img id="boxjuke" src={require("./jukebox2.png")} draggable="false" alt="Icon"/></button>
-        </Link>
-        <Link to="/user_all">
-            <button type="button" id="userswitch" className="btn btn-warning"><img id="boxjuke" src={require("./settings.png")} draggable="false" alt="Settings"/></button>
-        </Link>
+        <Navbar />
+        
         <br/>
           <h2 className="userTitle text-center">Hello User!</h2>
           <div className="row">
