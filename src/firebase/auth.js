@@ -6,14 +6,7 @@ export const doCreateUserWithEmailAndPassword = (email, password) =>
 
 // Sign in
 export const doSignInWithEmailAndPassword = (email, password) =>
-    auth.setPersistence(auth.Auth.Persistence.LOCAL)
-        .then(function() {
-    return auth.signInWithEmailAndPassword(email, password);
-        })
-        .catch(function(error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-        });
+    auth.signInWithEmailAndPassword(email, password);
 
 // Sign out
 export const doSignOut = () =>
@@ -27,7 +20,8 @@ export const doPasswordReset = (email) =>
 
 auth.onAuthStateChanged(function (user) {
     if (user) {
-        console.log("logged in");
+        console.log(user.uid);
+        console.log(auth.currentUser);
     } else {
         console.log("logged out");
     }
