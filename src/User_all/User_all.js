@@ -69,6 +69,7 @@ class User_all extends Component {
         <div className="col-12 container-fluid">
         <Navbar />
         <br/>
+        <br/>
         <h1 className="text-center">Manage Trackz</h1>
         <br/>
           <h2 className="userTitle text-center">Favouritz</h2>
