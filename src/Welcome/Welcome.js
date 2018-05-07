@@ -65,7 +65,7 @@ class Welcome extends Component {
       });
   }
   else {
-    alert("Failed to fetch a location!")
+    alert("Please enter a location!")
   }
   }
 
