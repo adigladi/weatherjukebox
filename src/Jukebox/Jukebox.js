@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Jukebox.css';
 import { Link } from 'react-router-dom';
 import { modelInstance } from '../data/WeatherModel.js'
+import Navbar from '../Navbar/Navbar';
 
 class Jukebox extends Component {
 
@@ -98,14 +99,7 @@ class Jukebox extends Component {
       case 'LOADED':
       jukebox = 
       <div className="col-md-12 container-fluid" id="mainDiv">
-        <div id="buttonDiv">
-          <Link to="/">
-            <button type="button" id="jukeButtons" className="btn btn-warning welcomebutton"><i className="fa fa-chevron-circle-left"></i></button>
-          </Link>
-          <Link to="/user_main">
-            <button type="button" id="jukeButtons" className="btn btn-warning userbutton"><i className="material-icons w3-xlarge">person</i></button>
-          </Link>
-        </div>
+        <Navbar />
         <div id="backgroundImg"></div>
         <div className="Jukebox text-center">
           <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=350&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.trackid + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="350" data-height="350"></div>
