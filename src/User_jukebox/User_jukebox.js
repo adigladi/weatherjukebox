@@ -82,11 +82,13 @@ class User_jukebox extends Component {
         <div className="row">
           <div className="col-md-6 container-fluid">
             <div className="Jukebox text-center">
+            <div id="playerscale">
               <div className="deezer-widget-player" id="myjukebox" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=350&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.playedTrack.song.id + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="350" data-height="350"></div>
               <div id="infoText">
                 <h2>When you liked this track you were in {this.state.playedTrack.city}</h2>
                 <h2>The weather condition was: {this.state.playedTrack.weather.description}</h2>
                 <h2>Genre: {this.state.playedTrack.genre.name}</h2>
+              </div>
               </div>
             </div>
           </div>

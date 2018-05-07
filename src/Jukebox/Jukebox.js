@@ -110,11 +110,13 @@ class Jukebox extends Component {
         <br/>
         <br/>
         <div className="Jukebox text-center">
+        <div id="playerscale">
           <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=350&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.trackid + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="350" data-height="350"></div>
           <div id="infoText">
             <h2>Location: {this.state.location}</h2>
             <h2>{this.state.weather.description}</h2>
             <h2>Genre: {this.state.genre.name}</h2>
+          </div>
           </div>
           <button type="button" className="btn btn-warning welcomebutton" id="addbutton" onClick={this.onClickAdd}>Add</button>
           <button type="button" className="btn btn-warning welcomebutton" id="disablebutton" onClick={this.onClickBlacklist}>Dislike</button>
