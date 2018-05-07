@@ -20,7 +20,7 @@ class Jukebox extends Component {
     modelInstance.addObserver(this);
 
     modelInstance.getWeather().then(weather => {
-      if(typeof weather != 'undefined') {
+      if(typeof weather !== 'undefined') {
       modelInstance.weatherMatch(weather.weather[0].id);
 
       modelInstance.getArtists().then(artists => {
