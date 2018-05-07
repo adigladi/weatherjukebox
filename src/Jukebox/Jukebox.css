@@ -8,6 +8,16 @@ iframe {
     box-shadow: 3px 3px 20px #333;
 }
 
+#loading {
+    width: 250px;
+    height: auto;
+
+}
+
+#loadingtext {
+    font-size: 4vw;
+}
+
 #backgroundImg {
     position: fixed;
     left: 0;
