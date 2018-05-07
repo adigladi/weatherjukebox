@@ -15,9 +15,10 @@ const Navbar = () =>
     <div>
         <div id="mySidenav" className="sidenav">
             <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
-            <Link to="/user_login">User page</Link>
+            <Link to="/user_main">User page</Link>
+            <Link to="/user_jukebox">Play my trackz</Link>
             <Link to="/user_all">Manage trackz</Link>
-            <a href="#">About</a>
+            <Link to="/about">About</Link>
             <span id="navLink" onClick={auth.doSignOut}>Sign Out</span>
         </div>
         <span id="navBtn" onClick={openNav}>&#9776;</span>
