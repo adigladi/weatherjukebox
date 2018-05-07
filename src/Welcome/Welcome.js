@@ -6,7 +6,6 @@ import SignOutButton from '../User_signout/User_signout';
 import Navbar from '../Navbar/Navbar';
 
 class Welcome extends Component {
-
   constructor(props) {
     super(props)
 
@@ -44,8 +43,9 @@ class Welcome extends Component {
   }
 
   onLocationClick = (e) => {
+    var component = this;
     if (navigator.geolocation) {
-      this.setState({
+      component.setState({
         status: 'LOADING'
       })
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -58,12 +58,15 @@ class Welcome extends Component {
           modelInstance.setCity(weather.name);
           var text = document.getElementById('locationField');
           text.value = weather.name;
+          component.setState({
+            status: 'LOADED'
+          })
         })
       });
-    }
-    else {
-      alert("Please enter a location instead!")
-    }
+  }
+  else {
+    alert("Failed to fetch a location!")
+  }
   }
 
   render() {
@@ -75,6 +78,9 @@ class Welcome extends Component {
       case 'LOADING':
       button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><img id="marker" alt="Weather Jukebox" src={require("./spinner.gif")} draggable="false"/></button>
         break;
+        case 'LOADED':
+        button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><img id="marker" alt="Weather Jukebox" src={require("./marker.png")} draggable="false"/></button>
+          break;
       default:
         button = <b>Try Again</b>
         break;
