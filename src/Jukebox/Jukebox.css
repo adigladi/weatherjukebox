@@ -18,6 +18,12 @@ iframe {
     font-size: 4vw;
 }
 
+@media only screen and (max-width: 600px) {
+    #loadingtext {
+        font-size: 40px;
+    }
+}
+
 #backgroundImg {
     position: fixed;
     left: 0;
