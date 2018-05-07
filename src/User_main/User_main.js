@@ -83,7 +83,7 @@ class User_main extends Component {
           <table className="table table-striped">
             <thead>
               <tr>
-                <th scope="col" className="text-center">Favouritz</th>
+                <th scope="col" className="text-center">Favouritz (click to listen!)</th>
               </tr>
             </thead>
             <tbody className="text-center">
