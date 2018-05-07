@@ -30,7 +30,7 @@ class About extends Component {
         <Navbar />
           <br/>
           <br/>
-            <img className="center" alt="Weather Jukebox" id="mainlogo" src={require("../Welcome/Logo.png")} draggable="false"/>
+            <img className="center" alt="Weather Jukebox" id="aboutlogo" src={require("../Welcome/Logo.png")} draggable="false"/>
           <br/>
         </div>
         </div>
