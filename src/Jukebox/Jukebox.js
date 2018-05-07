@@ -26,6 +26,7 @@ class Jukebox extends Component {
       modelInstance.getArtists().then(artists => {
         modelInstance.artistMatch(artists.data);
         modelInstance.getTopTracks().then(topTracks => {
+          if(typeof topTracks !== 'undefined'){
           modelInstance.trackMatch(topTracks.data);
           modelInstance.getTrack().then(returnTrack => {
             modelInstance.setCurrentTrack(returnTrack);
@@ -46,7 +47,11 @@ class Jukebox extends Component {
             modelInstance.addMyHistory({'song':modelInstance.getCurrentTrack(),'weather':this.state.weather,'genre':this.state.genre,'city':this.state.location})
             document.getElementById("backgroundImg").style.backgroundImage = "url(" + modelInstance.getCurrentTrack().album.cover_xl + ")";
           });
-        });
+        }
+      else{
+        alert("We encountered some api problems. \n Please try again!")
+        window.location = "/";
+      }});
       })}
       else{
         alert("The location you have entered doen't exist. \n Please try again!")
