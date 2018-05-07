@@ -13,7 +13,7 @@ class User_jukebox extends Component {
         playedTrack: modelInstance.getPlayedTrack(),
       }}
       else {
-        alert("It seems you haven't liked any tracks yet. Go at get jukebox'd!")
+        alert("It seems you haven't liked any tracks yet. Go and get jukebox'd!")
         window.location = "/"
       }
   }
