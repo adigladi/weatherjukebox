@@ -17,18 +17,12 @@ body {
     height: auto
 }
 
-p {
+#abouttext {
     color: rgb(252, 227, 127);
     font-size: 15px;
     font-family: LemonMilk;
 }
 
-@media only screen and (max-width: 600px) {
-    #mainlogo {
-        width: 80vw;
-        height: auto
-    }
-}
 
 .center {
     display: block;

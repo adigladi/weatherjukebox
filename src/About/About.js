@@ -36,9 +36,9 @@ class About extends Component {
         </div>
         <div className="row container-fluid">
         <div className="col-12 text-center">
-            <p>This application let's you enter a location (or fetch one by gps) and then plays you a song based on the weather conditions. You have the possibility to like the track, thus adding it to you private library, or you could dislike it preventing it from reappearing in further listening.</p>
-            <p>In you personal library you can play your liked tracks; reminiscing both location and weather of the day you liked it!</p>
-            <p>Bla Bla Bla</p>
+            <p id="abouttext">This application let's you enter a location (or fetch one by gps) and then plays you a song based on the weather conditions. You have the possibility to like the track, thus adding it to you private library, or you could dislike it preventing it from reappearing in further listening.</p>
+            <p id="abouttext">In you personal library you can play your liked tracks; reminiscing both location and weather of the day you liked it!</p>
+            <p id="abouttext">Bla Bla Bla</p>
           </div>
         </div>
         </div>
