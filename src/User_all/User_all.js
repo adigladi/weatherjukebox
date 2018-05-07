@@ -65,7 +65,7 @@ class User_all extends Component {
       <div className="User row container-fluid">
         <div className="col-12 container-fluid">
         <Link to="/">
-            <button type="button" className="btn btn-warning towelcomebutton"><img id="boxjuke" src={require("./jukebox2.png")} draggable="false"/></button>
+            <button type="button" className="btn btn-warning towelcomebutton"><img id="boxjuke" src={require("./jukebox2.png")} draggable="false" alt="Icon"/></button>
         </Link>
         <Link to="/user_main">
             <button type="button" id="userswitch" className="btn btn-warning"><i className="material-icons w3-xlarge">person</i></button>

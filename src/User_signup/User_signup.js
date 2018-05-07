@@ -74,14 +74,14 @@ class User_signup extends Component {
         } = this.state;
 
         const isInvalid = 
-            passwordOne != passwordTwo ||
+            passwordOne !== passwordTwo ||
             passwordOne === '' ||
             email === '';
 
         return (
             <form id="signupForm" onSubmit={this.onSubmit}>
                 <div className="imgcontainer">
-                    <img src={require("./Logo.png")} className="avatar" />
+                    <img src={require("./Logo.png")} className="avatar" alt="Logo"/>
                 </div>
 
                 <div className="container">

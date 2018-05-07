@@ -59,8 +59,8 @@ class User_jukebox extends Component {
   render() {
     let myList = "";
     myList = this.state.myTracks.map((track, i) => {
-      if(track.song.id == this.state.playedTrack.song.id){
-        return <tr key={i}><td className="text-center" id="pink" title={track.song.id} onClick={this.clickTrack}><img id="speaker" className="d-inline" src={require("./speaker.png")}/>&#032;<p title={track.song.id} className="d-inline">{track.song.title+" - "+track.song.artist.name}</p></td></tr>
+      if(track.song.id === this.state.playedTrack.song.id){
+        return <tr key={i}><td className="text-center" id="pink" title={track.song.id} onClick={this.clickTrack}><img id="speaker" className="d-inline" src={require("./speaker.png")} alt="Speaker"/>&#032;<p title={track.song.id} className="d-inline">{track.song.title+" - "+track.song.artist.name}</p></td></tr>
       }
       else{
         return <tr key={i}><td className="text-center" id="hp" title={track.song.id} onClick={this.clickTrack}><p title={track.song.id} className="d-inline">{track.song.title+" - "+track.song.artist.name}</p></td></tr>

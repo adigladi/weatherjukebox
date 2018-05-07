@@ -28,7 +28,7 @@ class User_forgot extends Component {
         return (
             <form id="forgotForm">
                 <div className="imgcontainer">
-                    <img src={require("./Logo.png")} className="avatar" />
+                    <img src={require("./Logo.png")} className="avatar" alt="Logo"/>
                 </div>
 
                 <div className="container">
