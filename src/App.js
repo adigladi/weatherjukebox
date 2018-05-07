@@ -10,13 +10,23 @@ import User_jukebox from "./User_jukebox/User_jukebox";
 import User_login from "./User_login/User_login";
 import User_signup from "./User_signup/User_signup";
 import User_forgot from "./User_forgot/User_forgot";
+import { firebase } from "./firebase";
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       title: 'Weather Jukebox',
+      authUser: null,
     }
+  }
+
+  componentDidMount() {
+    firebase.auth.onAuthStateChanged(authUser => {
+      authUser
+        ? this.setState(() => ({ authUser }))
+        : this.setState(() => ({ authUser: null }));
+    });
   }
 
   render() {
