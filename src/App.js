@@ -10,23 +10,13 @@ import User_jukebox from "./User_jukebox/User_jukebox";
 import User_login from "./User_login/User_login";
 import User_signup from "./User_signup/User_signup";
 import User_forgot from "./User_forgot/User_forgot";
-import { firebase } from "./firebase";
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       title: 'Weather Jukebox',
-      authUser: null,
-    }
-  }
-
-  componentDidMount() {
-    firebase.auth.onAuthStateChanged(authUser => {
-      authUser
-        ? this.setState(() => ({ authUser }))
-        : this.setState(() => ({ authUser: null }));
-    });
+    };
   }
 
   render() {
@@ -35,7 +25,7 @@ class App extends Component {
         <header className="App-header container-fluid">
           {/* We rended diffrent component based on the path */}
           <Route exact path="/" component={Welcome}/>
-          <Route path="/jukebox" render={() => <Jukebox model={modelInstance}/>}/>
+          <Route path="/jukebox" render={() => <Jukebox model={modelInstance}/>} />
           <Route exact path="/user_main" component={User_main}/>
           <Route exact path="/user_all" component={User_all}/>
           <Route exact path="/user_jukebox" component={User_jukebox}/>

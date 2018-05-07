@@ -12,6 +12,18 @@ body {
     background-attachment: fixed;
 }
 
+#mainlogo {
+    width: 60vw;
+    height: auto
+}
+
+@media only screen and (max-width: 600px) {
+    #mainlogo {
+        width: 80vw;
+        height: auto
+    }
+}
+
 .center {
     display: block;
     margin-left: auto;

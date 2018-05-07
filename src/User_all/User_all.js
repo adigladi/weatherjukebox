@@ -42,9 +42,9 @@ class User_all extends Component {
       <tr key={i}>
         <td><a href={this.state.myTracks[i].song.link} target="_blank">{this.state.myTracks[i].song.title}</a></td>
         <td><a href={this.state.myTracks[i].song.artist.link} target="_blank">{this.state.myTracks[i].song.artist.name}</a></td>
-        <td>{this.state.myTracks[i].genre.name}</td>
-        <td>{this.state.myTracks[i].weather.description}</td>
-        <td>{this.state.myTracks[i].city}</td>
+        <td className="thinvisible">{this.state.myTracks[i].genre.name}</td>
+        <td className="thinvisible">{this.state.myTracks[i].weather.description}</td>
+        <td className="thinvisible">{this.state.myTracks[i].city}</td>
         <td><img id="trashbin" src={require("./trash.png")} draggable="false" title={this.state.myTracks[i].song.id} alt="X" onClick={this.clickTrash}/></td>
       </tr>
     )
@@ -54,9 +54,9 @@ class User_all extends Component {
       <tr key={j}>
         <td><a href={this.state.myBlacklistTracks[j].song.link} target="_blank">{this.state.myBlacklistTracks[j].song.title}</a></td>
         <td><a href={this.state.myBlacklistTracks[j].song.artist.link} target="_blank">{this.state.myBlacklistTracks[j].song.artist.name}</a></td>
-        <td>{this.state.myBlacklistTracks[j].genre.name}</td>
-        <td>{this.state.myBlacklistTracks[j].weather.description}</td>
-        <td>{this.state.myBlacklistTracks[j].city}</td>
+        <td className="thinvisible">{this.state.myBlacklistTracks[j].genre.name}</td>
+        <td className="thinvisible">{this.state.myBlacklistTracks[j].weather.description}</td>
+        <td className="thinvisible">{this.state.myBlacklistTracks[j].city}</td>
         <td><img id="trashbin" src={require("./trash.png")} draggable="false" title={this.state.myBlacklistTracks[j].song.id} alt="X" onClick={this.clickRemoveBlacklist} /></td>
       </tr>
     )
@@ -79,9 +79,9 @@ class User_all extends Component {
               <tr>
                 <th scope="col">Title</th>
                 <th scope="col">Artist</th>
-                <th scope="col">Genre</th>
-                <th scope="col">Weather</th>
-                <th scope="col">City</th>
+                <th className="thinvisible" scope="col">Genre</th>
+                <th className="thinvisible" scope="col">Weather</th>
+                <th className="thinvisible" scope="col">City</th>
                 <th className="text-center" scope="col">X</th>
               </tr>
             </thead>
@@ -97,9 +97,9 @@ class User_all extends Component {
               <tr>
                 <th scope="col">Title</th>
                 <th scope="col">Artist</th>
-                <th scope="col">Genre</th>
-                <th scope="col">Weather</th>
-                <th scope="col">City</th>
+                <th className="thinvisible" scope="col">Genre</th>
+                <th className="thinvisible" scope="col">Weather</th>
+                <th className="thinvisible"scope="col">City</th>
                 <th className="text-center" scope="col">X</th>
               </tr>
             </thead>
