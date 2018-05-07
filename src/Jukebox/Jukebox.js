@@ -19,7 +19,7 @@ class Jukebox extends Component {
     modelInstance.addObserver(this);
 
     modelInstance.getWeather().then(weather => {
-
+      if(typeof weather != 'undefined') {
       modelInstance.weatherMatch(weather.weather[0].id);
 
       modelInstance.getArtists().then(artists => {
@@ -46,7 +46,11 @@ class Jukebox extends Component {
             document.getElementById("backgroundImg").style.backgroundImage = "url(" + modelInstance.getCurrentTrack().album.cover_xl + ")";
           });
         });
-      });
+      })}
+      else{
+        alert("The location you have entered doen't exist...")
+        window.location = "/";
+      }
     });
   }
   

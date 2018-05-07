@@ -584,7 +584,7 @@ const WeatherModel = function () {
 
   let observers = [];
   let myTracks = [];
-  let currentCity = "Stockholm";
+  let currentCity = "";
   let currentWeather = 800;
   let currentGenre = genreMatches[0];
   let currentArtist = 27;
