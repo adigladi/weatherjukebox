@@ -7,11 +7,15 @@ class User_jukebox extends Component {
 
   constructor(props) {
     super(props)
-    
-    this.state = {
-      myTracks: modelInstance.getMyTracks(),
-      playedTrack: modelInstance.getPlayedTrack(),
-    }
+    if (typeof modelInstance.getPlayedTrack() !== 'undefined' && modelInstance.getMyTracks().length > 0){
+      this.state = {
+        myTracks: modelInstance.getMyTracks(),
+        playedTrack: modelInstance.getPlayedTrack(),
+      }}
+      else {
+        alert("It seems you haven't liked any tracks yet. Go at get jukebox'd!")
+        window.location = "/"
+      }
   }
 
   componentDidMount() {
