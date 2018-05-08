@@ -56,7 +56,7 @@ class User_forgot extends Component {
 
                 <div className="container">
                     <Link to="/user_login">
-                        <button type="button" className="cancelbtn">Back</button>
+                        <button type="button" id="locationBtn" className="btn btn-warning welcomebutton cancelbtn">Back</button>
                     </Link>
                 </div>
             </form>

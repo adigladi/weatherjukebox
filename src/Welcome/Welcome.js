@@ -72,13 +72,13 @@ class Welcome extends Component {
     let button = null;
     switch (this.state.status) {
       case 'INITIAL':
-      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><img id="marker" alt="Weather Jukebox" src={require("./marker.png")} draggable="false"/></button>
+      button = <button type="button" className="btn btn-warning welcomebutton markerbutton" onClick={this.onLocationClick}><img id="marker" alt="Weather Jukebox" src={require("./marker.png")} draggable="false"/></button>
         break;
       case 'LOADING':
-      button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><img id="marker" alt="Weather Jukebox" src={require("./spinner.gif")} draggable="false"/></button>
+      button = <button type="button" className="btn btn-warning welcomebutton markerbutton" onClick={this.onLocationClick}><img id="marker" alt="Weather Jukebox" src={require("./spinner.gif")} draggable="false"/></button>
         break;
         case 'LOADED':
-        button = <button type="button" className="btn btn-warning welcomebutton" onClick={this.onLocationClick}><img id="marker" alt="Weather Jukebox" src={require("./marker.png")} draggable="false"/></button>
+        button = <button type="button" className="btn btn-warning welcomebutton markerbutton" onClick={this.onLocationClick}><img id="marker" alt="Weather Jukebox" src={require("./marker.png")} draggable="false"/></button>
           break;
       default:
         button = <b>Try Again</b>
@@ -96,20 +96,14 @@ class Welcome extends Component {
         </div>
         </div>
         <div className="row container-fluid">
-        <div className="col-12 text-center">
-          <div className="row">
-            <div className="col-12 col-md-4 offset-md-2" id="buttonCol">
+            <div className="col-12 text-center" id="buttonCol">
               <input id="locationField" type="text" name="search" placeholder="Enter your location..." onChange={this.onTextChange}/>
-            </div>
-            <div className="col-12 col-md-5 text-md-left" id="buttonCol">  
               {button}
               <Link to="/jukebox">
                 <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Get Jukebox'd</button>
               </Link>
             </div>
           </div>
-        </div>
-        </div>
         </div>
     );
   }

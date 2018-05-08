@@ -132,3 +132,7 @@ button:hover {
         padding: 15px 10px 15px 10px;
 }
 }
+
+.jukeboxbuttons:hover {
+    cursor: pointer;
+}
