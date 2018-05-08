@@ -110,14 +110,14 @@ class User_signup extends Component {
                         name="psw2" required />
 
                     <br /><br />
-                    <button disabled={isInvalid} type="submit">Sign up</button>
+                    <button disabled={isInvalid} type="submit" id="locationBtn" className="btn btn-warning welcomebutton">Sign up</button>
                     <br /><br />
                     { error && <label><b>{error.message}</b></label> }
                 </div>
 
                 <div className="container">
                     <Link to="/user_login">
-                        <button type="button" className="cancelbtn">Back</button>
+                        <button type="button" id="locationBtn" className="btn btn-warning welcomebutton cancelbtn">Back</button>
                     </Link>
                 </div>
             </form>

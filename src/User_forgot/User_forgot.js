@@ -37,14 +37,14 @@ class User_forgot extends Component {
 
                     <br /><br />
                     <Link to="/user_main">
-                        <button type="button">Reset my password!</button>
+                        <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Reset my password!</button>
                     </Link>
                     <br /><br />
                 </div>
 
                 <div className="container">
                     <Link to="/user_login">
-                        <button type="button" className="cancelbtn">Back</button>
+                        <button type="button" id="locationBtn" className="btn btn-warning welcomebutton cancelbtn">Back</button>
                     </Link>
                 </div>
             </form>
