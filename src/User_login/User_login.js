@@ -108,14 +108,14 @@ class User_login extends Component {
             <div className="col-md-6">
               <br /><br />
               <Link to="/user_signup">
-                <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Don't have an account? Sign up!</button>
+                <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Lack an account? Sign up!</button>
               </Link>
             </div>
 
             <div className="col-md-6">
               <br /><br />
               <Link to="/user_forgot">
-                <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Forgot your password? Try here!</button>
+                <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Forgot your password?</button>
               </Link>
             </div>
           </div>
