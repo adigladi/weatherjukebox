@@ -126,3 +126,9 @@ button:hover {
         -moz-transform: scale(0.9);
 }
 }
+
+@media only screen and (max-width: 680px) {
+    .jukeboxbuttons {
+        padding: 15px 10px 15px 10px;
+}
+}
