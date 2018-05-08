@@ -46,3 +46,7 @@
     left: 1vw;
     top: 2vh;
 }
+
+#navBtn {
+    cursor: pointer;
+}
