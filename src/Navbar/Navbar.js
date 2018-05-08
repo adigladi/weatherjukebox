@@ -1,47 +1,28 @@
 import React from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
-import { auth } from '../firebase/firebase';
+import { auth } from '../firebase';
+import { auth as userAuth } from '../firebase/firebase';
 
 function openNav() {
-    var user = auth.currentUser;
+    var user = userAuth.currentUser;
     var sidenavOnline = document.getElementById("sidenavOnline");
     var sidenavOffline = document.getElementById("sidenavOffline");
     if (user) {
-        //sidenavOffline.style.display = 'none';
         sidenavOnline.style.width = '250px';
     }
     else {
-        //sidenavOnline.style.display = 'none';
         sidenavOffline.style.width = '250px';
     }
-    
-    //document.getElementById("sideNav").style.width = "250px";
 }
 
 function closeNav() {
     var user = auth.currentUser;
     var sidenavOnline = document.getElementById("sidenavOnline");
     var sidenavOffline = document.getElementById("sidenavOffline");
-    if (user) {
-        //sidenavOffline.style.display = 'none';
         sidenavOnline.style.width = '0px';
-    }
-    else {
-        //sidenavOnline.style.display = 'none';
         sidenavOffline.style.width = '0px';
-    }
 }
-
-auth.onAuthStateChanged(function (user) {
-    if (user) {
-        console.log("logged in");
-
-    } else {
-        console.log("logged out");
-
-    }
-});
 
 const Navbar = () =>
     <div>
@@ -52,7 +33,7 @@ const Navbar = () =>
             <Link to="/user_jukebox">Play my trackz</Link>
             <Link to="/user_all">Manage trackz</Link>
             <Link to="/about">About</Link>
-            <span id="navLink" onClick={auth.signOut}>Sign Out</span>
+            <span id="navLink" onClick={auth.doSignOut}>Sign Out</span>
         </div>
         <div id="sidenavOffline" className="sidenav">
             <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
