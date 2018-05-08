@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './User_forgot.css';
 import { Link } from 'react-router-dom';
-import { modelInstance } from '../data/WeatherModel.js'
+import { modelInstance } from '../data/WeatherModel.js';
+import { auth } from '../firebase';
+
 class User_forgot extends Component {
 
     constructor(props) {
@@ -24,6 +26,18 @@ class User_forgot extends Component {
 
     }
 
+    emailReset = () => {
+        var mail = document.getElementById("email").value;
+        var container = document.getElementById("resetContainer");
+        console.log("tjo");
+
+        auth.doPasswordReset(mail).then(function() {
+                container.innerHTML = '<h2>Reset password link sent to: ' + mail + '</h2>';
+            }).catch(function(error) {
+                container.innerHTML = '<h2>Invalid email!</h2>';
+            });
+      }
+
     render() {
         return (
             <form id="forgotForm">
@@ -31,14 +45,12 @@ class User_forgot extends Component {
                     <img src={require("./Logo.png")} className="avatar" alt="Logo"/>
                 </div>
 
-                <div className="container">
+                <div id="resetContainer" className="container">
                     <label><b>Email:</b></label>
-                    <input type="text" placeholder="Enter email" name="uname" required />
+                    <input id="email" type="text" placeholder="Enter email" name="uname" required />
 
                     <br /><br />
-                    <Link to="/user_main">
-                        <button type="button">Reset my password!</button>
-                    </Link>
+                    <button type="button" onClick={this.emailReset}>Reset my password!</button>
                     <br /><br />
                 </div>
 
