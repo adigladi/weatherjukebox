@@ -37,6 +37,7 @@ const Navbar = () =>
         </div>
         <div id="sidenavOffline" className="sidenav">
             <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
+            <Link to="/">Home</Link>
             <Link to="/user_login">Log in</Link>
         </div>
         <span id="navBtn" onClick={openNav}>&#9776;</span>
