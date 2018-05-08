@@ -595,7 +595,7 @@ const WeatherModel = function () {
   let favouritesList = [];
   let blackListHit = false;
   let currentTrack = {};
-  let playedTrack = {};
+  let playedTrack
   let coordinates = {
     lat: 59.3463798,
     lng: 18.0724861

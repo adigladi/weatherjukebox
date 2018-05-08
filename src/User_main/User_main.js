@@ -76,6 +76,7 @@ class User_main extends Component {
         <Navbar />
         
         <br/>
+        <br/>
           <h2 className="userTitle text-center">Hello User!</h2>
           <div className="row">
           <div className="col-md-6">

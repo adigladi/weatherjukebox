@@ -26,6 +26,7 @@ class Jukebox extends Component {
       modelInstance.getArtists().then(artists => {
         modelInstance.artistMatch(artists.data);
         modelInstance.getTopTracks().then(topTracks => {
+          if(typeof topTracks !== 'undefined'){
           modelInstance.trackMatch(topTracks.data);
           modelInstance.getTrack().then(returnTrack => {
             modelInstance.setCurrentTrack(returnTrack);
@@ -46,7 +47,11 @@ class Jukebox extends Component {
             modelInstance.addMyHistory({'song':modelInstance.getCurrentTrack(),'weather':this.state.weather,'genre':this.state.genre,'city':this.state.location})
             document.getElementById("backgroundImg").style.backgroundImage = "url(" + modelInstance.getCurrentTrack().album.cover_xl + ")";
           });
-        });
+        }
+      else{
+        alert("We encountered some api problems. \n Please try again!")
+        window.location = "/";
+      }});
       })}
       else{
         alert("The location you have entered doen't exist. \n Please try again!")
@@ -102,16 +107,24 @@ class Jukebox extends Component {
       <div className="col-md-12 container-fluid" id="mainDiv">
         <Navbar />
         <div id="backgroundImg"></div>
+        <br/>
+        <br/>
         <div className="Jukebox text-center">
+        <div id="playerscale">
           <div className="deezer-widget-player" data-src={"https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=350&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=" + this.state.trackid + "&app_id=1"} data-scrolling="no" data-frameborder="0" data-width="350" data-height="350"></div>
           <div id="infoText">
             <h2>Location: {this.state.location}</h2>
             <h2>{this.state.weather.description}</h2>
             <h2>Genre: {this.state.genre.name}</h2>
           </div>
+          </div>
+          <div className="row">
+          <div className="col-12-xs text-center">
           <button type="button" className="btn btn-warning welcomebutton" id="addbutton" onClick={this.onClickAdd}>Add</button>
           <button type="button" className="btn btn-warning welcomebutton" id="disablebutton" onClick={this.onClickBlacklist}>Dislike</button>
           <button type="button" id="rerollbutton" className="btn btn-warning welcomebutton" onClick={this.onClickReroll}>Reroll</button>
+        </div>
+        </div>
         </div>
       </div>
         break;

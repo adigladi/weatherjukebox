@@ -121,3 +121,10 @@ button:hover {
     width:20px;
     height:auto;
 }
+
+@media only screen and (max-width: 680px) {
+    #playerscale {
+        zoom: 0.9;
+        -moz-transform: scale(0.9);
+}
+}
