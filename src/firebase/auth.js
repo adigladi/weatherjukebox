@@ -15,14 +15,3 @@ export const doSignOut = () =>
 // Password Reset
 export const doPasswordReset = (email) =>
     auth.sendPasswordResetEmail(email);
-
-
-
-auth.onAuthStateChanged(function (user) {
-    if (user) {
-        console.log(user.uid);
-        console.log(auth.currentUser);
-    } else {
-        console.log("logged out");
-    }
-});

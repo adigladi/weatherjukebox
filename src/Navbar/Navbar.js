@@ -33,7 +33,7 @@ const Navbar = () =>
             <Link to="/user_jukebox">Play my trackz</Link>
             <Link to="/user_all">Manage trackz</Link>
             <Link to="/about">About</Link>
-            <span id="navLink" onClick={auth.doSignOut}>Sign Out</span>
+            <span id="navLink" onClick={function(){auth.doSignOut(); closeNav();}}>Sign Out</span>
         </div>
         <div id="sidenavOffline" className="sidenav">
             <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
