@@ -118,15 +118,11 @@ class Jukebox extends Component {
             <h2>Genre: {this.state.genre.name}</h2>
           </div>
           </div>
-          <div className="row">
-          <div className="col-12-xs text-center">
-          <button type="button" className="btn btn-warning welcomebutton" id="addbutton" onClick={this.onClickAdd}>Add</button>
-          <button type="button" className="btn btn-warning welcomebutton" id="disablebutton" onClick={this.onClickBlacklist}>Dislike</button>
-          <button type="button" id="rerollbutton" className="btn btn-warning welcomebutton" onClick={this.onClickReroll}>Reroll</button>
+          <button type="button" className="btn btn-warning welcomebutton jukeboxbuttons" id="addbutton" onClick={this.onClickAdd}>Add</button>
+          <button type="button" className="btn btn-warning welcomebutton jukeboxbuttons" id="disablebutton" onClick={this.onClickBlacklist}>Dislike</button>
+          <button type="button" id="rerollbutton" className="btn btn-warning welcomebutton jukeboxbuttons" onClick={this.onClickReroll}>Reroll</button>
+          </div>
         </div>
-        </div>
-        </div>
-      </div>
         break;
       default:
         jukebox = <b>Failed to load data, please try again</b>
