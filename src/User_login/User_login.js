@@ -100,7 +100,7 @@ class User_login extends Component {
             name="psw" required />
 
           <br /><br />
-          <button disabled={isInvalid} type="submit" id="locationBtn" className="btn btn-warning welcomebutton">Login</button>
+          <button disabled={isInvalid} type="submit" id="loginBtn" className="btn btn-warning welcomebutton">Login</button>
 
           { error && <label><b>{error.message}</b></label> }
 
@@ -108,14 +108,14 @@ class User_login extends Component {
             <div className="col-md-6">
               <br /><br />
               <Link to="/user_signup">
-                <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Lack an account? Sign up!</button>
+                <button type="button" id="signupBtn" className="btn btn-warning welcomebutton">Lack an account? Sign up!</button>
               </Link>
             </div>
 
             <div className="col-md-6">
               <br /><br />
               <Link to="/user_forgot">
-                <button type="button" id="locationBtn" className="btn btn-warning welcomebutton">Forgot your password?</button>
+                <button type="button" id="forgotBtn" className="btn btn-warning welcomebutton">Forgot your password?</button>
               </Link>
             </div>
           </div>
@@ -123,7 +123,7 @@ class User_login extends Component {
 
         <div className="container">
           <Link to="/">
-            <button type="button" id="locationBtn" className="btn btn-warning welcomebutton cancelbtn">Back</button>
+            <button type="button" id="backBtn" className="btn btn-warning welcomebutton cancelbtn">Back</button>
           </Link>
         </div>
       </form>

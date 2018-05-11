@@ -12,7 +12,6 @@ const config = {
 if (!firebase.apps.length) {
     firebase.initializeApp(config);
 }
-/* Funkar - men detta måste nog göras vid skapandet av en användare... */
 
 var database = firebase.database();
 
@@ -35,7 +34,7 @@ function getUserData(id) {
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         userId = user.uid;
-        getUserData(userId);
+        //getUserData(userId);
     } else { }
 });
 
@@ -70,4 +69,7 @@ const auth = firebase.auth();
 export {
     auth,
     userCity,
+    userCurrentTracks,
+    userCurrentHistory,
+    userCurrentBlacklist,
 };
