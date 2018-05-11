@@ -13,30 +13,61 @@ if (!firebase.apps.length) {
     firebase.initializeApp(config);
 }
 /* Funkar - men detta måste nog göras vid skapandet av en användare... */
+
 var database = firebase.database();
-/*
-function writeUserData() {
-    firebase.database().ref('users/XU8u4ZfKuobP7DzE6Yb0j0WUwF72').set({
-        username: 'Emil',
-        email: 'edickson@kth.se',
-        currentCity: 'Stockholm'
+
+var userId = "";
+var userCity = "";
+var userCurrentTracks = "";
+var userCurrentHistory = "";
+var userCurrentBlacklist = "";
+
+// Get data from database.
+function getUserData(id) {
+    return firebase.database().ref('/users/' + id).once('value').then(function (snapshot) {
+        userCity = snapshot.val().currentCity;
+        userCurrentTracks = snapshot.val().userTracks;
+        userCurrentHistory = snapshot.val().userHistory;
+        userCurrentBlacklist = snapshot.val().userBlacklist;
+    });
+}
+
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        userId = user.uid;
+        getUserData(userId);
+    } else { }
+});
+
+// Needs to run when a user is created.
+function writeInitialUserData(iId, email) {
+    firebase.database().ref('users/' + iId).set({
+        email: email,
+        currentCity: "Stockholm",
+        userTracks: "",
+        userHistory: "",
+        userBlacklist: "",
+    });
+    console.log("set initial stuff");
+}
+
+// Needs to run when something is updated, i.e. notifyObservers.
+function writeUserData(wId, city, tracks, history, blacklist) {
+    firebase.database().ref('users/' + wId).set({
+        currentCity: city,
+        userTracks: tracks,
+        userHistory: history,
+        userBlacklist: blacklist,
     });
     console.log("set stuff");
 }
 
-writeUserData();
-*/
+//writeUserData();
 
-function getUserData() {
-    return firebase.database().ref('/users/XU8u4ZfKuobP7DzE6Yb0j0WUwF72').once('value').then(function (snapshot) {
-        console.log(snapshot.val().currentCity);
-    });
-}
-
-getUserData();
 
 const auth = firebase.auth();
 
 export {
     auth,
+    userCity,
 };

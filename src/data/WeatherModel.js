@@ -1,5 +1,8 @@
+import { genreMatches } from './GenreMatches';
+
 const WeatherModel = function () {
 
+  /*
   var genreMatches = [
     {
       'name': 'Pop',
@@ -581,6 +584,7 @@ const WeatherModel = function () {
       'likelihood': 6
     },
   ];
+  */
 
   let observers = [];
   let myTracks = [];
@@ -592,10 +596,9 @@ const WeatherModel = function () {
   let songOut = 0;
   let trackBlacklist = [];
   let myHistory = [];
-  let favouritesList = [];
   let blackListHit = false;
   let currentTrack = {};
-  let playedTrack
+  let playedTrack;
   let coordinates = {
     lat: 59.3463798,
     lng: 18.0724861
