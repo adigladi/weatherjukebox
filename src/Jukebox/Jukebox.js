@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './Jukebox.css';
-import { Link } from 'react-router-dom';
 import { modelInstance } from '../data/WeatherModel.js'
 import Navbar from '../Navbar/Navbar';
-import { userCity } from '../firebase/firebase';
+//import { userCity } from '../firebase/firebase';
 
 class Jukebox extends Component {
 
@@ -18,7 +17,6 @@ class Jukebox extends Component {
   }
 
   componentDidMount() {
-    console.log(userCity);
     modelInstance.addObserver(this);
 
     modelInstance.getWeather().then(weather => {

@@ -13,17 +13,19 @@ if (!firebase.apps.length) {
     firebase.initializeApp(config);
 }
 
-var database = firebase.database();
+//var database = firebase.database();
 
 var userId = "";
 var userCity = "";
 var userCurrentTracks = "";
 var userCurrentHistory = "";
 var userCurrentBlacklist = "";
+var currentUserId = "";
 
 // Get data from database.
 function getUserData(id) {
     return firebase.database().ref('/users/' + id).once('value').then(function (snapshot) {
+        currentUserId = id;
         userCity = snapshot.val().currentCity;
         userCurrentTracks = snapshot.val().userTracks;
         userCurrentHistory = snapshot.val().userHistory;
@@ -34,11 +36,12 @@ function getUserData(id) {
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         userId = user.uid;
-        //getUserData(userId);
+        getUserData(userId);
     } else { }
 });
 
-// Needs to run when a user is created.
+// Needs to run when a user is created. is now in the User_signup component.
+/*
 function writeInitialUserData(iId, email) {
     firebase.database().ref('users/' + iId).set({
         email: email,
@@ -49,8 +52,10 @@ function writeInitialUserData(iId, email) {
     });
     console.log("set initial stuff");
 }
+*/
 
 // Needs to run when something is updated, i.e. notifyObservers.
+/*
 function writeUserData(wId, city, tracks, history, blacklist) {
     firebase.database().ref('users/' + wId).set({
         currentCity: city,
@@ -60,7 +65,7 @@ function writeUserData(wId, city, tracks, history, blacklist) {
     });
     console.log("set stuff");
 }
-
+*/
 //writeUserData();
 
 
@@ -72,4 +77,5 @@ export {
     userCurrentTracks,
     userCurrentHistory,
     userCurrentBlacklist,
+    currentUserId,
 };

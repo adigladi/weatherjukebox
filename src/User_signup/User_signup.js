@@ -15,9 +15,9 @@ const SignUpPage = ({ history }) =>
     </div>
 
 const INITIAL_STATE = {
-    email: '',
-    passwordOne: '',
-    passwordTwo: '',
+    email: 'none',
+    passwordOne: 'none',
+    passwordTwo: 'none',
     error: null,
 };
 
@@ -33,7 +33,6 @@ const writeInitialUserData = (iId, email) => {
         userHistory: "",
         userBlacklist: "",
     });
-    console.log("set initial stuff");
 };
 
 class User_signup extends Component {
@@ -57,7 +56,6 @@ class User_signup extends Component {
         auth.doCreateUserWithEmailAndPassword(email, passwordOne)
             .then(authUser => {
                 writeInitialUserData(authUser.uid, email);
-                console.log(authUser.uid);
                 this.setState(() => ({INITIAL_STATE}));
                 history.push(routes.HOME);
             })
@@ -89,8 +87,8 @@ class User_signup extends Component {
 
         const isInvalid = 
             passwordOne !== passwordTwo ||
-            passwordOne === '' ||
-            email === '';
+            passwordOne === 'none' ||
+            email === 'none';
 
         return (
             <form id="signupForm" onSubmit={this.onSubmit}>

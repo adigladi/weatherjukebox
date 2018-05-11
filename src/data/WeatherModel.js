@@ -4,7 +4,9 @@ import {
   userCurrentTracks,
   userCurrentHistory,
   userCurrentBlacklist,
+  currentUserId,
 } from '../firebase/firebase';
+import firebase from 'firebase';
 
 const WeatherModel = function () {
 
@@ -32,19 +34,19 @@ const WeatherModel = function () {
 
   if (userCity !== "") {
     currentCity = userCity;
-  }
+  } else { currentCity = "Stockholm"; }
 
   if (userCurrentTracks !== "") {
-    myTracks = JSON.parse(userCurrentTracks);
-  }
+    myTracks = userCurrentTracks;
+  } else { myTracks = []; }
 
   if (userCurrentHistory !== "") {
-    myHistory = JSON.parse(userCurrentHistory);
-  }
+    myHistory = userCurrentHistory;
+  } else { myHistory = []; }
 
   if (userCurrentBlacklist !== "") {
-    trackBlacklist = JSON.parse(userCurrentBlacklist);
-  }
+    trackBlacklist = userCurrentBlacklist;
+  } else { trackBlacklist = []; }
 
   // Functions for setting values, getting values and such.
 
@@ -76,6 +78,7 @@ const WeatherModel = function () {
 
   this.addMyHistory = function (track) {
     myHistory.push(track);
+    notifyObservers();
   }
 
   this.getMyHistory = function () {
@@ -145,6 +148,7 @@ const WeatherModel = function () {
 
   this.addToBlacklist = function (toBeBlacklisted) {
     trackBlacklist.push(toBeBlacklisted);
+    notifyObservers();
   }
 
   this.removeFromBlacklist = function (toBeUnblacklisted) {
@@ -271,7 +275,30 @@ const WeatherModel = function () {
     observers = observers.filter(o => o !== observer);
   };
 
+  // Function for writing user data to Firebase.
+
+  const writeUserData = function (wId, city, tracks, history, blacklist) {
+    var updates = {};
+    updates['users/' + wId + '/currentCity'] = city;
+    updates['users/' + wId + '/userHistory'] = history;
+    updates['users/' + wId + '/userTracks'] = tracks;
+    updates['users/' + wId + '/userBlacklist'] = blacklist;
+    /*
+    firebase.database().ref('users/' + wId).set({
+      currentCity: city,
+      userTracks: tracks,
+      userHistory: history,
+      userBlacklist: blacklist,
+    });
+    */
+    firebase.database().ref().update(updates);
+    //console.log('users/' + wId);
+  }
+
+  // notify observers.
+
   const notifyObservers = function () {
+    writeUserData(currentUserId, currentCity, myTracks, myHistory, trackBlacklist);
     observers.forEach(o => o.update());
   };
 
