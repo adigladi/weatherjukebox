@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+import { modelInstance } from '../data/WeatherModel.js'
 
 const config = {
     apiKey: "AIzaSyDDzNS_XrUTXRgX6QXSoNsrZP4L8r3-yuc",
@@ -13,23 +14,24 @@ if (!firebase.apps.length) {
     firebase.initializeApp(config);
 }
 
-//var database = firebase.database();
 
 var userId = "";
-var userCity = "";
-var userCurrentTracks = "";
-var userCurrentHistory = "";
-var userCurrentBlacklist = "";
 var currentUserId = "";
 
 // Get data from database.
 function getUserData(id) {
     return firebase.database().ref('/users/' + id).once('value').then(function (snapshot) {
         currentUserId = id;
-        userCity = snapshot.val().currentCity;
-        userCurrentTracks = snapshot.val().userTracks;
-        userCurrentHistory = snapshot.val().userHistory;
-        userCurrentBlacklist = snapshot.val().userBlacklist;
+        modelInstance.setCity(snapshot.val().currentCity);
+        if (snapshot.val().userTracks && snapshot.val().userTracks !== "") {
+            modelInstance.setUserTracks(snapshot.val().userTracks);
+        }
+        if (snapshot.val().userHistory && snapshot.val().userHistory !== "") {
+            modelInstance.setUserHistory(snapshot.val().userHistory);
+        }
+        if (snapshot.val().userBlacklist && snapshot.val().userBlacklist !== "") {
+            modelInstance.setUserBlacklist(snapshot.val().userBlacklist);
+        }
     });
 }
 
@@ -73,9 +75,5 @@ const auth = firebase.auth();
 
 export {
     auth,
-    userCity,
-    userCurrentTracks,
-    userCurrentHistory,
-    userCurrentBlacklist,
     currentUserId,
 };

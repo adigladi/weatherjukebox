@@ -1,11 +1,5 @@
 import { genreMatches } from './GenreMatches';
-import {
-  userCity,
-  userCurrentTracks,
-  userCurrentHistory,
-  userCurrentBlacklist,
-  currentUserId,
-} from '../firebase/firebase';
+import { currentUserId } from '../firebase/firebase';
 import firebase from 'firebase';
 
 const WeatherModel = function () {
@@ -30,23 +24,6 @@ const WeatherModel = function () {
     lng: 18.0724861
   }
 
-  // Setting variables that are based on user data (initial values are given above).
-
-  if (userCity !== "") {
-    currentCity = userCity;
-  } else { currentCity = "Stockholm"; }
-
-  if (userCurrentTracks !== "") {
-    myTracks = userCurrentTracks;
-  } else { myTracks = []; }
-
-  if (userCurrentHistory !== "") {
-    myHistory = userCurrentHistory;
-  } else { myHistory = []; }
-
-  if (userCurrentBlacklist !== "") {
-    trackBlacklist = userCurrentBlacklist;
-  } else { trackBlacklist = []; }
 
   // Functions for setting values, getting values and such.
 
@@ -76,6 +53,10 @@ const WeatherModel = function () {
     return coordinates
   }
 
+  this.setUserHistory = function (inputHistory) {
+    myHistory = inputHistory;
+  }
+
   this.addMyHistory = function (track) {
     myHistory.push(track);
     notifyObservers();
@@ -88,6 +69,10 @@ const WeatherModel = function () {
   this.clearMyHistory = function () {
     myHistory = [];
     notifyObservers();
+  }
+
+  this.setUserTracks = function (inputTracks) {
+    myTracks = inputTracks;
   }
 
   this.addMyTracks = function (track) {
@@ -145,6 +130,10 @@ const WeatherModel = function () {
   }
 
   this.setCurrentArtist = function () { }
+
+  this.setUserBlacklist = function (inputBlacklist) {
+    trackBlacklist = inputBlacklist;
+  }
 
   this.addToBlacklist = function (toBeBlacklisted) {
     trackBlacklist.push(toBeBlacklisted);
@@ -283,16 +272,7 @@ const WeatherModel = function () {
     updates['users/' + wId + '/userHistory'] = history;
     updates['users/' + wId + '/userTracks'] = tracks;
     updates['users/' + wId + '/userBlacklist'] = blacklist;
-    /*
-    firebase.database().ref('users/' + wId).set({
-      currentCity: city,
-      userTracks: tracks,
-      userHistory: history,
-      userBlacklist: blacklist,
-    });
-    */
     firebase.database().ref().update(updates);
-    //console.log('users/' + wId);
   }
 
   // notify observers.
