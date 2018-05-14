@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import './About.css';
-import { Link } from 'react-router-dom';
 import { modelInstance } from '../data/WeatherModel.js'
-import SignOutButton from '../User_signout/User_signout';
 import Navbar from '../Navbar/Navbar';
 
 class About extends Component {
-
+  /* Appearently useless constructor
   constructor(props) {
     super(props)
   }
+  */
 
   componentDidMount() {
     modelInstance.addObserver(this)

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Jukebox.css';
-import { Link } from 'react-router-dom';
 import { modelInstance } from '../data/WeatherModel.js'
 import Navbar from '../Navbar/Navbar';
+//import { userCity } from '../firebase/firebase';
 
 class Jukebox extends Component {
 

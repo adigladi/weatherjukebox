@@ -7,6 +7,7 @@ import './User_signup.css';
 import { modelInstance } from '../data/WeatherModel.js';
 import { auth } from '../firebase';
 import * as routes from '../constants/routes';
+import * as firebase from 'firebase';
 
 const SignUpPage = ({ history }) => 
     <div>
@@ -14,15 +15,25 @@ const SignUpPage = ({ history }) =>
     </div>
 
 const INITIAL_STATE = {
-    email: '',
-    passwordOne: '',
-    passwordTwo: '',
+    email: 'none',
+    passwordOne: 'none',
+    passwordTwo: 'none',
     error: null,
 };
 
 const byPropKey = (propertyName, value) => () => ({
     [propertyName]: value,
 });
+
+const writeInitialUserData = (iId, email) => {
+    firebase.database().ref('users/' + iId).set({
+        email: email,
+        currentCity: "Stockholm",
+        userTracks: "",
+        userHistory: "",
+        userBlacklist: "",
+    });
+};
 
 class User_signup extends Component {
 
@@ -44,6 +55,7 @@ class User_signup extends Component {
 
         auth.doCreateUserWithEmailAndPassword(email, passwordOne)
             .then(authUser => {
+                writeInitialUserData(authUser.uid, email);
                 this.setState(() => ({INITIAL_STATE}));
                 history.push(routes.HOME);
             })
@@ -75,8 +87,8 @@ class User_signup extends Component {
 
         const isInvalid = 
             passwordOne !== passwordTwo ||
-            passwordOne === '' ||
-            email === '';
+            passwordOne === 'none' ||
+            email === 'none';
 
         return (
             <form id="signupForm" onSubmit={this.onSubmit}>
@@ -110,14 +122,14 @@ class User_signup extends Component {
                         name="psw2" required />
 
                     <br /><br />
-                    <button disabled={isInvalid} type="submit" id="locationBtn" className="btn btn-warning welcomebutton">Sign up</button>
+                    <button disabled={isInvalid} type="submit" id="signupBtn" className="btn btn-warning welcomebutton">Sign up</button>
                     <br /><br />
                     { error && <label><b>{error.message}</b></label> }
                 </div>
 
                 <div className="container">
                     <Link to="/user_login">
-                        <button type="button" id="locationBtn" className="btn btn-warning welcomebutton cancelbtn">Back</button>
+                        <button type="button" id="backBtn" className="btn btn-warning welcomebutton cancelbtn">Back</button>
                     </Link>
                 </div>
             </form>

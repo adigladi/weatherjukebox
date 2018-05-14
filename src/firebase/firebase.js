@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+import { modelInstance } from '../data/WeatherModel.js'
 
 const config = {
     apiKey: "AIzaSyDDzNS_XrUTXRgX6QXSoNsrZP4L8r3-yuc",
@@ -13,8 +14,66 @@ if (!firebase.apps.length) {
     firebase.initializeApp(config);
 }
 
+
+var userId = "";
+var currentUserId = "";
+
+// Get data from database.
+function getUserData(id) {
+    return firebase.database().ref('/users/' + id).once('value').then(function (snapshot) {
+        currentUserId = id;
+        modelInstance.setCity(snapshot.val().currentCity);
+        if (snapshot.val().userTracks && snapshot.val().userTracks !== "") {
+            modelInstance.setUserTracks(snapshot.val().userTracks);
+        }
+        if (snapshot.val().userHistory && snapshot.val().userHistory !== "") {
+            modelInstance.setUserHistory(snapshot.val().userHistory);
+        }
+        if (snapshot.val().userBlacklist && snapshot.val().userBlacklist !== "") {
+            modelInstance.setUserBlacklist(snapshot.val().userBlacklist);
+        }
+    });
+}
+
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        userId = user.uid;
+        getUserData(userId);
+    } else { }
+});
+
+// Needs to run when a user is created. is now in the User_signup component.
+/*
+function writeInitialUserData(iId, email) {
+    firebase.database().ref('users/' + iId).set({
+        email: email,
+        currentCity: "Stockholm",
+        userTracks: "",
+        userHistory: "",
+        userBlacklist: "",
+    });
+    console.log("set initial stuff");
+}
+*/
+
+// Needs to run when something is updated, i.e. notifyObservers.
+/*
+function writeUserData(wId, city, tracks, history, blacklist) {
+    firebase.database().ref('users/' + wId).set({
+        currentCity: city,
+        userTracks: tracks,
+        userHistory: history,
+        userBlacklist: blacklist,
+    });
+    console.log("set stuff");
+}
+*/
+//writeUserData();
+
+
 const auth = firebase.auth();
 
 export {
     auth,
+    currentUserId,
 };

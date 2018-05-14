@@ -17,7 +17,7 @@ function openNav() {
 }
 
 function closeNav() {
-    var user = auth.currentUser;
+    //var user = auth.currentUser;
     var sidenavOnline = document.getElementById("sidenavOnline");
     var sidenavOffline = document.getElementById("sidenavOffline");
         sidenavOnline.style.width = '0px';
