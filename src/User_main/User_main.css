@@ -94,3 +94,9 @@ button:hover {
     background-color: #f0ad4e;
     border-color: #f0ad4e;
 }
+
+#maintext {
+    color: rgb(252, 227, 127);
+    font-size: 17px;
+    font-family: LemonMilk;
+}
