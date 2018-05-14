@@ -72,8 +72,6 @@ class User_main extends Component {
             <tbody className="text-center">
               <p id="maintext">You currently have {modelInstance.getMyTracks().length} songs in your liked list</p>
               <p id="maintext">And for the moment being, you have disliked {modelInstance.getBlacklist().length} tracks!</p>
-              <p id="maintext">The last time you jukebox'd you were in {modelInstance.getMyTracks().splice(-1)[0].city}</p>
-              <p id="maintext">and the weather was {modelInstance.getMyTracks().splice(-1)[0].weather.description}</p>
             </tbody>
           </table>
           </div>
