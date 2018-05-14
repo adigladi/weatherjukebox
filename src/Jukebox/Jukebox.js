@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Jukebox.css';
 import { modelInstance } from '../data/WeatherModel.js'
 import Navbar from '../Navbar/Navbar';
+import { auth as userAuth } from '../firebase/firebase';
 //import { userCity } from '../firebase/firebase';
 
 class Jukebox extends Component {
@@ -96,6 +97,18 @@ class Jukebox extends Component {
   }
 
   render() {
+    var user = userAuth.currentUser;
+    var buttonrow;
+    if (!user) {
+      buttonrow = <div><h2 id="signedouttext">Please log in to add or dislike tracks!</h2><button type="button" className="btn btn-warning welcomebutton jukeboxbuttons" id="addbutton" onClick={this.onClickAdd} disabled>Add</button>
+      <button type="button" className="btn btn-warning welcomebutton jukeboxbuttons" id="disablebutton" onClick={this.onClickBlacklist} disabled>Dislike</button>
+      <button type="button" id="rerollbutton" className="btn btn-warning welcomebutton jukeboxbuttons" onClick={this.onClickReroll}>Reroll</button></div>
+    }
+    else { buttonrow =
+      <div><button type="button" className="btn btn-warning welcomebutton jukeboxbuttons" id="addbutton" onClick={this.onClickAdd}>Add</button>
+      <button type="button" className="btn btn-warning welcomebutton jukeboxbuttons" id="disablebutton" onClick={this.onClickBlacklist}>Dislike</button>
+      <button type="button" id="rerollbutton" className="btn btn-warning welcomebutton jukeboxbuttons" onClick={this.onClickReroll}>Reroll</button></div>
+    }
     let jukebox = null;
     switch (this.state.status) {
       case 'INITIAL':
@@ -117,9 +130,7 @@ class Jukebox extends Component {
             <h2>Genre: {this.state.genre.name}</h2>
           </div>
           </div>
-          <button type="button" className="btn btn-warning welcomebutton jukeboxbuttons" id="addbutton" onClick={this.onClickAdd}>Add</button>
-          <button type="button" className="btn btn-warning welcomebutton jukeboxbuttons" id="disablebutton" onClick={this.onClickBlacklist}>Dislike</button>
-          <button type="button" id="rerollbutton" className="btn btn-warning welcomebutton jukeboxbuttons" onClick={this.onClickReroll}>Reroll</button>
+          {buttonrow}
           </div>
         </div>
         break;
