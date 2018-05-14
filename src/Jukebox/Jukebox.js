@@ -76,7 +76,6 @@ class Jukebox extends Component {
   onClickAdd = () => {
     var resetBtn = "";
     modelInstance.addMyTracks({'song':modelInstance.getCurrentTrack(),'weather':this.state.weather,'genre':this.state.genre,'city':this.state.location})
-    modelInstance.setPlayedTrack({'song':modelInstance.getCurrentTrack(),'weather':this.state.weather,'genre':this.state.genre,'city':this.state.location})
     resetBtn = document.getElementById("addbutton");
     resetBtn.disabled = "disabled";
     resetBtn = document.getElementById("disablebutton");

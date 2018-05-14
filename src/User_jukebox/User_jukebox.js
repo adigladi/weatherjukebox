@@ -8,10 +8,10 @@ class User_jukebox extends Component {
 
   constructor(props) {
     super(props)
-    if (typeof modelInstance.getPlayedTrack() !== 'undefined' && modelInstance.getMyTracks().length > 0){
+    if (modelInstance.getMyTracks().length > 0){
       this.state = {
         myTracks: modelInstance.getMyTracks(),
-        playedTrack: modelInstance.getPlayedTrack(),
+        playedTrack: modelInstance.getMyTracks().slice(-1)[0],
       }}
     else {
       alert("It seems you haven't liked any tracks yet. Go and get jukebox'd!")
