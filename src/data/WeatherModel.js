@@ -8,7 +8,7 @@ const WeatherModel = function () {
 
   let observers = [];
   let myTracks = [];
-  let currentCity = "Stockholm";
+  let currentCity = "";
   let currentWeather = 800;
   let currentGenre = genreMatches[0];
   let currentArtist = 27;
@@ -24,6 +24,12 @@ const WeatherModel = function () {
     lng: 18.0724861
   }
 
+  if (localStorage.getItem('currentCity')) {
+    currentCity = localStorage.getItem('currentCity')
+    /* Session storage set successfully. */
+  } else {
+    currentCity = "";
+  }
 
   // Functions for setting values, getting values and such.
 
@@ -123,6 +129,7 @@ const WeatherModel = function () {
 
   this.setCity = function (city) {
     currentCity = city;
+    localStorage.setItem('currentCity', currentCity);
   }
 
   this.getCity = function () {

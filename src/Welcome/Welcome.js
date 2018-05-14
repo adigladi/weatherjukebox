@@ -19,6 +19,11 @@ class Welcome extends Component {
 
     var input = document.getElementById("locationField");
 
+    if (localStorage.getItem('currentCity')) {
+      input.value = localStorage.getItem('currentCity');
+    }
+
+
     //Enter press
     input.addEventListener("keyup", function(event) {
       if (event.keyCode === 13) {
