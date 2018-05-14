@@ -45,24 +45,7 @@ class User_main extends Component {
     modelInstance.clearMyHistory();
   }
 
-  clickTrack = (r) => {
-    for (let i = 0; i < this.state.myTracks.length; i++) {
-      if (this.state.myTracks[i].song.id === parseInt(r.target.title, 10)) {
-        modelInstance.setPlayedTrack(this.state.myTracks[i])
-      }
-    }
-  }
-
   render() {
-    let myList = "";
-    myList = this.state.myTracks.map((track, i) =>
-      <tr key={i}>
-      <Link to="/user_jukebox">
-        <td className="text-center" title={this.state.myTracks[i].song.id} id="hp" onClick={this.clickTrack}>{this.state.myTracks[i].song.title+" - "+this.state.myTracks[i].song.artist.name}</td>
-      </Link>
-      </tr>
-    )
-
     let myHistoryList = "";
     myHistoryList = this.state.myHistory.map((track, i) =>
       <tr key={i}>
@@ -83,11 +66,12 @@ class User_main extends Component {
           <table className="table table-striped">
             <thead>
               <tr>
-                <th scope="col" className="text-center">Favouritz (click to listen!)</th>
+                <th scope="col" className="text-center">Your jukeboxin'</th>
               </tr>
             </thead>
             <tbody className="text-center">
-              {myList.reverse()}
+              <p id="maintext">You currently have {modelInstance.getMyTracks().length} songs in your liked list</p>
+              <p id="maintext">And for the moment being, you have disliked {modelInstance.getBlacklist().length} tracks!</p>
             </tbody>
           </table>
           </div>
