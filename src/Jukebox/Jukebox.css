@@ -73,6 +73,10 @@ h2 {
     font-size: 12px;
 }
 
+#signedouttext {
+    font-size: 12px;
+}
+
 img {
     width:50vh;
     display: block;
