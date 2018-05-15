@@ -27,7 +27,7 @@ function closeNav() {
 const Navbar = () =>
     <div>
         <div id="sidenavOnline" className="sidenav">
-            <a href="javascript" className="closebtn" onClick={closeNav}>&times;</a>
+            <a href="javascript:" className="closebtn" onClick={closeNav}>&times;</a>
             <Link to="/" id= "homebutton">Home</Link>
             <Link to="/user_main">User page</Link>
             <Link to="/user_jukebox">Play my trackz</Link>
@@ -36,7 +36,7 @@ const Navbar = () =>
             <span id="navLink" onClick={function(){auth.doSignOut(); closeNav(); document.getElementById("homebutton").click();}}>Sign Out</span>
         </div>
         <div id="sidenavOffline" className="sidenav">
-            <a href="javascript" className="closebtn" onClick={closeNav}>&times;</a>
+            <a href="javascript:" className="closebtn" onClick={closeNav}>&times;</a>
             <Link to="/">Home</Link>
             <Link to="/user_login">Log in</Link>
         </div>
