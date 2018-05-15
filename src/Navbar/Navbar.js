@@ -27,7 +27,7 @@ function closeNav() {
 const Navbar = () =>
     <div>
         <div id="sidenavOnline" className="sidenav">
-            <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
+            <a href="javascript" className="closebtn" onClick={closeNav}>&times;</a>
             <Link to="/" id= "homebutton">Home</Link>
             <Link to="/user_main">User page</Link>
             <Link to="/user_jukebox">Play my trackz</Link>
