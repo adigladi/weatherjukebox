@@ -42,35 +42,6 @@ firebase.auth().onAuthStateChanged(function (user) {
     } else { }
 });
 
-// Needs to run when a user is created. is now in the User_signup component.
-/*
-function writeInitialUserData(iId, email) {
-    firebase.database().ref('users/' + iId).set({
-        email: email,
-        currentCity: "Stockholm",
-        userTracks: "",
-        userHistory: "",
-        userBlacklist: "",
-    });
-    console.log("set initial stuff");
-}
-*/
-
-// Needs to run when something is updated, i.e. notifyObservers.
-/*
-function writeUserData(wId, city, tracks, history, blacklist) {
-    firebase.database().ref('users/' + wId).set({
-        currentCity: city,
-        userTracks: tracks,
-        userHistory: history,
-        userBlacklist: blacklist,
-    });
-    console.log("set stuff");
-}
-*/
-//writeUserData();
-
-
 const auth = firebase.auth();
 
 export {

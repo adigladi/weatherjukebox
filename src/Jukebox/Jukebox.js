@@ -3,7 +3,6 @@ import './Jukebox.css';
 import { modelInstance } from '../data/WeatherModel.js'
 import Navbar from '../Navbar/Navbar';
 import { auth as userAuth } from '../firebase/firebase';
-//import { userCity } from '../firebase/firebase';
 
 class Jukebox extends Component {
 

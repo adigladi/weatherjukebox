@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './User_jukebox.css';
-//import { Link } from 'react-router-dom';
 import { modelInstance } from '../data/WeatherModel.js';
 import Navbar from '../Navbar/Navbar';
 
