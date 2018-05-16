@@ -11,15 +11,15 @@
 <p>The app is deployed using Firebase and can be found <a href="https://weather-jukebox.firebaseapp.com/">here</a>.</p>
 
 <img src="http://www.emildickson.se/weatherjukebox/1_start.png" alt="logo"/>
-<i>The front page.</i><br/><br/>
+<i>The front page. Location can be entered via the text box or retrieved automatically via the location button.</i><br/><br/>
 
 <img src="http://www.emildickson.se/weatherjukebox/2_songresult.png" alt="logo"/>
-<i>A song result for someone in Dallas.</i><br/><br/>
+<i>A song result for someone in Dallas. Add will put the song in the user's list of liked songs. Dislike will blacklist the song, to ensure it is not suggested again. Reroll will re-render so that a new song is generated.</i><br/><br/>
 
 <img src="http://www.emildickson.se/weatherjukebox/3_userpage.png" alt="logo"/>
 <img src="http://www.emildickson.se/weatherjukebox/4_playfavourites.png" alt="logo"/>
 <img src="http://www.emildickson.se/weatherjukebox/5_managetracks.png" alt="logo"/>
-<i>The pages in the user section. Note that the user can play their previously liked tracks and also manage history, liked tracks and disliked tracks.</i><br/><br/>
+<i>The pages in the user section. Note that the user can play their previously liked tracks and also manage history, liked tracks and disliked tracks. The history can be cleared, if the user wishes to do this.</i><br/><br/>
 
 <img src="http://www.emildickson.se/weatherjukebox/6_menu.png" alt="logo"/>
 <img src="http://www.emildickson.se/weatherjukebox/7_menusignedout.png" alt="logo"/>
@@ -27,7 +27,7 @@
 
 <img src="http://www.emildickson.se/weatherjukebox/8_loginscreen.png" alt="logo"/>
 <img src="http://www.emildickson.se/weatherjukebox/9_accountcreation.png" alt="logo"/>
-<i>Login and signup pages.</i><br/><br/>
+<i>Login, signup and "forgot my password" pages. If a user forgets his/her password, they can enter their email address and have a reset link sent to them.</i><br/><br/>
 
 
 <h2>About the actual work</h2>
