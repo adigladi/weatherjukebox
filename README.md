@@ -4,6 +4,8 @@
 
 <p>The app takes weather info from <a href="https://openweathermap.org/api">OpenWeatherMap's API</a>, gets song info from <a href="https://developers.deezer.com/api/explorer">Deezer's API</a> and finally plays music using a player from Deezer.</p>
 
+<b>No configuration is needed on the user side - just create an account, log in and get Jukebox'd!</b>
+
 <p>The app is deployed using Firebase and can be found <a href="https://weather-jukebox.firebaseapp.com/">here</a>.</p>
 
 <img src="http://www.emildickson.se/weatherjukebox/1_start.png" alt="logo"/>
