@@ -6,7 +6,7 @@
 
 <h2>Awesome, how do I try it out?</h2>
 <p>No configuration is needed on the user side - just press the hamburger menu in the top left corner, create an account, log in and get Jukebox'd!</p>
-<p>The app is deployed using Firebase and can be found <a href="https://weather-jukebox.firebaseapp.com/">here</a>.</p>
+<p>The app is deployed using <b>Firebase</b> and can be found <a href="https://weather-jukebox.firebaseapp.com/">here</a>.</p>
 
 
 <h2>Screengrabs from the app:</h2>
