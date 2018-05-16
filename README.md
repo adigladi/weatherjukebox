@@ -1,4 +1,4 @@
-# weatherjukebox - intro
+<h1>weatherjukebox - intro</h1>
 
 <b>Our project will retrieve the users location (via geolocation or user input) and give music suggestions based on the current weather.</b>
 
@@ -7,7 +7,7 @@
 <h2>Awesome, how do I try it out?</h2>
 <b>No configuration is needed on the user side - just press the hamburger menu in the top left corner, create an account, log in and get Jukebox'd!</b>
 
-<h2>Screengrabs from the app itself:</h2>
+<h2>Screengrabs from the app:</h2>
 <p>The app is deployed using Firebase and can be found <a href="https://weather-jukebox.firebaseapp.com/">here</a>.</p>
 
 <img src="http://www.emildickson.se/weatherjukebox/1_start.png" alt="logo"/>
@@ -30,7 +30,7 @@
 <i>Login and signup pages.</i><br/><br/>
 
 
-# about the actual work
+<h2>About the actual work</h2>
 
 <ul>
 <li><b>What we have done</b></li>
