@@ -84,6 +84,7 @@ const WeatherModel = function () {
   this.addMyTracks = function (track) {
     this.removeMyTracks(track.song.id)
     myTracks.push(track);
+    notifyObservers();
   }
 
   this.removeMyTracks = function (id) {

@@ -10,7 +10,7 @@ class User_jukebox extends Component {
     if (modelInstance.getMyTracks().length > 0){
       this.state = {
         myTracks: modelInstance.getMyTracks(),
-        playedTrack: modelInstance.getMyTracks().slice(-1)[0],
+        playedTrack: modelInstance.getMyTracks()[0],
       }}
     else {
       alert("It seems you haven't liked any tracks yet. Go and get jukebox'd!")
@@ -99,7 +99,7 @@ class User_jukebox extends Component {
                   </tr>
                 </thead>
                 <tbody className="text-center">
-                  {myList.reverse()}
+                  {myList}
                 </tbody>
               </table>
             </div>
