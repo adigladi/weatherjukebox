@@ -6,9 +6,10 @@
 
 <h2>Awesome, how do I try it out?</h2>
 <p>No configuration is needed on the user side - just press the hamburger menu in the top left corner, create an account, log in and get Jukebox'd!</p>
+<p>The app is deployed using Firebase and can be found <a href="https://weather-jukebox.firebaseapp.com/">here</a>.</p>
+
 
 <h2>Screengrabs from the app:</h2>
-<p>The app is deployed using Firebase and can be found <a href="https://weather-jukebox.firebaseapp.com/">here</a>.</p>
 
 <img src="http://www.emildickson.se/weatherjukebox/1_start.png" alt="logo"/>
 <i>The front page. Location can be entered via the text box or retrieved automatically via the location button.</i><br/><br/>
