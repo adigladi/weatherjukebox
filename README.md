@@ -6,15 +6,25 @@
 
 <p>The app is deployed using Firebase and can be found <a href="https://weather-jukebox.firebaseapp.com/">here</a>.</p>
 
-<img src="http://www.emildickson.se/weatherjukebox/logo.png" alt="logo"/>
+<img src="http://www.emildickson.se/weatherjukebox/1_start.png" alt="logo"/>
 <i>The front page.</i><br/><br/>
 
-<img src="http://www.emildickson.se/weatherjukebox/result.png" alt="logo"/>
+<img src="http://www.emildickson.se/weatherjukebox/2_songresult.png" alt="logo"/>
 <i>A song result for someone in Dallas.</i><br/><br/>
 
-<img src="http://www.emildickson.se/weatherjukebox/user1.png" alt="logo"/>
-<img src="http://www.emildickson.se/weatherjukebox/user2.png" alt="logo"/>
-<i>The pages in the user section.</i><br/><br/>
+<img src="http://www.emildickson.se/weatherjukebox/3_userpage.png" alt="logo"/>
+<img src="http://www.emildickson.se/weatherjukebox/4_playfavourites.png" alt="logo"/>
+<img src="http://www.emildickson.se/weatherjukebox/5_managetracks.png" alt="logo"/>
+<i>The pages in the user section. Note that the user can play their previously liked tracks and also manage history, liked tracks and disliked tracks.</i><br/><br/>
+
+<img src="http://www.emildickson.se/weatherjukebox/6_menu.png" alt="logo"/>
+<img src="http://www.emildickson.se/weatherjukebox/7_menusignedout.png" alt="logo"/>
+<i>The menu changes dependning on wether the user is currently signed in or not. This is a Firebase feature.</i><br/><br/>
+
+<img src="http://www.emildickson.se/weatherjukebox/8_loginscreen.png" alt="logo"/>
+<img src="http://www.emildickson.se/weatherjukebox/9_accountcreation.png" alt="logo"/>
+<i>Login and signup pages.</i><br/><br/>
+
 
 # about the actual work
 
@@ -25,13 +35,9 @@
     <li>A 'user' section where the user can se their saved and disliked ("blacklisted") tracks. The user can also remove tracks from either of the lists. The section consists of two views/pages.</li>
     <li>A loading screen, present while fetching data from the Deezer API.</li>
     <li>A 'jukebox' page, that plays music for the user and displays information about weather and genre. The user has the ability to add the song to their favourites list or add it to a blacklist to ensure that this particular song is not suggested again.</li>
-</ul>
-<li><b>What we still plan to do</b></li>
-<ul>
-    <li>User data will be stored using Firebase.</li>
-    <li>The user interaction for the favourites and blacklist will be improved.</li>
-    <li>The icon for geolocation will stop spinning when location is retrieved.</li>
-    <li>A "reroll" button will be added to the Jukebox view that will reload the song suggestion for the selected location.</li>
+    <li>Users are able to play liked tracks again.</li>
+    <li>Users are able to create an account and log in via Firebase.</li>
+    <li>User data is stored using Firebase.</li>
 </ul>
 <li><b>Our project file structure (images are ignored)</b></li>
 <ul>
@@ -45,7 +51,10 @@
         <li>App.css - empty css file.</li>
         <li>App.js - acts as router for the app.</li>
         <li>data/WeatherModel.js - this handles all of the logic for the app, such as generating songs, communicating with API's and such.</li>
+        <li>data/GenreMatches.js - Contains info about genres matched to weather id's.</li>
         <li>Fonts/LemonMilk.otf - a nice font we use in the app.</li>
+        <li>firebase/auth.js - js file for authenticating to Firebase during login, logout, account creation and resetting forgotten passwords.</li>
+        <li>firebase/firebase.js - Initializes Firebase and downloads user data from the realtime database.</li>
         <li>index.css - empty css file.</li>
         <li>index.js - browser router.</li>
         <li>Jukebox/Jukebox.css - css file for the Jukebox view.</li>
@@ -55,6 +64,8 @@
         <li>User_all/User_all.js - favourites and blacklist view for the user page.</li>
         <li>User_main/User_main.css - css for the User_main view.</li>
         <li>User_main/User_main.js - main view for the user page.</li>
+        <li>User_main/User_login.css - css for the User_login view.</li>
+        <li>User_login/User_login.js - main view for the login screen.<b>Note that similar files are available for signup and "forgot password".</b></li>
         <li>Welcome/Welcome.css - handles css for the front page.</li>
         <li>Welcome/Welcome.js - this is the first page that the user is presented with when using the app.</li>
     </ul>
